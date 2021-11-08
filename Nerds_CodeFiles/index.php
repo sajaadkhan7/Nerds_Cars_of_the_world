@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<?php require('requires/header.php');  ?>
+<?php require('requires/header.php'); ?>
 
 
 
