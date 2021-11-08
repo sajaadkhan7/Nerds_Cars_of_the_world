@@ -1,5 +1,6 @@
 
 <!-- Footer -->
+<script src="js/cars.js"></script>
 <footer class="page-footer bg-dark text-white font-small indigo">
 
   <!-- Footer Links -->
@@ -132,4 +133,3 @@
 
 <!-- Footer -->
 
-<script src="js/cars.js"></script>

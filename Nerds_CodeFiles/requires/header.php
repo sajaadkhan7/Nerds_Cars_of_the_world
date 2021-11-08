@@ -20,7 +20,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cars.css">
     <!-- Font awesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    
@@ -28,14 +28,14 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm  navbar-dark" style="background-color: #000;">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Car</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+    <a class="navbar-brand" href="javascript:void(0)">CAR</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
@@ -52,6 +52,14 @@
           <a class="nav-link" href="contact.php">Contact Us</a>
         </li>    
       </ul>
+      
+      <form class="d-flex">
+        <button class="btn btn-danger my-2 mx-2 " type="button"><i class="fas fa-user"></i><span class="d-md-none"> LOGIN</span></button>
+      </form>
+      <form class="d-flex btn-group">
+        <input class="form-control" type="text" placeholder="Search">
+        <button class="btn btn-danger" type="button"><i class="fas fa-search"></i></button>
+      </form>
     </div>
   </div>
 </nav>
