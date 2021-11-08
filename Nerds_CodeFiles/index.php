@@ -8,7 +8,7 @@
 
    <!-- your content here... -->
    <header id="overlay" style="position: relative;">
-        <img src="assets/images/banner-image.jpg" style="max-width:100%;" alt="book store cover image">
+        <img src="assets/images/banner-image.jpg" style="width:100%;" alt="book store cover image">
             <div class="row" >
         <div class="col-md-4 col-md-push-7 my-auto" style="position: absolute; top:170px; right:60px;">
           <div class="banner_content text-white">
@@ -16,6 +16,8 @@
             <p>We have more than a thousand cars for you to choose. </p>
             <a href="#cars" class="btn btn-danger btn-lg px-5">Find Car <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
         </div>
+
+        
       </div>
       
     </header>
