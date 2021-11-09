@@ -65,7 +65,7 @@
               <div class="form-group">
                 <input type="email" name="subscriberemail" class="form-control newsletter-input" required placeholder="Enter Email Address" />
               </div>
-              <button type="submit" name="emailsubscibe" class="btn text-white bg-danger btn-block px-5 mt-4">Subscribe <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+              <button type="submit" name="emailsubscibe" class="btn text-white bgcolor bg-danger btn-block px-5 mt-4">Subscribe <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
               <small class="text-muted text-small d-block">*We send great deals and latest auto news to our subscribed users every week.</small>
             </form>
            

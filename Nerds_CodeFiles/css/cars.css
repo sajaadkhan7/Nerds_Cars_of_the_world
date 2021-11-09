@@ -1,4 +1,21 @@
-.transparent-details{
+:root {
+    --primary-color: #df4759;
+    --hover-color: #e56b7a;
+}
+
+.bgcolor,
+.btncolor {
+    background-color: var(--primary-color);
+    color: white;
+
+}
+
+.bgcolor,
+.btncolor:hover {
+    background-color: var(--hover-color);
+}
+
+.transparent-details {
     background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
     bottom: 0;
     margin: 0 auto;
@@ -7,21 +24,139 @@
     height: 50px;
 
 }
-.transparent-details li{
+
+.transparent-details li {
     padding: 10px;
-    
+
 }
 
-.section-back{
+.section-back {
     background-image: url('../assets/images/porsche-g62f206e72_1280.jpg');
     background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height:400px ;
-  
-}
-.section-back>div{
-    transform: translate(0,50%);
-}
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
 
 
+}
+
+.section-back>div {
+    transform: translate(0, 50%);
+}
+
+@media only screen and (max-width: 708px) {
+    
+    .section-back>div{
+        transform: translate(0,5%);
+    }
+
+  }
+
+
+
+
+#testimonial img {
+    width: 100%;
+    height: 100%
+}
+
+.review {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 30px 0
+}
+
+.name {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0
+}
+
+#testimonial {
+    background-color: whitesmoke;
+}
+
+.job {
+    color: #c8c8c8;
+    font-size: 14px
+}
+
+.carousel-inner {
+    width: 100%;
+    padding: 80px;
+
+}
+
+.fa-minus {
+    font-size: 14px
+}
+
+.carousel-indicators {
+    bottom: -20px;
+    right: 0;
+    margin: 0
+}
+
+.carousel-indicators [data-bs-target] {
+    height: 10px;
+    border: 2px solid black;
+    width: 10px;
+    background-color: inherit;
+    border-radius: 50%
+}
+
+.carousel-indicators .active {
+    border: 2px solid transparent;
+    background-color: var(--primary-color);
+}
+
+.left {
+    color: rgb(20, 20, 20);
+    font-weight: 600
+}
+
+.right {
+    color: rgb(12, 12, 12);
+    font-weight: 600
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    position: relative
+}
+
+@media (max-width:560px) {
+    .review {
+        font-size: 14px;
+        font-weight: 600
+    }
+
+    .name {
+        font-size: 13px
+    }
+
+    .job {
+        font-size: 10px
+    }
+
+    .right {
+        font-size: 12px
+    }
+
+    .left {
+        font-size: 12px
+    }
+
+    .carousel-indicators [data-bs-target] {
+        height: 8px;
+        border: 1px solid black;
+        width: 8px;
+        background-color: inherit;
+        border-radius: 50%
+    }
+
+    .carousel-indicators .active {
+        border: 1px solid transparent;
+        background-color: var(--primary-color);
+    }
+}

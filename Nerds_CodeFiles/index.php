@@ -14,7 +14,7 @@
           <div class="banner_content text-white">
             <h1 class="fw-bolder text-uppercase">Rent the right car for you.</h1>
             <p>We have more than a thousand cars for you to choose. </p>
-            <a href="#cars" class="btn btn-danger btn-lg px-5">Find Car <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
+            <a href="#cars"  class="btn btncolor btn-lg px-5">Find Car <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
         </div>
 
         
@@ -22,7 +22,7 @@
       
     </header>
     <!-- Section-->
-<?php include('requires/carlist-home.php');?>
+<?php include('requires/homepage_main.php');?>
 
 <?php require('requires/footer.php'); ?>
  
