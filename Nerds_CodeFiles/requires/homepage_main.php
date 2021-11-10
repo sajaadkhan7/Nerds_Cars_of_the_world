@@ -68,61 +68,55 @@
               </div>
       </div>
   </section>
-
- 
   <div id="testimonial" class="d-flex align-items-center m-0 py-5 mh-100"> <a class="carousel-control-prev text-decoration-none " href="#mycarousel" role="button" data-bs-slide="prev">
         <div class="d-flex flex-column justify-content-center me-2 ms-auto left">PREV<span class="fas fa-arrow-left"></span> </div> <span class="sr-only">Previous</span>
     </a>
     <div class="container">
         <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-bs-target="#mycarousel" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#mycarousel" data-bs-slide-to="1"></li>
-                <li data-bs-target="#mycarousel" data-bs-slide-to="2"></li>
+         
+
+  <?php
+  
+  
+      $q = "SELECT * From tbltestimonial";
+      $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);   
+      $counter=0;
+      while($r=mysqli_fetch_array($res)){
+        $counter=$counter+1;
+      ?> 
+         <li data-bs-target="#mycarousel"  data-bs-slide-to="<?php echo htmlentities($counter-1);?>"   class="<?php if($counter==1){echo "active";}else{ echo '';} ?>"></li>
+         <?php } ?>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+
+            <?php  
+             $q = "SELECT * From tbltestimonial";
+             $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);   
+             $counter=0;
+             while($r=mysqli_fetch_array($res)){
+               $counter=$counter+1;
+            ?>
+
+                <div class="carousel-item <?php if($counter==1){echo 'active';}?>">
                     <div class="row">
-                        <div class="col-lg-6 "> <img src="https://images.pexels.com/photos/8052808/pexels-photo-8052808.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="d-block w-100 rounded-3" alt="..."> </div>
+                        <div class="col-lg-6 "> <img src="assets/images/<?php echo htmlentities($r['imgUrl']) ?>" class="d-block w-100 rounded-3" alt="..."> </div>
                         <div class="col-lg-6">
                             <div class=" d-flex flex-column justify-content-center my-5 ms-5 px-3 ">
-                                <p class="review text-center">"Incredible services and amazing customer support"</p>
+                                <p class="review text-center">"<?php echo $r['Testimonial'] ?>"</p>
                                 <div class="name d-flex align-items-center justify-content-center"> <span class="fas fa-minus pe-1"></span>
-                                    <p class="m-0">Joy Smith</p>
+                                    <p class="m-0"><?php echo $r['name'] ?></p>
                                 </div>
                                 <p class="job text-center">Project Manager</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-lg-6 "> <img src="https://images.pexels.com/photos/8052808/pexels-photo-8052808.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="d-block w-100 rounded-3" alt="..."> </div>
-                        <div class="col-lg-6 ">
-                            <div class=" d-flex flex-column justify-content-center my-5 px-3">
-                                <p class="review text-center">"Incredible services and amazing customer support"</p>
-                                <div class="name d-flex align-items-center justify-content-center"> <span class="fas fa-minus pe-1"></span>
-                                    <p class="m-0">Joy Smith</p>
-                                </div>
-                                <p class="job text-center">Project Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-lg-6 "> <img src="https://images.pexels.com/photos/8052808/pexels-photo-8052808.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="d-block w-100 rounded-3" alt="..."> </div>
-                        <div class="col-lg-6 ">
-                            <div class=" d-flex flex-column justify-content-center my-5 px-3">
-                                <p class="review text-center">"Incredible services and amazing customer support"</p>
-                                <div class="name d-flex align-items-center justify-content-center"> <span class="fas fa-minus pe-1"></span>
-                                    <p class="m-0">Joy Smith</p>
-                                </div>
-                                <p class="job text-center">Project Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+                <?php } ?>
+
+
+              
             </div>
         </div>
     </div> <a class="carousel-control-next text-decoration-none " href="#mycarousel" role="button" data-bs-slide="next">

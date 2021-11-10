@@ -9,6 +9,13 @@
     color: white;
 
 }
+#overlay-text{
+  position:absolute; 
+   top:50px;
+    right:10px;
+    width: 50%;
+}
+
 
 .bgcolor,
 .btncolor:hover {
@@ -53,6 +60,15 @@
     }
 
   }
+  @media only screen and (min-width: 708px) {
+    #overlay-text{
+       width:40%;
+         top:150px;
+          right:10px;
+          line-height: 30px;
+          
+      }
+}
 
 
 
