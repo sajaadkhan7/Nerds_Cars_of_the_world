@@ -57,7 +57,7 @@
       </ul>
       
       <form class="d-flex">
-        <button class="btn btncolor my-2 mx-2 " type="button"><i class="fas fa-user"></i><span class="d-md-none"> LOGIN</span></button>
+        <button class="btn btncolor my-2 mx-2 " type="button"><i class="fas fa-user"></i><span class="d-sm-none"> LOGIN</span></button>
       </form>
       <form class="d-flex btn-group">
         <input class="form-control" type="text" placeholder="Search">
