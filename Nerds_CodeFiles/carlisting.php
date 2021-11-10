@@ -2,13 +2,13 @@
 <html lang="en">
 
 
-<?php require('requires/header.php');  ?>
+<?php require('requires/head.php');  ?>
 
 
 
- <!-- your content here... -->
- <header id="overlay" style="position: relative;">
-        <img src="assets/images/banner-image.jpg" style="width:100%;" alt="book store cover image">
+<!-- your content here... -->
+<header id="overlay" style="position: relative;">
+    <img src="assets/images/banner-image.jpg" style="width:100%;" alt="book store cover image">
 </header>
 
 <div class="container" style="width:85%; margin-left: auto; margin-right: auto;">
@@ -22,18 +22,18 @@
 
             <form method='POST' style='margin-top:60px;'>
                 <!--<div class="list-group">-->
-                    <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
-                    value='All Manufacturers'/>
-                    <input type="submit" class="list-group-item list-group-item-action" name='bmw' value='BMW'/>
-                    <input type="submit" class="list-group-item list-group-item-action" name='nissan' value='Nissan'/>
-                    <input type="submit" class="list-group-item list-group-item-action" name='toyota' value='Toyota'/>
-                    
+                <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
+                    value='All Manufacturers' />
+                <input type="submit" class="list-group-item list-group-item-action" name='bmw' value='BMW' />
+                <input type="submit" class="list-group-item list-group-item-action" name='nissan' value='Nissan' />
+                <input type="submit" class="list-group-item list-group-item-action" name='toyota' value='Toyota' />
+
                 <!--</div>-->
             </form>
         </div>
         <div class="col-9">
-        <section id="cars" class="py-2"> 
-            <div class="container-fluid px-4 px-lg-5 mt-5">
+            <section id="cars" class="py-2">
+                <div class="container-fluid px-4 px-lg-5 mt-5">
                     <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
                         <?php
 
@@ -113,11 +113,11 @@
                     ?>
 
 
+                    </div>
                 </div>
-            </div>
-        </section>
-  
-    </div>
+            </section>
+
+        </div>
     </div>
 </div>
 
@@ -125,8 +125,8 @@
 
 
 <?php require('requires/footer.php'); ?>
-   
-   
+
+
 </body>
 
 </html>
