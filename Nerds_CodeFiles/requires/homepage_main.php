@@ -50,18 +50,18 @@
     <div class="row text-center justify-content-around">
 
         <div class="col-sm-3 col-xs-6 text-center rounded-circle bg-danger py-5" style="width: 170px; height:170px;">
-            <h2><i class="fa fa-calendar"> </i> 40+</h2>
+            <h2><i class="fa fa-calendar"> </i> 10+</h2>
             <p>Years in business</p>
         </div>
 
 
         <div class="col-sm-3 col-xs-6 text-center rounded-circle bg-danger py-5" style="width: 170px; height:170px;">
-            <h2><i class="fa fa-calendar"> </i> 40+</h2>
-            <p>Years in business</p>
+            <h2><i class="fa fa-car"> </i> 300+</h2>
+            <p>New Cars</p>
         </div>
         <div class="col-sm-3 col-xs-6  text-center rounded-circle bg-danger py-5" style="width: 170px; height:170px;">
-            <h2><i class="fa fa-calendar"> </i> 40+</h2>
-            <p>Years in business</p>
+            <h2><i class="fa fa-smile"> </i> 1000+</h2>
+            <p>Happy Customers</p>
         </div>
 
         <div class="col-sm-3 col-xs-6 text-center rounded-circle bg-danger py-5" style="width: 170px; height:170px;">
