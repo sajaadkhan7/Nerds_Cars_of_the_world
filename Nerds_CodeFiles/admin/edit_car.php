@@ -13,25 +13,26 @@ else{
  $SESSION_ID = intval($_SESSION['id']);
 
 if($_SERVER['REQUEST_METHOD'] =='POST'){
-    if(isset($_FILES['upload']['name']) and !empty($_POST['VehiclesTitle']) and !empty($_POST['VehiclesBrand']) and !empty($_POST['VehiclesOverview']) and !empty($_POST['PricePerDay']) and !empty($_POST['ModelYear'])){
+  if(isset($_FILES['upload']['name']) and !empty($_POST['VehiclesTitle']) and !empty($_POST['VehiclesBrand']) 
+  and !empty($_POST['VehiclesOverview']) and !empty($_POST['PricePerDay']) and !empty($_POST['ModelYear'])){
 
 
-        $VehiclesTitle = mysqli_real_escape_string($dbc,$_POST['VehiclesTitle']);
-        $VehiclesBrand = mysqli_real_escape_string($dbc,$_POST['VehiclesBrand']);
-      $VehiclesOverview = mysqli_real_escape_string($dbc,$_POST['VehiclesOverview']);
-      $PricePerDay = mysqli_real_escape_string($dbc,$_POST['PricePerDay']);
-      $ModelYear = mysqli_real_escape_string($dbc,$_POST['ModelYear']);
+      $VehiclesTitle = mysqli_real_escape_string($dbc,$_POST['VehiclesTitle']);
+      $VehiclesBrand = mysqli_real_escape_string($dbc,$_POST['VehiclesBrand']);
+    $VehiclesOverview = mysqli_real_escape_string($dbc,$_POST['VehiclesOverview']);
+    $PricePerDay = mysqli_real_escape_string($dbc,$_POST['PricePerDay']);
+    $ModelYear = mysqli_real_escape_string($dbc,$_POST['ModelYear']);
 
-        $image = $_FILES['upload']['name'];
-        if(!file_exists("uploads")){
-    
-            mkdir("uploads/");
-    
-        }
-       
-    
-    }
-    if(move_uploaded_file($_FILES['upload']['tmp_name'],"uploads/{$_FILES['upload']['name']}")){
+      $image = $_FILES['upload']['name'];
+      if(!file_exists("uploads")){
+  
+          mkdir("uploads/");
+  
+      }
+     
+  
+  }
+  if(move_uploaded_file($_FILES['upload']['tmp_name'],"uploads/{$_FILES['upload']['name']}")){
 
         // $insertQuery = "INSERT INTO `tblvehicles`(`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOverview`, `PricePerDay`, `ModelYear`,`Vimage1`)
         // VALUES (null,'$VehiclesTitle','$VehiclesBrand','$VehiclesOverview','$PricePerDay','$ModelYear','$image')";
@@ -44,23 +45,9 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
     
         echo "File not uploaded";
     
-     }
-    
-//      $VehiclesTitle = mysqli_real_escape_string($dbc,$_POST['VehiclesTitle']);
-//      $VehiclesBrand = mysqli_real_escape_string($dbc,$_POST['VehiclesBrand']);
-//    $VehiclesOverview = mysqli_real_escape_string($dbc,$_POST['VehiclesOverview']);
-//    $PricePerDay = mysqli_real_escape_string($dbc,$_POST['PricePerDay']);
-//    $ModelYear = mysqli_real_escape_string($dbc,$_POST['ModelYear']);
-//     // $query = "SELECT * FROM `tblvehicles` where id = {$SESSION_ID}";
-//     // $result = mysqli_query($dbc, $query); 
-//     // exit();
-
-//      $updateQuery = "UPDATE `tblvehicles` SET `VehiclesTitle`='$VehiclesTitle',`VehiclesBrand`='$VehiclesBrand',
-//     `VehiclesOverview`='$VehiclesOverview', `PricePerDay`='$PricePerDay',`ModelYear`='$ModelYear' WHERE id= {$SESSION_ID}";
-//      $update_table = @mysqli_query($dbc, $updateQuery) or die(mysqli_error($dbc));
-//         unset ($_SESSION['id']);
-//         session_destroy();
+//      }
     }
+}
 }
  $query1 = "SELECT * FROM `tblvehicles` where id = {$SESSION_ID}";
     $result1 = mysqli_query($dbc, $query1); 
@@ -125,10 +112,12 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
                   </div>
                   <div class="form-group">
                     <label for="File">File input</label>
+                    <img src='uploads/<?php echo $rows['Vimage1'];  ?>' width="100" height="100">
+
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="InputFile">
-                        <label class="custom-file-label" name="file" for="File">Choose file</label>
+                        <!-- <input type="file" class="custom-file-input" id="InputFile"> -->
+        <input type="file" name="upload" value="">
                       </div>
                      
                     </div>
