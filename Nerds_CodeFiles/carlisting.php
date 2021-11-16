@@ -16,18 +16,42 @@
         <div class="col-3">
 
             <?php
-
+                require('requires/mysqli_connect.php');
                 
             ?>
 
-            <form method='POST' style='margin-top:60px;'>
+            <form action='carlisting.php' method='POST' style='margin-top:60px;'>
                 <!--<div class="list-group">-->
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                    <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
+                    value='All Manufacturers'/>
+
+                    <?php
+                    
+                    
+                    $q = "SELECT BrandName from tblbrands;";
+                    $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);  
+                        
+                    while($r=mysqli_fetch_array($res)){
+                        echo "<input type='submit' class='list-group-item list-group-item-action' name='" . $r['BrandName'] . "' value='" . $r['BrandName'] ."'/>";
+                    }
+
+                    ?>
+                    
+=======
+>>>>>>> Stashed changes
                 <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
                     value='All Manufacturers' />
                 <input type="submit" class="list-group-item list-group-item-action" name='bmw' value='BMW' />
                 <input type="submit" class="list-group-item list-group-item-action" name='nissan' value='Nissan' />
                 <input type="submit" class="list-group-item list-group-item-action" name='toyota' value='Toyota' />
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> 801a9b2e2e98c0bd18a7105e097f2c6a02d15395
+>>>>>>> Stashed changes
                 <!--</div>-->
             </form>
         </div>
@@ -37,23 +61,23 @@
                     <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
                         <?php
 
-                    require('requires/mysqli_connect.php');
-                
-    
+                    //require('requires/mysqli_connect.php');
+
+                    
                     if(array_key_exists('all_manufacturers', $_POST)) {
                         $brandname = '';
-                        car_display($brandname,$dbc);
+                        car_display($brandname,$dbc);                
                     }
-                    else if(array_key_exists('bmw', $_POST)) {
+                    else if(array_key_exists('BMW', $_POST)) {
                         $brandname = 'bmw';
                         car_display($brandname,$dbc);
 
                     }
-                    else if(array_key_exists('nissan', $_POST)) {
+                    else if(array_key_exists('NISSAN', $_POST)) {
                         $brandname = 'nissan';
                         car_display($brandname,$dbc);
                     }
-                    else if(array_key_exists('toyota', $_POST)) {
+                    else if(array_key_exists('TOYOTA', $_POST)) {
                         $brandname = 'toyota';
                         car_display($brandname,$dbc);
                     }
