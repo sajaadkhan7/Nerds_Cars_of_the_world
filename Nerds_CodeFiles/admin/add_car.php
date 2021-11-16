@@ -3,7 +3,8 @@ require('mysqli_connect.php');
 
 if($_SERVER['REQUEST_METHOD'] =='POST'){
 
-    if(isset($_FILES['upload']['name']) and !empty($_POST['VehiclesTitle']) and !empty($_POST['VehiclesBrand']) and !empty($_POST['VehiclesOverview']) and !empty($_POST['PricePerDay']) and !empty($_POST['ModelYear'])){
+    if(isset($_FILES['upload']['name']) and !empty($_POST['VehiclesTitle']) and !empty($_POST['VehiclesBrand']) 
+    and !empty($_POST['VehiclesOverview']) and !empty($_POST['PricePerDay']) and !empty($_POST['ModelYear'])){
 
 
         $VehiclesTitle = mysqli_real_escape_string($dbc,$_POST['VehiclesTitle']);
@@ -27,6 +28,8 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
         VALUES (null,'$VehiclesTitle','$VehiclesBrand','$VehiclesOverview','$PricePerDay','$ModelYear','$image')";
        $insert_table = @mysqli_query($dbc, $insertQuery) or die(mysqli_error($dbc));
          echo "Added successfully.";
+         echo "<script type='text/javascript'>window.location.href = 'car_detail.php'; </script>";
+
      }else{
     
         echo "File not uploaded";
