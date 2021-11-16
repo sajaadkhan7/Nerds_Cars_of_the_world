@@ -22,9 +22,7 @@
 
             <form action='carlisting.php' method='POST' style='margin-top:60px;'>
                 <!--<div class="list-group">-->
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
                     <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
                     value='All Manufacturers'/>
 
@@ -40,18 +38,14 @@
 
                     ?>
                     
-=======
->>>>>>> Stashed changes
+
                 <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
                     value='All Manufacturers' />
                 <input type="submit" class="list-group-item list-group-item-action" name='bmw' value='BMW' />
                 <input type="submit" class="list-group-item list-group-item-action" name='nissan' value='Nissan' />
                 <input type="submit" class="list-group-item list-group-item-action" name='toyota' value='Toyota' />
 
-<<<<<<< Updated upstream
-=======
->>>>>>> 801a9b2e2e98c0bd18a7105e097f2c6a02d15395
->>>>>>> Stashed changes
+
                 <!--</div>-->
             </form>
         </div>
