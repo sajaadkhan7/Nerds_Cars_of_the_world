@@ -74,7 +74,8 @@ while($row = mysqli_fetch_array($result)){
                                                 <td><?php echo $row['PricePerDay']; ?></td>
                                                 <td><?php echo $row['ModelYear']; ?></td>
                                                 <td>   <a  href="edit_car.php?id=<?php echo $id ; ?>">  Edit</a></td>
-                                                <td><a href="delete.php?id=<?php echo $row["id"]; ?>" title='Delete Record'>delete</a></td>
+                                                <td >    <button>   <span class="trash" data-id="<?php echo $row['id']; ?>" >delete</span> </button></td >
+                                                <td><a href="delete.php?id=<?php echo $row["id"]; ?>" title='Delete Record'><i class='material-icons'><i class='material-icons'></i></i></a></td>
                                                 <!-- <a href="#" id="<?php echo $row['id']; ?>" class="trash" >del</a> -->
                                                        <!-- <td >  <a class="delete_car" id = "delete" onclick="deletecar(<?php echo $row['id']; ?>);" > <span class='delete' data-id='<?= $id; ?>'>Delete</span></a>  </td > -->
                                              <!-- <td > <a class="delete_car" id = "delete" onclick="deletecar(<?php echo $row['id']; ?>);"> Delete </a></td> -->

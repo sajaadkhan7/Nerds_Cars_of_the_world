@@ -27,9 +27,7 @@
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase font-weight-bold">
-          <!-- <a href="#" class="text-white">ADMIN LOGIN</a> -->
-          <a class="text-white" href="admin.php">Admin Login</a>
-
+          <a href="#" class="text-white">ADMIN LOGIN</a>
         </h6>
       </div>
       <!-- Grid column -->
@@ -84,7 +82,7 @@
     <hr class="clearfix rgba-white-light">
 
     <!-- Grid row-->
-    <div class="row pb-3">
+    <div class="sc row pb-3">
 
       <!-- Grid column -->
       <div class="col-md-12">
@@ -92,7 +90,7 @@
         <div class="mb-4 flex-center text-center">
 
           <!-- Facebook -->
-          <a class="fb-ic text-decoration-none" href="https://www.facebook.com">
+          <a id="fb" class="fb-ic text-decoration-none" href="https://www.facebook.com">
             <i class="fab fa-facebook-f fa-lg text-white me-4"> </i>
           </a>
           <!-- Twitter -->

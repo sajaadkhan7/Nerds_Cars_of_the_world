@@ -1,8 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php require('requires/head.php');  
+require('requires/mysqli_connect.php');
+?>
+
+<?php
+$done = NULL;
+if($_SERVER['REQUEST_METHOD'] =='POST'){
+	$name = mysqli_real_escape_string($dbc,$_POST['name']);
+	$email = mysqli_real_escape_string($dbc,$_POST['email']);
+	$description = mysqli_real_escape_string($dbc,$_POST['message']);
+$insert = "INSERT INTO `contactus`(`id`, `name`, `email`, `description`) VALUES (null,'$name','$email','$description')";
+$result =  @mysqli_query($dbc, $insert) or die(mysqli_error($dbc));
+$done = "Thank you for contacting us. We’ll get back to you soon.";
+// echo "Thank you for contacting us. We’ll get back to you soon.";
+
+?>
+<script> //alert("Thank you for contacting us. We’ll get back to you soon."); </script>
+<?php
+}
+
+
+?>
 <head>
-	<title>Contact V6</title>
+	<title>Contact Us</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -45,7 +67,7 @@
 				<i class="fa fa-close" aria-hidden="true"></i>
 			</button>
 
-			<form class="contact100-form validate-form" action="index.html">
+			<form class="contact100-form validate-form" action="contactus.php" method="POST">
 				<span class="contact100-form-title">
 					Contact Us
 				</span>
@@ -70,9 +92,10 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button type="submit" class="contact100-form-btn">
 						<span>
-							Submit
+														              
+Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
