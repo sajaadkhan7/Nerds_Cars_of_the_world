@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+<head>
+<title>Cars Of The World:Homepage</title>
 <?php require('requires/head.php'); ?>
 
 <!-- your content here... -->

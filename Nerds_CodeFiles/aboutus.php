@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+<head>
+<title>Cars Of The World:About us</title>
 <?php require('requires/head.php'); ?>
 <header id="overlay" style="position: relative;">
   <body>

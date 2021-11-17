@@ -26,7 +26,8 @@ $password = mysqli_real_escape_string($dbc, $_POST['password']);
 <!doctype html>
 <html lang="en">
 
-
+<head>
+<title>Cars Of The World: Admin</title>
 <?php require('requires/head.php');  ?>
 
 </body>

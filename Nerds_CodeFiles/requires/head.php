@@ -1,8 +1,8 @@
-<head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cars Of The World</title>
+  
   <meta name="description" content="Here you can rent latest Cars.">
   <meta name="author" content="Nerds">
 

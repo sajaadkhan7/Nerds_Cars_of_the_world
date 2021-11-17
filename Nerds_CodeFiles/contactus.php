@@ -1,129 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<?php require('requires/head.php'); ?>
 
 <head>
-	<title>Contact Us</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="assets/images/icons/favicon.ico" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/contactcss/util.css">
-	<link rel="stylesheet" type="text/css" href="css/contactcss/main.css">
-	<!--===============================================================================================-->
-</head>
-
-<body>
+	<title>Cars Of The World:Contact Us</title>
+	<style>
+		/* Style inputs */
+		.contactus [type=text],
+		input[type=email],
+		textarea {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #ccc;
+			margin-top: 6px;
+			margin-bottom: 16px;
+			resize: vertical;
+		}
 
 
-	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-map-x="43.47940680011732" data-map-y="-80.5184913018984"
-			data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
-		<button class="contact100-btn-show">
-			<i class="fa fa-envelope-o" aria-hidden="true"></i>
-		</button>
+		/* Style the container/contact section */
+		.contactus {
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 10px;
+		}
 
-		<div class="wrap-contact100">
-			<button class="contact100-btn-hide">
-				<i class="fa fa-close" aria-hidden="true"></i>
-			</button>
+		/* Create two columns that float next to eachother */
+		.column {
+			float: left;
+			width: 50%;
+			margin-top: 6px;
+			padding: 20px;
+		}
 
-			<form class="contact100-form validate-form" action="index.html">
-				<span class="contact100-form-title">
-					Contact Us
-				</span>
+		/* Clear floats after the columns */
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+.address-wrap{
 
-				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter your name">
-					<span class="focus-input100"></span>
+   
+   
+    /* background: #fff; */
+	background-color: #f2f2f2;
+    box-shadow: 0px 3px 10px 0px rgba(38, 59, 94, 0.1);
+    -webkit-box-flex: 1;
+    margin-left: 3%;
+    flex: 1 1 40%;
+    margin-top: 25px;}
+		/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 600px) {
+
+			.column,
+			input[type=submit] {
+				width: 100%;
+				margin-top: 0;
+			}
+		}
+	</style>
+	<?php require('requires/head.php');  ?>
+
+	<!-- contact us -->
+	<div class="container-fluid">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.3985197818934!2d-80.40614968512944!3d43.38959917745511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b8a78cad8e0c7%3A0xff890e93ef71682!2sA-Wing%20%2F%20B-Wing%2C%20299%20Doon%20Valley%20Dr%2C%20Kitchener%2C%20ON%20N2P%202N6!5e0!3m2!1sen!2sca!4v1608723992035!5m2!1sen!2sca"
+			width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+			tabindex="0"></iframe>
+	</div>
+	<div class="container-fluid">
+
+		<div class="container">
+			<div style="text-align:center">
+				<h2>Contact Us</h2>
+				<p>Drop a message or visit us if you have any queries.</p>
+			</div>
+			<div class="row">
+				<div class="column col-sm-8  p-5 contactus">
+					<form action="/action_page.php">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" placeholder="Your name..">
+						
+						<label for="Email">Email</label>
+						<input type="email" id="Email" name="email">
+						<label for="subject">Subject</label>
+						<textarea id="subject" name="subject" placeholder="Write something.."
+							style="height:50px"></textarea>
+						<input type="submit" class="btn btncolor mt-auto" value="Submit">
+					</form>
 				</div>
+				<div class="col-sm-4">
+					<div class="row">
 
-				<div class="wrap-input100 rs1-wrap-input100 validate-input"
-					data-validate="Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="Enter your email addess">
-					<span class="focus-input100"></span>
+<div class="address-wrap  p-5">
+						<h4>What is your story? Get in touch with us.</h4>
+						<br>
+						<p>We are always here to help you out and find the best car for you, Feel free to contact us.
+							your query is our one of the goals.
+						</p>
+		<br>
+						<div class="address-btm">
+							<div class="location-wrapp">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+								<span> 299 Doon Valley Dr</span> 
+							</div>
+
+							<div class="email-wrapp">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<a href="mailto:sajaadkhan7@gmail.com">Carsoftheworld@gmail.com</a>
+							</div>
+
+							<div class="mob-wrapp">
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+								<a href="tel:+1 (519) 781-3138">+1 (519) 781-3138</a>
+							</div>
+						</div>
+</div>
+
+					</div>
 				</div>
-
-				<div class="wrap-input100 validate-input" data-validate="Message is required">
-					<span class="label-input100">Message</span>
-					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						<span>
-							Submit
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
-			</form>
-
-			<span class="contact100-more">
-				For any queries call us at: <span class="contact100-more-highlight">+1 333
-					444 5555 </span>
-			</span>
+			</div>
 		</div>
 	</div>
+	<!-- contact us -->
 
 
-
-	<div id="dropDownSelect1"></div>
-
-	<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-	<script src="js/map-custom.js"></script>
-	<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-23581568-13');
-	</script>
 
 	<?php require('requires/footer.php'); ?>
-
-</body>
+	</body>
 
 </html>
