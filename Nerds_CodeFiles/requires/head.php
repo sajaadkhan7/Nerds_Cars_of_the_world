@@ -6,15 +6,14 @@
   <meta name="description" content="Here you can rent latest Cars.">
   <meta name="author" content="Nerds">
 
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rent a Car">
+  <meta property="og:type" content="car rental">
   <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
+  <meta property="og:description" content="A Place where you can find cars to get on rent.">
+  <meta property="og:image" content="../assets/images/logo/cars_logo_white.png">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="../assets/images/logo/cars_logo_white.png">
+
   <!-- Latest compiled and minified CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 

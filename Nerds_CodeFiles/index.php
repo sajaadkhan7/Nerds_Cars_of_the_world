@@ -9,8 +9,8 @@
     <div class="col-sm-12 my-auto">
       <div class="banner_content text-white">
         <h1 class="fw-md-bolder text-uppercase">Rent the right car for you.</h1>
-        <p>We have more than a thousand cars for you to choose. </p>
-        <a href="#cars" class="btn btncolor btn-sm btn-lg px-5">Find Car<span class="angle_arrow"><i
+        <p>We have thousands of cars for you to choose. </p>
+        <a href="#cars" class="btn btncolor mt-auto">Find Car <span class="angle_arrow"><i
               class="fa fa-angle-right" aria-hidden="true"></i></span></a>
       </div>
     </div>

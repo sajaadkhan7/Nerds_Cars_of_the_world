@@ -13,14 +13,15 @@
                require('mysqli_connect.php');
                 $q = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
                 tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
-                 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
+                 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand
+                 limit 6";
                 $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);   
                 while($r=mysqli_fetch_array($res)){
  
              echo "<div class='col mb-5'>
                 <div class='card h-100'>
                 <div style='position:relative;'>
-                   <a href='car_detail.php?Car_id=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['Vimage1']."' alt='...' /></a>
+                   <a href='car_detail.php?Car_id=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>
                    <ul style='position:absolute;list-style-type:none;' class='text-white list-inline transparent-details'>
                         <li class='list-inline-item'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
                         <li class='list-inline-item'><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. " Model</li>

@@ -8,7 +8,7 @@
 
 <!-- your content here... -->
 <header id="overlay" style="position: relative;">
-    <img src="assets/images/banner-image.jpg" style="width:100%;" alt="book store cover image">
+    <img src="assets/images/banner-image-1.jpg" style="width:100%;" alt="book store cover image">
 </header>
 
 <div class="container" style="width:85%; margin-left: auto; margin-right: auto;">
@@ -20,11 +20,11 @@
                 
             ?>
 
-            <form  method='POST' style='margin-top:60px;'>
+            <form  method='POST' action="carlisting.php#cars" style='margin-top:60px;'>
 
 
                     <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
-                    value='All Manufacturers'/>
+                    value='All Manufacturers'  />
 
                     <?php
                     
@@ -59,12 +59,20 @@
                         car_display($brandname,$dbc);
 
                     }
-                    else if(array_key_exists('NISSAN', $_POST)) {
-                        $brandname = 'nissan';
+                    else if(array_key_exists('Tesla', $_POST)) {
+                        $brandname = 'tesla';
                         car_display($brandname,$dbc);
                     }
-                    else if(array_key_exists('TOYOTA', $_POST)) {
-                        $brandname = 'toyota';
+                    else if(array_key_exists('Hyundai', $_POST)) {
+                        $brandname = 'Hyundai';
+                        car_display($brandname,$dbc);
+                    }
+                    else if(array_key_exists('Genesis', $_POST)) {
+                        $brandname = 'genesis';
+                        car_display($brandname,$dbc);
+                    }
+                    else if(array_key_exists('Mercedes', $_POST)) {
+                        $brandname = 'mercedes';
                         car_display($brandname,$dbc);
                     }
                     else {
@@ -95,7 +103,7 @@
                     echo "<div class='col mb-5'>
                         <div class='card h-100'>
                         <div style='position:relative;'>
-                        <a href='#'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['Vimage1']."' alt='...' /></a>
+                        <a href='#'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>
                         <ul style='position:absolute;list-style-type:none;' class='text-white list-inline transparent-details'>
                                 <li class='list-inline-item'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
                                 <li class='list-inline-item'><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. " Model</li>
