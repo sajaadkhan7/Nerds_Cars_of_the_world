@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+	<?php require('requires/head.php'); ?>
 
 <head>
 	<title>Contact Us</title>
@@ -120,6 +121,8 @@
 
 		gtag('config', 'UA-23581568-13');
 	</script>
+
+	<?php require('requires/footer.php'); ?>
 
 </body>
 
