@@ -29,7 +29,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark navbg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
         <img src="assets/images/logo/cars_logo_white.png" style="width:120px;">
@@ -61,7 +61,7 @@
               LOGIN</span></button>
         </form>
         <form class="d-flex btn-group">
-          <input class="form-control" type="text" placeholder="Search">
+          <input class="form-control" type="text" placeholder="Search" style="font-size: 0.7rem;">
           <button class="btn btncolor" type="button"><i class="fas fa-search"></i></button>
         </form>
       </div>

@@ -10,7 +10,7 @@
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
+        <h6 class="text-uppercase">
           <a href="index.php" class="text-white">HOME</a>
         </h6>
       </div>
@@ -18,7 +18,7 @@
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
+        <h6 class="text-uppercase">
           <a href="carlisting.php" class="text-white">CAR LIST</a>
         </h6>
       </div>
@@ -26,7 +26,7 @@
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
+        <h6 class="text-uppercase">
           <a href="#" class="text-white">ADMIN LOGIN</a>
         </h6>
       </div>
@@ -34,7 +34,7 @@
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
+        <h6 class="text-uppercase">
           <a href="aboutus.php" class="text-white">ABOUT US</a>
         </h6>
       </div>
@@ -42,7 +42,7 @@
 
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
+        <h6 class="text-uppercase">
           <a href="contactus.php" class="text-white">Contact US</a>
         </h6>
       </div>
@@ -56,19 +56,19 @@
     <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
 
       <!-- Grid column -->
-      <div class="col-md-4 col-12 mt-5">
+      <div class="col-md-4 col-12 m-5">
 
-        <h6 class="mb-4">Subscribe Newsletter</h6>
+        <h6 class="mb-4 newsletter-font text-uppercase">Subscribe to our Newsletter</h6>
         <div class="newsletter-form">
           <form method="post">
             <div class="form-group">
-              <input type="email" name="subscriberemail" class="form-control newsletter-input" required
-                placeholder="Enter Email Address" />
+              <input type="email" name="subscriberemail" class="form-control newsletter-input" style="font-size: 0.7rem;" required
+                placeholder="Your Email" />
             </div>
             <button type="submit" name="emailsubscibe"
-              class="btn text-white bgcolor bg-danger btn-block px-5 mt-4">Subscribe <span><i class="fa fa-angle-right"
+              class="btn btncolor text-white text-uppercase mt-3">Subscribe <span><i class="fa fa-angle-right"
                   aria-hidden="true"></i></span></button>
-            <small class="text-muted text-small d-block">*We send great deals and latest auto news to our subscribed
+            <small class="text-small d-block mt-3">* We send great deals and latest auto news to our subscribed
               users every week.</small>
           </form>
 
@@ -82,7 +82,7 @@
     <hr class="clearfix rgba-white-light">
 
     <!-- Grid row-->
-    <div class="sc row pb-3">
+    <div class="sc row mt-4">
 
       <!-- Grid column -->
       <div class="col-md-12">
@@ -126,7 +126,7 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3" style="background-color: #000;">© 2020 Copyright:
+  <div class="footer-copyright text-center">© 2020 Copyright:
     <a href="index.php">Cars Of The World</a>
   </div>
   <!-- Copyright -->
