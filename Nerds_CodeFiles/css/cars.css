@@ -7,15 +7,18 @@
 .btncolor {
     background-color: var(--primary-color);
     color: white;
-
 }
-#overlay-text{
-  position:absolute; 
-   top:50px;
-    right:10px;
+
+#overlay-text {
+    position: absolute;
+    top: 50px;
+    right: 10px;
     width: 50%;
 }
 
+.aboutus {
+    text-align: center;
+}
 
 .bgcolor,
 .btncolor:hover {
@@ -29,12 +32,10 @@
     padding: 0 15px;
     width: 100%;
     height: 50px;
-
 }
 
 .transparent-details li {
     padding: 10px;
-
 }
 
 .section-back {
@@ -43,35 +44,26 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
-
-
 }
 
 .section-back>div {
     transform: translate(0, 50%);
 }
 
-
-
 @media only screen and (max-width: 708px) {
-    
-    .section-back>div{
-        transform: translate(0,5%);
+    .section-back>div {
+        transform: translate(0, 5%);
     }
-
-  }
-  @media only screen and (min-width: 708px) {
-    #overlay-text{
-       width:40%;
-         top:150px;
-          right:10px;
-          line-height: 30px;
-          
-      }
 }
 
-
-
+@media only screen and (min-width: 708px) {
+    #overlay-text {
+        width: 40%;
+        top: 150px;
+        right: 10px;
+        line-height: 30px;
+    }
+}
 
 #testimonial img {
     width: 100%;
@@ -102,7 +94,6 @@
 .carousel-inner {
     width: 100%;
     padding: 80px;
-
 }
 
 .fa-minus {
@@ -148,23 +139,18 @@
         font-size: 14px;
         font-weight: 600
     }
-
     .name {
         font-size: 13px
     }
-
     .job {
         font-size: 10px
     }
-
     .right {
         font-size: 12px
     }
-
     .left {
         font-size: 12px
     }
-
     .carousel-indicators [data-bs-target] {
         height: 8px;
         border: 1px solid black;
@@ -172,7 +158,6 @@
         background-color: inherit;
         border-radius: 50%
     }
-
     .carousel-indicators .active {
         border: 1px solid transparent;
         background-color: var(--primary-color);
