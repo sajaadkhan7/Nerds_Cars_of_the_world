@@ -9,7 +9,7 @@
     <div class="row h-100 align-items-center py-5">
       <div class="col-lg-6">
         <h1 class="display-4">Who are we?</h1>
-        <p class="lead text-muted mb-0">We rent cars and that's about it./p>
+        <p class="lead text-muted mb-0">We rent cars and that's about it.</p>
         </p>
       </div>
       <div class="col-lg-6 d-none d-lg-block"><img src="assets/images/undraw_content_team.png" alt="" class="img-fluid"></div>
