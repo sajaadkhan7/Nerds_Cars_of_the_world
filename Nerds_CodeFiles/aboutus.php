@@ -79,7 +79,7 @@
 
       <!-- Team item-->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Prescription02&facialHairType=BeardLight&facialHairColor=Black&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
           <h5 class="mb-0">Sajaad Khan</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -93,7 +93,7 @@
 
       <!-- Team item-->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
           <h5 class="mb-0">Jeni Patel</h5><span class="small text-uppercase text-muted">Senior Web Developer</span>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
