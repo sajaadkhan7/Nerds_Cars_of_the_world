@@ -1,6 +1,32 @@
 :root {
-    --primary-color: #df4759;
-    --hover-color: #e56b7a;
+    --primary-color: #0091AD;
+    --hover-color: #4ACDE8;
+}
+
+a{
+    color: var(--primary-color);
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.text-white{
+    font-size: smaller;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.newsletter-font{
+    font-weight: 300;
+    letter-spacing: normal;
+}
+
+.cirlce-bg{
+    background: rgba(0, 145, 173, 0.7);
+    font-size: 0.6rem;
+    text-transform: uppercase;
 }
 
 .bgcolor,
@@ -42,7 +68,8 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    background-attachment: fixed;
+    height: 450px;
 
 
 }
@@ -51,6 +78,9 @@
     transform: translate(0, 50%);
 }
 
+.container-homepage{
+    background-color: #212121;
+}
 
 
 @media only screen and (max-width: 708px) {
@@ -177,4 +207,32 @@
         border: 1px solid transparent;
         background-color: var(--primary-color);
     }
+}
+
+.nav-item{
+    text-transform: uppercase;
+    font-size: 8pt;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.footer-copyright{
+    padding-bottom: 2em;
+    font-size: smaller;
+    letter-spacing: normal;
+}
+
+.cardbg{
+    background-color: #bd0f0f;
+}
+
+.card-details{
+    font-size: 0.7rem;
+    letter-spacing: normal;
+    text-transform: uppercase;
+}
+
+.navbg{
+    background-color: #031F26;
 }
