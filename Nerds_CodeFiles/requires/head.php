@@ -12,6 +12,10 @@
   <meta property="og:description" content="A Place where you can find cars to get on rent.">
   <meta property="og:image" content="../assets/images/logo/cars_logo_white.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+
   <link rel="icon" href="../assets/images/logo/cars_logo_white.png">
 
   <!-- Latest compiled and minified CSS -->
@@ -40,19 +44,19 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="index.php"><b>Home</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="carlisting.php">Car List</a>
+            <a class="nav-link" href="carlisting.php"><b>Cars</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin.php">Admin Login</a>
+            <a class="nav-link" href="admin.php"><b>Admin</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutus.php">About Us</a>
+            <a class="nav-link" href="aboutus.php"><b>About</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contactus.php">Contact Us</a>
+            <a class="nav-link" href="contactus.php"><b>Contact</b></a>
           </li>
         </ul>
 
