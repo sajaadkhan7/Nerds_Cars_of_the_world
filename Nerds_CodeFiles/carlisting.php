@@ -23,7 +23,7 @@
             <form  method='POST' action="carlisting.php#cars" style='margin-top:60px;'>
 
 
-                    <input type="submit" class="list-group-item list-group-item-action active" name='all_manufacturers'
+                    <input type="submit" class="list-group-item list-group-item-action carlistmenu" name='all_manufacturers'
                     value='All Manufacturers'  />
 
                     <?php
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                             <div class='text-center card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                                <Span class='text-center'><a class='btn btncolor mt-auto' href='checkout.php?Book_ID=".$r['PricePerDay']."'>View Details</a></span> &nbsp;
+                                <Span class='text-center'><a class='btn btncolor text-white mt-auto' href='checkout.php?Book_ID=".$r['PricePerDay']."'>View Details</a></span> &nbsp;
                             
                             </div>
                         </div>

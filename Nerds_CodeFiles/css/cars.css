@@ -218,3 +218,14 @@ a:link {
 .navbg {
     background-color: #031F26;
 }
+
+
+.carlistmenu{
+    background-color: var(--primary-color);
+    color:white;
+}
+
+.carlistmenu:hover{
+    background-color: var(--primary-color);
+    color:white;
+}
