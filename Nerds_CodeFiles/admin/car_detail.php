@@ -1,7 +1,11 @@
 <?php
-require('mysqli_connect.php');
+require('../requires/mysqli_connect.php');  
 $query = "SELECT * FROM `tblvehicles` ";
 $result = mysqli_query($dbc, $query); 
+
+$join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vimage1 as img1 , v.VehiclesTitle as title , b.BrandName as carbrand, v.VehiclesOverview as vehicle_overview , v.PricePerDay as price, 
+v.ModelYear as model FROM tblvehicles v INNER JOIN tblbrands b ON v.VehiclesBrand = b.id ";
+$result1 = mysqli_query($dbc, $join); 
 
 
 ?>
@@ -12,12 +16,12 @@ $result = mysqli_query($dbc, $query);
 
 <?php require('header.php'); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-      
+
         <!-- Main Sidebar Container -->
         <?php require('sidebar.php'); ?>
         <!-- Content Wrapper. Contains page content -->
@@ -29,7 +33,7 @@ $result = mysqli_query($dbc, $query);
                         <div class="col-sm-6">
                             <h1>Car Details</h1>
                         </div>
-                        <button> <a href="add_car.php" > ADD CAR </a></button>
+                        <button> <a href="add_car.php"> ADD CAR </a></button>
 
                     </div>
                 </div>
@@ -47,9 +51,10 @@ $result = mysqli_query($dbc, $query);
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <table id="example2"  class="table table-bordered table-hover">
+                                    <table id="example2" class="table table-bordered table-hover">
                                         <thead>
-                                            <tr><th>Image</th>
+                                            <tr>
+                                                <th>Image</th>
                                                 <th>Vehicle's Title</th>
                                                 <th>Vehicle's Brand</th>
                                                 <th>Vehicle's Detail</th>
@@ -59,38 +64,40 @@ $result = mysqli_query($dbc, $query);
                                             </tr>
                                         </thead>
                                         <tbody>
- <?php
+                                            <?php
                                             
-while($row = mysqli_fetch_array($result)){
-  $id = $row['id'];
+while($rows = mysqli_fetch_array($result1)){
+  $id = $rows['vid'];
 
 ?>
                                             <tr>
-                                                <td>   <img src='uploads/<?php echo $row['Vimage1'];  ?>' width="100" height="100">
-</td>
-                                                <td><?php echo $row['VehiclesTitle']; ?></td>
-                                                <td><?php echo $row['VehiclesBrand']; ?></td>
-                                                <td><?php echo $row['VehiclesOverview']; ?></td>
-                                                <td><?php echo $row['PricePerDay']; ?></td>
-                                                <td><?php echo $row['ModelYear']; ?></td>
-                                                <td>   <a  href="edit_car.php?id=<?php echo $id ; ?>">  Edit</a></td>
-                                                <td >    <button>   <span class="trash" data-id="<?php echo $row['id']; ?>" >delete</span> </button></td >
-                                                <td><a href="delete.php?id=<?php echo $row["id"]; ?>" title='Delete Record'><i class='material-icons'><i class='material-icons'></i></i></a></td>
-                                                <!-- <a href="#" id="<?php echo $row['id']; ?>" class="trash" >del</a> -->
-                                                       <!-- <td >  <a class="delete_car" id = "delete" onclick="deletecar(<?php echo $row['id']; ?>);" > <span class='delete' data-id='<?= $id; ?>'>Delete</span></a>  </td > -->
-                                             <!-- <td > <a class="delete_car" id = "delete" onclick="deletecar(<?php echo $row['id']; ?>);"> Delete </a></td> -->
+                                                <td> <a target="_blank"
+                                                        href="../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>"><img
+                                                            src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>'
+                                                            width="100" height="100"> </a></td>
+                                                <td><?php echo $rows['title']; ?></td>
+                                                <td><?php echo $rows['brand_id']; ?></td>
+                                                <td><?php echo $rows['vehicle_overview']; ?></td>
+                                                <td><?php echo $rows['price']; ?></td>
+                                                <td><?php echo $rows['model']; ?></td>
+                                                <td> <a href="edit_car.php?id=<?php echo $id ; ?>"> Edit</a></td>
+                                                <!-- <td> <button> <span class="trash"
+                                                            data-id="<?php echo $rows['vid']; ?>">delete</span>
+                                                    </button></td> -->
+                                                <td><a href="delete.php?id=<?php echo $rows["vid"]; ?>"
+                                                        title='Delete Record'>delete</a></td>
                                             </tr>
                                             <?php
 }
                                             ?>
-                                           
+
                                         </tbody>
 
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
-                         
+
                         </div>
                         <!-- /.col -->
                     </div>
@@ -104,54 +111,7 @@ while($row = mysqli_fetch_array($result)){
         <?php require('footer.php'); ?>
         <!-- Page specific script -->
 
-<script>
-//       $(document).on('click', '.delete', function(){
-//   	var id = $(this).data('id');
-//      alert(id);
-//   	// $clicked_btn = $(this);
-//   	$.ajax({
-//   	  url: 'ajax.php',
-//   	  type: 'POST',
-//   	  data: {
-//     	'delete': 1,
-//     	'id': id,
-//       },
-//       success: function(response){
-//         // remove the deleted comment
-//         // $clicked_btn.parent().remove();
-//         // $('#name').val('');
-//         // $('#comment').val('');
-//                 //    alert("deleteid");
-
-//       }
-//   	});
-//   });
-
-// $(function(){
-//         $('.trash').click(function(){
-//             // var del_id= $(this).attr('id');
-//             var del_id = $(this).data('id');
-//             alert(del_id);
-//             // var ele = $(this).parent().parent();
-//             // alert(ele);
-//             $.ajax({
-//     type:'POST',
-//     url:'ajax.php',
-//     data:{del_id:del_id},
-//     // print_r(data);
-//     success: function(data){
-
-//          if(data=="YES"){
-//              $ele.fadeOut().remove();
-//          }else{
-//              alert("can't delete the row");
-//          }
-//     }
-
-//      })
-// })
-        
-//     });
+        <script>
 
 
         </script>
