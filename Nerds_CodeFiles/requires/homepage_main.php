@@ -1,7 +1,7 @@
 <section class="px-2 pt-4" style="background-color: #121212;">
     <div class="container" style="padding-top: 60px; color: #ffffff; background-color: #121212;">
         <div class="text-center">
-            <h2 class="fw-bolder">Be the Best <span class="fw-normal">Chose the Best</span></h2>
+            <h2>Be the Best. Chose the Best</h2>
             <p style="margin-bottom: 0;">Wide range of cars handpicked for your ease. We care for your decisions, hence made it easy fro you. <br>Just rent and ride. </p>
         </div>
     </div>
@@ -20,7 +20,7 @@
  
              echo "<div class='col mb-5'>
                 <div class='card h-100' style='padding: 20px; background-color: #031F26; border-style: none; border-radius: 0'>
-                <div style='position:relative; text'>
+                <div style='position:relative;'>
                    <a href='car_detail.php?Car_id=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>
                    <ul style='position:absolute;list-style-type:none;' class='text-white list-inline transparent-details card-details'>
                         <li class='list-inline-item'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
@@ -29,13 +29,13 @@
                         </ul>
                     </div>
                  <div class='card-body p-4'>
-                        <div class='text-center text-white'>
-                            <h5 class='fw-bolder'>".$r['BrandName']." : ".$r['VehiclesTitle']."</h5>
+                        <div class='text-center text-white '>
+                            <h5 class='fw-bolder text-uppercase'>".$r['BrandName']." : ".$r['VehiclesTitle']."</h5>
                             $".$r['PricePerDay']."/day
                         </div>
                     </div>
                     <div class='text-center card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                        <Span class='text-center'><a class='btn btncolor text-white mt-auto' href='car_detail.php?Car_id=".$r['id']."'>Book Now</a></span> &nbsp;
+                        <Span class='text-center'><a class='btn btncolor text-white mt-auto text-uppercase' href='car_detail.php?Car_id=".$r['id']."'><b>Book Now</b></a></span> &nbsp;
                       
                     </div>
                 </div>

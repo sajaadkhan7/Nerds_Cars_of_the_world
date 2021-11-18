@@ -66,7 +66,7 @@
                 placeholder="Your Email" />
             </div>
             <button type="submit" name="emailsubscibe"
-              class="btn btncolor text-white text-uppercase mt-3">Subscribe <span><i class="fa fa-angle-right"
+              class="btn btncolor text-white text-uppercase mt-3"><b>Subscribe</b><span><i class="fa fa-angle-right"
                   aria-hidden="true"></i></span></button>
             <small class="text-small d-block mt-3">* We send great deals and latest auto news to our subscribed
               users every week.</small>
@@ -126,7 +126,7 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center">© 2020 Copyright:
+  <div class="footer-copyright text-center">© 2020 Copyright
     <a href="index.php">Cars Of The World</a>
   </div>
   <!-- Copyright -->

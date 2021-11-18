@@ -44,19 +44,19 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.php"><b>Home</b></a>
+            <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="carlisting.php"><b>Cars</b></a>
+            <a class="nav-link" href="carlisting.php">Cars</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin.php"><b>Admin</b></a>
+            <a class="nav-link" href="admin.php">Admin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutus.php"><b>About</b></a>
+            <a class="nav-link" href="aboutus.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contactus.php"><b>Contact</b></a>
+            <a class="nav-link" href="contactus.php">Contact</a>
           </li>
         </ul>
 
