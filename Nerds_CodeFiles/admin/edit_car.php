@@ -1,57 +1,42 @@
 <?php
 require('mysqli_connect.php');
-session_start();
-if(!isset($_GET["id"])){
-    if(!$_SESSION["id"]){
-        echo "<br>Session not set!!!!<br>";
-    }
-  }
-else{
-    $_SESSION["id"] =  $_GET["id"];
-//     echo "<br>Session set<br>";
+// session_start();
+if(isset($_GET["id"])){
+   $getid = $_GET["id"];
+}
+ $getid;
 
- $SESSION_ID = intval($_SESSION['id']);
+ if($_SERVER['REQUEST_METHOD'] =='POST'){
 
-if($_SERVER['REQUEST_METHOD'] =='POST'){
-  if(isset($_FILES['upload']['name']) and !empty($_POST['VehiclesTitle']) and !empty($_POST['VehiclesBrand']) 
-  and !empty($_POST['VehiclesOverview']) and !empty($_POST['PricePerDay']) and !empty($_POST['ModelYear'])){
-
-
-      $VehiclesTitle = mysqli_real_escape_string($dbc,$_POST['VehiclesTitle']);
-      $VehiclesBrand = mysqli_real_escape_string($dbc,$_POST['VehiclesBrand']);
+  if(!empty($_POST['color']) and !empty($_POST['VehiclesOverview']) and !empty($_POST['PricePerDay']) ){
     $VehiclesOverview = mysqli_real_escape_string($dbc,$_POST['VehiclesOverview']);
     $PricePerDay = mysqli_real_escape_string($dbc,$_POST['PricePerDay']);
-    $ModelYear = mysqli_real_escape_string($dbc,$_POST['ModelYear']);
+    $color = mysqli_real_escape_string($dbc,$_POST['color']);
 
-      $image = $_FILES['upload']['name'];
-      if(!file_exists("uploads")){
+    $updateQuery = "UPDATE `tblvehicles` SET `PricePerDay`='$PricePerDay' , `VehiclesOverview`='$VehiclesOverview' , `color`='$color' WHERE id= $getid";
+    $update_table = @mysqli_query($dbc, $updateQuery) or die(mysqli_error($dbc));
+  if(mysqli_affected_rows($dbc) > 0){
+    echo "<span style='color:green; font-size:2em'>Updated Successfully!!</span>";
+  } else {
+    echo "<span style='color:red; font-size:2em'>Not Updated Successfully!!</span>";
+      }   
   
-          mkdir("uploads/");
-  
-      }
-     
   
   }
-  if(move_uploaded_file($_FILES['upload']['tmp_name'],"uploads/{$_FILES['upload']['name']}")){
 
-        // $insertQuery = "INSERT INTO `tblvehicles`(`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOverview`, `PricePerDay`, `ModelYear`,`Vimage1`)
-        // VALUES (null,'$VehiclesTitle','$VehiclesBrand','$VehiclesOverview','$PricePerDay','$ModelYear','$image')";
-          $updateQuery = "UPDATE `tblvehicles` SET `VehiclesTitle`='$VehiclesTitle',`VehiclesBrand`='$VehiclesBrand',
-             `VehiclesOverview`='$VehiclesOverview', `PricePerDay`='$PricePerDay',`ModelYear`='$ModelYear' , `Vimage1`='$image' WHERE id= {$SESSION_ID}";
-              $update_table = @mysqli_query($dbc, $updateQuery) or die(mysqli_error($dbc));
-    //    $insert_table = @mysqli_query($dbc, $insertQuery) or die(mysqli_error($dbc));
-         echo "updated successfully.";
-     }else{
+
+ }
+//  $query1 = "SELECT * FROM `tblvehicles` where id = $getid";
+//     $result1 = mysqli_query($dbc, $query1); 
+//     $rows = mysqli_fetch_array($result1);
     
-        echo "File not uploaded";
-    
-//      }
-    }
-}
-}
- $query1 = "SELECT * FROM `tblvehicles` where id = {$SESSION_ID}";
-    $result1 = mysqli_query($dbc, $query1); 
-    $rows = mysqli_fetch_array($result1)
+$join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vimage1 as img1 , v.Vimage2 as img2,
+ v.Vimage3 as img3, v.VehiclesTitle as title , b.BrandName as carbrand, v.VehiclesOverview as vehicle_overview , v.SeatingCapacity as SeatingCapacity
+ , v.PricePerDay as price, v.FuelType as Fuel, v.color as color,
+v.ModelYear as model FROM tblvehicles v INNER JOIN tblbrands b ON v.VehiclesBrand = b.id where v.id = $getid";
+$result1 = mysqli_query($dbc, $join); 
+$rows = mysqli_fetch_array($result1);
+//  echo  $id = $rows['vid'];
 ?>
 
 
@@ -68,6 +53,8 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
 
         <!-- Main Sidebar Container -->
         <?php require('sidebar.php'); ?>
+        <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -77,7 +64,8 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
                         <div class="col-sm-6">
                             <h1>Edit Car</h1>
                         </div>
-                   
+                        <button> <a href="car_detail.php"> Back to Car List </a></button>
+
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -87,51 +75,65 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
             <section class="content">
                 <div class="container-fluid">
                   
-                <form action="edit_car.php?id=<?php echo $SESSION_ID ;?>" method="POST">
-                <div class="card-body">
-                  <div class="form-group">
-               
-                    <label for="VehiclesTitle">Vehicle's Title</label>
-                    <input type="text" class="form-control" id="VehiclesTitle" name="VehiclesTitle" value="<?php echo $rows['VehiclesTitle']; ?>">
-                  </div>
-                  <div class="form-group">
-                    <label for="VehiclesBrand">Vehicle's Brand</label>
-                    <input type="text" class="form-control" id="VehiclesBrand"  name="VehiclesBrand" value="<?php echo $rows['VehiclesBrand']; ?>">
-                  </div>
-                  <div class="form-group">
-                    <label for="VehiclesOverview">Vehicle's Overview</label>
-                    <input type="text" class="form-control" id="VehiclesOverview" name="VehiclesOverview"  value="<?php echo $rows['VehiclesOverview']; ?>">
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="PricePerDay">Price Per Day</label>
-                    <input type="text" class="form-control" id="PricePerDay" name="PricePerDay"  value="<?php echo $rows['PricePerDay']; ?>">
-                  </div> <div class="form-group">
-                    <label for="ModelYear">Model Year</label>
-                    <input type="text" class="form-control" id="ModelYear" name="ModelYear"   value="<?php echo $rows['ModelYear']; ?>">
-                  </div>
-                  <div class="form-group">
-                    <label for="File">File input</label>
-                    <img src='uploads/<?php echo $rows['Vimage1'];  ?>' width="100" height="100">
+                <form action="edit_car.php?id=<?php echo $getid; ?>" method="POST">
+            <div class="card-body">
+<div class="form-group">
 
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <!-- <input type="file" class="custom-file-input" id="InputFile"> -->
-        <input type="file" name="upload" value="">
-                      </div>
-                     
-                    </div>
-                  </div>
-               
-                </div>
-                <!-- /.card-body -->
+<label for="VehiclesTitle">Image</label>
+<img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>' width="100" height="100">
+<!-- <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img2'];  ?>' width="100" height="100">
+<img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img3'];  ?>' width="100" height="100"> -->
+</div>
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
+              <div class="form-group">
+           
 
+                <label for="VehiclesTitle">Vehicle's Title</label>
+                <input disabled class="form-control" id="VehiclesTitle" name="VehiclesTitle" value="<?php echo $rows['title']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="VehiclesBrand">Vehicle's Brand</label>
+                <input disabled class="form-control" id="VehiclesBrand" name="VehiclesBrand" value="<?php echo $rows['carbrand']; ?>">
+              </div>
+           
+              <div class="form-group">
+                <label for="fueltype">Fuel type</label>
+                <input disabled class="form-control" id="fueltype" name="fueltype" value="<?php echo $rows['Fuel']; ?>">
+              </div>
 
+              <div class="form-group">
+                <label for="VehiclesOverview">Vehicle's Overview</label>
+                <textarea class="ckeditor" name="VehiclesOverview"><?php echo $rows['vehicle_overview']; ?></textarea>
+
+                <!-- <input disabled class="form-control" id="VehiclesOverview" name="VehiclesOverview" value="<?php echo $rows['vehicle_overview']; ?>"> -->
+              </div>
+
+              <div class="form-group">
+                <label for="PricePerDay">Price Per Day</label>
+                <input type="text" class="form-control" id="PricePerDay" name="PricePerDay" value="<?php echo $rows['price']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="color">Colour</label>
+                <input type="text" class="form-control" id="color" name="color" value="<?php echo $rows['color']; ?>">
+              </div>
+
+              <div class="form-group">
+                <label for="ModelYear">Model Year</label>
+                <input disabled class="form-control" id="ModelYear" name="ModelYear" value="<?php echo $rows['model']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="SeatingCapacity">SeatingCapacity</label>
+                <input disabled class="form-control" id="SeatingCapacity" value="<?php echo $rows['SeatingCapacity']; ?>" name="SeatingCapacity">
+              </div>
+            
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
                 </div>
             
             </section>

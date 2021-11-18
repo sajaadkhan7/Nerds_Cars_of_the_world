@@ -3,7 +3,7 @@
     --hover-color: #4ACDE8;
 }
 
-a{
+a {
     color: var(--primary-color);
 }
 
@@ -12,18 +12,18 @@ a:link {
     color: var(--primary-color);
 }
 
-.text-white{
+.text-white {
     font-size: smaller;
     font-weight: 100;
     letter-spacing: 2px;
 }
 
-.newsletter-font{
+.newsletter-font {
     font-weight: 300;
     letter-spacing: normal;
 }
 
-.cirlce-bg{
+.cirlce-bg {
     background: rgba(0, 145, 173, 0.7);
     font-size: 0.6rem;
     text-transform: uppercase;
@@ -33,15 +33,14 @@ a:link {
 .btncolor {
     background-color: var(--primary-color);
     color: white;
-
 }
-#overlay-text{
-  position:absolute; 
-   top:50px;
-    right:10px;
+
+#overlay-text {
+    position: absolute;
+    top: 50px;
+    right: 10px;
     width: 50%;
 }
-
 
 .bgcolor,
 .btncolor:hover {
@@ -55,12 +54,10 @@ a:link {
     padding: 0 15px;
     width: 100%;
     height: 50px;
-
 }
 
 .transparent-details li {
     padding: 10px;
-
 }
 
 .section-back {
@@ -70,38 +67,30 @@ a:link {
     background-size: cover;
     background-attachment: fixed;
     height: 450px;
-
-
 }
 
 .section-back>div {
     transform: translate(0, 50%);
 }
 
-.container-homepage{
+.container-homepage {
     background-color: #212121;
 }
 
-
 @media only screen and (max-width: 708px) {
-    
-    .section-back>div{
-        transform: translate(0,5%);
+    .section-back>div {
+        transform: translate(0, 5%);
     }
-
-  }
-  @media only screen and (min-width: 708px) {
-    #overlay-text{
-       width:40%;
-         top:150px;
-          right:10px;
-          line-height: 30px;
-          
-      }
 }
 
-
-
+@media only screen and (min-width: 708px) {
+    #overlay-text {
+        width: 40%;
+        top: 150px;
+        right: 10px;
+        line-height: 30px;
+    }
+}
 
 #testimonial img {
     width: 100%;
@@ -132,7 +121,6 @@ a:link {
 .carousel-inner {
     width: 100%;
     padding: 80px;
-
 }
 
 .fa-minus {
@@ -178,23 +166,18 @@ a:link {
         font-size: 14px;
         font-weight: 600
     }
-
     .name {
         font-size: 13px
     }
-
     .job {
         font-size: 10px
     }
-
     .right {
         font-size: 12px
     }
-
     .left {
         font-size: 12px
     }
-
     .carousel-indicators [data-bs-target] {
         height: 8px;
         border: 1px solid black;
@@ -202,37 +185,36 @@ a:link {
         background-color: inherit;
         border-radius: 50%
     }
-
     .carousel-indicators .active {
         border: 1px solid transparent;
         background-color: var(--primary-color);
     }
 }
 
-.nav-item{
+.nav-item {
     text-transform: uppercase;
-    font-size: 8pt;
-    font-weight: 100;
+    font-size: 9pt;
+    font-weight: normal;
     letter-spacing: 2px;
     color: white;
 }
 
-.footer-copyright{
+.footer-copyright {
     padding-bottom: 2em;
     font-size: smaller;
     letter-spacing: normal;
 }
 
-.cardbg{
+.cardbg {
     background-color: #bd0f0f;
 }
 
-.card-details{
+.card-details {
     font-size: 0.7rem;
     letter-spacing: normal;
     text-transform: uppercase;
 }
 
-.navbg{
+.navbg {
     background-color: #031F26;
 }

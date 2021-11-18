@@ -6,18 +6,20 @@
 <header id="overlay" style="position: relative;">
   <body>
 
-<div class="bg-light">
-  <div class="container py-5">
+<!-- <div class="bg-light">
+  
+
+  
+</div> -->
+<div class="container py-5">
     <div class="row h-100 align-items-center py-5">
       <div class="col-lg-6">
         <h1 class="display-4">Who are we?</h1>
-        <p class="lead text-muted mb-0">We rent cars and that's about it.</p>
-        </p>
+        <p class="lead text-muted mb-0">We give cars rentals and provide any car you are looking for. Our Prices are way cheaper than the competitors.  </p>
       </div>
       <div class="col-lg-6 d-none d-lg-block"><img src="assets/images/undraw_content_team.png" alt="" class="img-fluid"></div>
     </div>
   </div>
-</div>
 
 <div class="bg-white py-5">
   <div class="container py-5">
@@ -25,16 +27,19 @@
   <div class="row align-items-center">
       <div class="col-lg-5 px-5 mx-auto"><img src="https://bootstrapious.com/i/snippets/sn-about/img-2.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
       <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
-        <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
-        <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
+        <h2 class="font-weight-light">Offers and insurance</h2>
+        <p class="font-italic text-muted mb-4">We offer the best deals for the car rental in this market. Moreover,
+       our prices are so cheap that even luxury cars seems affordable for anyone. Besides this, 
+       We provide insuarance as well. Which means you do not have to find any insurance companies to insure your vehicle. </p>
       </div>
     </div>
 
     <div class="row align-items-center mb-5">
       <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-        <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
-        <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
-      </div>
+        <h2 class="font-weight-light">Time Period for Car rental</h2>
+        <p class="font-italic text-muted mb-4">Our company allows any customer to get a car on rent for even more than years. Further More, We do not require ask for extra fees if they delay the while returning it. 
+      We just give a warning email which explains if delay has occured so you know when to reurn.</p>
+      </div> 
       <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://bootstrapious.com/i/snippets/sn-about/img-1.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
     </div>
   
@@ -55,12 +60,12 @@
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Round&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
           <h5 class="mb-0">Abjith</h5><span class="small text-uppercase text-muted">Graphic Designer</span>
-          <ul class="social mb-0 list-inline mt-3">
+          <!-- <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <!-- End-->
@@ -69,12 +74,12 @@
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
           <h5 class="mb-0">Gaganpreet Kaur</h5><span class="small text-uppercase text-muted">Web Developer</span>
-          <ul class="social mb-0 list-inline mt-3">
+          <!-- <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <!-- End-->
@@ -83,12 +88,12 @@
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Prescription02&facialHairType=BeardLight&facialHairColor=Black&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
           <h5 class="mb-0">Sajaad Khan</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-          <ul class="social mb-0 list-inline mt-3">
+          <!-- <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <!-- End-->
@@ -97,12 +102,12 @@
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
           <h5 class="mb-0">Jeni Patel</h5><span class="small text-uppercase text-muted">Senior Web Developer</span>
-          <ul class="social mb-0 list-inline mt-3">
+          <!-- <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <!-- End-->
