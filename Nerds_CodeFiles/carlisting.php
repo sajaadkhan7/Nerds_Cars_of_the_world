@@ -85,7 +85,14 @@
                     
 
                     function car_display($brandname, $dbc) {
-                       
+                        if($brandname!=''){   
+                        echo "<script>
+  
+                            $( '.listbtn' ).removeClass('carlistmenu');
+                                              
+                                $('input[value=\"".$brandname."\"]').addClass('carlistmenu');
+                            
+                        </script>";}
                         if($brandname == ''){
                             $q = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
                         tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
