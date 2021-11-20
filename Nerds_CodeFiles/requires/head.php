@@ -28,12 +28,17 @@
   <!-- Font awesome icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-
+   <!-- aos animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <!-- Add jquery cdn -->
+     <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+      </script>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark navbg">
+  <nav data-aos='zoom-out-down' data-aos-delay="50"
+    data-aos-duration="1000" class="navbar navbar-expand-sm navbar-dark navbg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
         <img src="assets/images/logo/cars_logo_white.png" style="width:120px;">

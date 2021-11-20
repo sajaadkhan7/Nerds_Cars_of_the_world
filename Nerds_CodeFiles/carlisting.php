@@ -7,7 +7,8 @@
 
 
 <!-- your content here... -->
-<header id="overlay" style="position: relative;">
+<header data-aos='zoom-out-down' data-aos-delay="550"
+    data-aos-duration="1000" id="overlay" style="position: relative;">
     <img src="assets/images/banner-image-1.jpg" style="width:100%;" alt="book store cover image">
 </header>
 
@@ -23,7 +24,7 @@
             <form  method='POST' action="carlisting.php#cars" style='margin-top:60px;'>
 
 
-                    <input type="submit" class="list-group-item list-group-item-action carlistmenu" name='all_manufacturers'
+                    <input type="submit" class="list-group-item list-group-item-action listbtn carlistmenu" name='all_manufacturers'
                     value='All Manufacturers'  />
 
                     <?php
@@ -33,7 +34,7 @@
                     $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);  
                         
                     while($r=mysqli_fetch_array($res)){
-                        echo "<input type='submit' class='list-group-item list-group-item-action' name='" . $r['BrandName'] . "' value='" . $r['BrandName'] ."'/>";
+                        echo "<input type='submit' class='list-group-item list-group-item-action listbtn' name='" . $r['BrandName'] . "' value='" . $r['BrandName'] ."'/>";
                     }
 
                     ?>
@@ -52,15 +53,17 @@
                     
                     if(array_key_exists('all_manufacturers', $_POST)) {
                         $brandname = '';
-                        car_display($brandname,$dbc);                
-                    }
-                    else if(array_key_exists('Ford', $_POST)) {
-                        $brandname = 'ford';
                         car_display($brandname,$dbc);
 
+
+                    }
+                    else if(array_key_exists('Ford', $_POST)) {
+                        $brandname = 'Ford';
+                        car_display($brandname,$dbc);
+                       
                     }
                     else if(array_key_exists('Tesla', $_POST)) {
-                        $brandname = 'tesla';
+                        $brandname = 'Tesla';
                         car_display($brandname,$dbc);
                     }
                     else if(array_key_exists('Hyundai', $_POST)) {
@@ -68,11 +71,11 @@
                         car_display($brandname,$dbc);
                     }
                     else if(array_key_exists('Genesis', $_POST)) {
-                        $brandname = 'genesis';
+                        $brandname = 'Genesis';
                         car_display($brandname,$dbc);
                     }
                     else if(array_key_exists('Mercedes', $_POST)) {
-                        $brandname = 'mercedes';
+                        $brandname = 'Mercedes';
                         car_display($brandname,$dbc);
                     }
                     else {
@@ -82,7 +85,7 @@
                     
 
                     function car_display($brandname, $dbc) {
-
+                       
                         if($brandname == ''){
                             $q = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
                         tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
@@ -100,7 +103,14 @@
                         } 
                         while($r=mysqli_fetch_array($res)){
         
-                    echo "<div class='col mb-5'>
+                    echo "<div class='col mb-5' data-aos='zoom-in-up'
+                    data-aos-offset='0'
+                    data-aos-delay='0'
+                    data-aos-duration='1000'
+                    data-aos-easing='ease-in-out'
+                    data-aos-mirror='false'
+                    data-aos-once='true'
+                    data-aos-anchor-placement='center-bottom'>
                         <div class='card h-100'>
                         <div style='position:relative;'>
                         <a href='#'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>

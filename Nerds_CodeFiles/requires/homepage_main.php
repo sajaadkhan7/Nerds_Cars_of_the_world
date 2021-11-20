@@ -1,4 +1,4 @@
-<section class="px-2 pt-4" style="background-color: #121212;">
+<section  class="px-2 pt-4" style="background-color: #121212;">
     <div class="container" style="padding-top: 60px; color: #ffffff; background-color: #121212;">
         <div class="text-center">
             <h2 class="fw-bolder">Be the Best <span class="fw-normal">Chose the Best</span></h2>
@@ -18,7 +18,14 @@
                 $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);   
                 while($r=mysqli_fetch_array($res)){
  
-             echo "<div class='col mb-5'>
+             echo "<div class='col mb-5 dataaos' data-aos='zoom-in-up'
+             data-aos-offset='0'
+             data-aos-delay='0'
+             data-aos-duration='1000'
+             data-aos-easing='ease-in-out'
+             data-aos-mirror='false'
+             data-aos-once='true'
+             data-aos-anchor-placement='center-bottom'>
                 <div class='card h-100' style='padding: 20px; background-color: #031F26; border-style: none; border-radius: 0'>
                 <div style='position:relative; text'>
                    <a href='car_detail.php?Car_id=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>
@@ -50,22 +57,26 @@
 <section class="section-back container-fluid p-sm-4 text-white">
     <div class="row text-center justify-content-around">
 
-        <div class="col-sm-3 col-xs-6 text-center rounded-circle py-5 cirlce-bg" style="width: 180px; height:180px;">
+        <div data-aos='fade-right' data-aos-delay="50"
+    data-aos-duration="1000" class="col-sm-3 col-xs-6 text-center rounded-circle py-5 cirlce-bg" style="width: 180px; height:180px;">
             <h3><i class="fa fa-calendar"> </i> 10+</h3>
             <p>Years in business</p>
         </div>
 
 
-        <div class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
+        <div data-aos='zoom-out-down' data-aos-delay="50"
+    data-aos-duration="1000" class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
             <h3><i class="fa fa-car"> </i> 300+</h3>
             <p>New Cars</p>
         </div>
-        <div class="col-sm-3 col-xs-6  text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
+        <div data-aos='zoom-out-down' data-aos-delay="50"
+    data-aos-duration="1000" class="col-sm-3 col-xs-6  text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
             <h3><i class="fa fa-smile"> </i> 1000+</h3>
             <p>Happy Customers</p>
         </div>
 
-        <div class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
+        <div data-aos='fade-left' data-aos-delay="50"
+    data-aos-duration="1000" class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
             <h3><i class="fa fa-calendar"> </i> 10+</h3>
             <p>Cars Rented Everyday</p>
         </div>
