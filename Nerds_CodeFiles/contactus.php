@@ -67,7 +67,7 @@
 
     <!-- contact us -->
     <div class="container-fluid">
-        <iframe
+        <iframe data-aos='zoom-out-down' data-aos-delay="50" data-aos-duration="1000"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.3985197818934!2d-80.40614968512944!3d43.38959917745511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b8a78cad8e0c7%3A0xff890e93ef71682!2sA-Wing%20%2F%20B-Wing%2C%20299%20Doon%20Valley%20Dr%2C%20Kitchener%2C%20ON%20N2P%202N6!5e0!3m2!1sen!2sca!4v1608723992035!5m2!1sen!2sca"
             width="100%" height="450"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
             tabindex="0"></iframe>
@@ -75,7 +75,7 @@
     <div class="container-fluid">
 
         <div class="container">
-            <div style="text-align:center">
+            <div data-aos='zoom-out-down' data-aos-delay="50" data-aos-duration="1000" style="text-align:center">
                 <div style="padding-top: 60px;">
 
                     <h2 class="fw-bolder">Contact Us</h2>
@@ -83,18 +83,18 @@
                 </div>
             </div>
             <div style="padding-top: 60px; padding-bottom: 70px" class="row">
-                <div class="column col-sm-8  p-5 contactus">
+                <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000" class="column col-sm-8  p-5 contactus">
                     <form id="contactus_form" action="contactus.php" method="POST" >
                        <div><label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name.." required>
                         <span id="nameerror"></span> </div>
 
                         <div> <label for="Email">Email</label>
-                        <input type="email" id="Email" onkeyup="emailvalid()" name="email" required>
+                        <input type="email" id="Email" onkeyup="emailvalid()" name="email" placeholder="Email..." required>
                         <span id="emailerror"></span> </div>
 
-						<div>    <label for="subject">Subject</label>
-                        <textarea id="subject" name="subject" placeholder="Write something.."
+						<div>    <label for="message">Subject</label>
+                        <textarea id="subject" name="message placeholder="Write something.."
                             style="height:50px"></textarea>
                         <span id="subjecterror"></span> </div>
 <div style="padding-top: 10px;" >
@@ -102,7 +102,7 @@
                         <!-- <input type="submit" onclick="validation()" class="btn btncolor mt-auto" value="Submit"> -->
                     </form>
                 </div>
-                <div class="col-sm-4" style="padding-top: 40px; padding-bottom: 50px">
+                <div data-aos='fade-left' data-aos-delay="0" data-aos-duration="1000" class="col-sm-4" style="padding-top: 40px; padding-bottom: 50px">
                     <div class="row">
 
                         <div class="address-wrap  p-5">
