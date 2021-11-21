@@ -29,7 +29,7 @@
                 <div class='card h-100' style='padding: 20px; background-color: #031F26; border-style: none; border-radius: 0'>
                 <div style='position:relative; text'>
                    <a href='car_detail.php?Car_id=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>
-                   <ul style='position:absolute;list-style-type:none;' class='text-white list-inline transparent-details card-details'>
+                   <ul style='position:absolute;list-style-type:none;width:100%;font-size:0.7em;' class='txtsize text-white list-inline transparent-details card-details'>
                         <li class='list-inline-item'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
                         <li class='list-inline-item'><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. " Model</li>
                         <li class='list-inline-item'><i class='fa fa-user' aria-hidden='true'></i> ".$r['SeatingCapacity']." seats</li>

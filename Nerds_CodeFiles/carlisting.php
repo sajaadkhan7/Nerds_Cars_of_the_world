@@ -3,6 +3,13 @@
 
 <head>
 <title>Car Listing page</title>
+<style>
+    @media (min-width: 576px) { 
+      .txtsize{
+          font-size: 1rem;
+      }
+     }
+    </style>
 <?php require('requires/head.php');  ?>
 
 
@@ -12,16 +19,16 @@
     <img src="assets/images/banner-image-1.jpg" style="width:100%;" alt="book store cover image">
 </header>
 
-<div class="container" style="width:85%; margin-left: auto; margin-right: auto;">
+<div class="container-fluid" style="width:100%; margin-left: auto; margin-right: auto;">
     <div class="row">
-        <div class="col-3">
+        <div class="col">
 
             <?php
                 require('requires/mysqli_connect.php');
                 
             ?>
 
-            <form  method='POST' action="carlisting.php#cars" style='margin-top:60px;'>
+            <form  id="cars" method='POST' class="justify-content-center list-group-horizontal-md list-group m-3 text-md-center" action="carlisting.php#cars" style='margin-top:60px;'>
 
 
                     <input type="submit" class="list-group-item list-group-item-action listbtn carlistmenu" name='all_manufacturers'
@@ -41,11 +48,12 @@
                     
 
             </form>
-        </div>
-        <div class="col-9">
-            <section id="cars" class="py-2">
+        </div></div>
+        <div class="row">
+        <div class="col-12">
+            <section class="py-2">
                 <div class="container-fluid px-4 px-lg-5 mt-5">
-                    <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
+                    <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
                         <?php
 
                     //require('requires/mysqli_connect.php');
@@ -121,10 +129,10 @@
                         <div class='card h-100'>
                         <div style='position:relative;'>
                         <a href='#'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>
-                        <ul style='position:absolute;list-style-type:none;' class='text-white list-inline transparent-details'>
-                                <li class='list-inline-item'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
-                                <li class='list-inline-item'><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. " Model</li>
-                                <li class='list-inline-item'><i class='fa fa-user' aria-hidden='true'></i> ".$r['SeatingCapacity']." seats</li>
+                        <ul style='position:absolute;width:100%;list-style-type:none;font-size:0.7em;' class='txtsize text-white list-inline transparent-details'>
+                                <li class='list-inline-item' ><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
+                                <li class='list-inline-item' ><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. " Model</li>
+                                <li class='list-inline-item' ><i class='fa fa-user' aria-hidden='true'></i> ".$r['SeatingCapacity']." seats</li>
                                 </ul>
                             </div>
                         <div class='card-body p-4'>

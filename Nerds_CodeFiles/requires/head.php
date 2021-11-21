@@ -49,19 +49,19 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.php"><b>Home</b></a>
+            <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='index.php'){ echo 'activeLink';} else echo ''; ?>" href="index.php" ><b>Home</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="carlisting.php"><b>Cars</b></a>
+            <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='carlisting.php'){ echo 'activeLink';} else echo ''; ?>" href="carlisting.php"><b>Cars</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin.php"><b>Admin</b></a>
+            <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='admin.php'){ echo 'activeLink';} else echo ''; ?>" href="admin.php"><b>Admin</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutus.php"><b>About</b></a>
+            <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='aboutus.php'){ echo 'activeLink';} else echo ''; ?>" href="aboutus.php"><b>About</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contactus.php"><b>Contact</b></a>
+            <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='contactus.php'){ echo 'activeLink';} else echo ''; ?>" href="contactus.php"><b>Contact</b></a>
           </li>
         </ul>
 

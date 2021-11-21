@@ -9,6 +9,13 @@
     .typed-cursor {
       display: none;
     }
+    @media (min-width: 576px) { 
+      .txtsize{
+          font-size: 1rem;
+      }
+     }
+
+
   </style>
   <title>Cars Of The World:Homepage</title>
   <?php require('requires/head.php'); ?>

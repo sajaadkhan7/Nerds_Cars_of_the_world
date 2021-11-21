@@ -211,6 +211,9 @@ a:link {
     color:white;
 }
 
+.activeLink{
+    border-bottom:2px solid var(--primary-color);
+}
 
 
 
