@@ -84,25 +84,25 @@
             </div>
             <div style="padding-top: 60px; padding-bottom: 70px" class="row">
                 <div class="column col-sm-8  p-5 contactus">
-                    <form id="contactus_form" action="contactus.php" method="POST" >
+                    <form id="contactus_form" action="contactus.php" method="POST">
                        <div><label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name.." required>
+                        <input type="text" id="name" name="name" placeholder="First Name" required>
                         <span id="nameerror"></span> </div>
 
                         <div> <label for="Email">Email</label>
-                        <input type="email" id="Email" onkeyup="emailvalid()" name="email" required>
+                        <input type="email" id="Email" onkeyup="emailvalid()" name="email" placeholder="Email" required>
                         <span id="emailerror"></span> </div>
 
-						<div>    <label for="subject">Subject</label>
-                        <textarea id="subject" name="subject" placeholder="Write something.."
+						<div>    <label for="subject">Message</label>
+                        <textarea id="subject" name="subject" placeholder="Your message for us"
                             style="height:50px"></textarea>
                         <span id="subjecterror"></span> </div>
 <div style="padding-top: 10px;" >
-                        <button class="btn btncolor mt-auto" onclick="validation()" value="Submit">submit</button></div>
+                        <button class="btn btncolor mt-3" onclick="validation()" value="Submit">SUBMIT</button></div>
                         <!-- <input type="submit" onclick="validation()" class="btn btncolor mt-auto" value="Submit"> -->
                     </form>
                 </div>
-                <div class="col-sm-4" style="padding-top: 40px; padding-bottom: 50px">
+                <div class="col-sm-4">
                     <div class="row">
 
                         <div class="address-wrap  p-5">

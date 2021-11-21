@@ -8,7 +8,7 @@
 
 <!-- your content here... -->
 <header id="overlay" style="position: relative;">
-    <img src="assets/images/banner-image-1.jpg" style="width:100%;" alt="book store cover image">
+    <img src="assets/images/banner-image-1.2.jpg" style="width:100%;" alt="book store cover image">
 </header>
 
 <div class="container" style="width:85%; margin-left: auto; margin-right: auto;">
