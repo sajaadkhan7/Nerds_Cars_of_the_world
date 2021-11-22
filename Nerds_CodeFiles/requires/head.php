@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+<!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  -->
 
   <link rel="icon" href="../assets/images/logo/cars_logo_white.png">
 
@@ -31,9 +31,13 @@
    <!-- aos animation -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
      <!-- Add jquery cdn -->
-     <script src=
-  "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-      </script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -67,6 +71,19 @@
         </ul>
 
         <form class="d-flex">
+          <button class="btn btncolor my-2 mx-2 btn-info btn-lg" onclick="loginuser()" data-toggle="modal" data-target="#myModal" type="button"><i class="fas fa-user"></i><span class="d-sm-none">
+              LOGIN</span></button>
+              <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+        </form>
+        <!-- <form class="d-flex btn-group">
+          <input class="form-control" type="text" placeholder="Search" style="font-size: 0.7rem;">
+          <button class="btn btncolor" type="button"><i class="fas fa-search"></i></button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
+<form class="d-flex">
           <button class="btn btncolor my-2 mx-2 " type="button"><i class="fas fa-user"></i><span class="d-sm-none">
               LOGIN</span></button>
         </form>
