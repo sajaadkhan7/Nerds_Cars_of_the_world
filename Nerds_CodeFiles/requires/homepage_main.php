@@ -10,7 +10,7 @@
     <div class="container-fluid px-lg-5 mt-5" style="background-color: #121212; padding-bottom: 50px">
         <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
             <?php
-               require('mysqli_connect.php');
+               require_once('mysqli_connect.php');
                 $q = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
                 tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
                  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand
