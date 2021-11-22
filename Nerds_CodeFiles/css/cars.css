@@ -15,11 +15,14 @@
 h1, h2, h3, h4, h5, h6{
     font-family: 'Cormorant Garamond',
     serif;
+    letter-spacing: 1pt;
 }
 
-p{
+p, small{
     font-family: 'Montserrat',
     sans-serif;
+    font-weight: normal;
+    letter-spacing: 1pt;
 }
 
 a {
@@ -39,7 +42,7 @@ a:link {
 
 .newsletter-font {
     font-weight: 300;
-    letter-spacing: normal;
+    letter-spacing: 2pt;
 }
 
 .cirlce-bg {
@@ -182,6 +185,7 @@ a:link {
 
 .footer-copyright {
     padding-bottom: 2em;
+    font-weight: normal;
     font-size: smaller;
     letter-spacing: normal;
 }
@@ -192,6 +196,7 @@ a:link {
 
 .card-details {
     font-size: 0.7rem;
+    font-weight: normal;
     letter-spacing: normal;
     text-transform: uppercase;
 }

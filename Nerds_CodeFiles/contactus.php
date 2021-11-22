@@ -73,6 +73,7 @@
                 </div>
             </div>
             <div style="padding-top: 60px; padding-bottom: 70px" class="row">
+
                 <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
                     class="column col-md-8  p-5 contactus">
                     <form id="contactus_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">

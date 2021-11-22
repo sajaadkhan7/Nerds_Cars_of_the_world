@@ -49,6 +49,7 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
+
             <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='index.php'){ echo 'activeLink';} else echo ''; ?>" href="index.php" ><b>Home</b></a>
           </li>
           <li class="nav-item">
