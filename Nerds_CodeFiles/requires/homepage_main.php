@@ -1,8 +1,9 @@
-<section  class="px-2 pt-4" style="background-color: #121212;">
+<section class="px-2 pt-4" style="background-color: #121212;">
     <div class="container" style="padding-top: 60px; color: #ffffff; background-color: #121212;">
         <div class="text-center">
             <h2>Be the Best. Chose the Best</h2>
-            <p style="margin-bottom: 0;">Wide range of cars handpicked for your ease. We care for your decisions, hence made it easy fro you. <br>Just rent and ride. </p>
+            <p style="margin-bottom: 0;">Wide range of cars handpicked for your ease. We care for your decisions, hence
+                made it easy fro you. <br>Just rent and ride. </p>
         </div>
     </div>
 </section>
@@ -57,26 +58,26 @@
 <section class="section-back container-fluid p-sm-4 text-white">
     <div class="row text-center justify-content-around">
 
-        <div data-aos='fade-right' data-aos-delay="50"
-    data-aos-duration="1000" class="col-sm-3 col-xs-6 text-center rounded-circle py-5 cirlce-bg" style="width: 180px; height:180px;">
+        <div data-aos='fade-right' data-aos-delay="50" data-aos-duration="1000"
+            class="col-sm-3 col-xs-6 text-center rounded-circle py-5 cirlce-bg" style="width: 180px; height:180px;">
             <h3><i class="fa fa-calendar"> </i> 10+</h3>
             <p>Years in business</p>
         </div>
 
 
-        <div data-aos='zoom-out-down' data-aos-delay="50"
-    data-aos-duration="1000" class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
+        <div data-aos='zoom-out-down' data-aos-delay="50" data-aos-duration="1000"
+            class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
             <h3><i class="fa fa-car"> </i> 300+</h3>
             <p>New Cars</p>
         </div>
-        <div data-aos='zoom-out-down' data-aos-delay="50"
-    data-aos-duration="1000" class="col-sm-3 col-xs-6  text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
+        <div data-aos='zoom-out-down' data-aos-delay="50" data-aos-duration="1000"
+            class="col-sm-3 col-xs-6  text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
             <h3><i class="fa fa-smile"> </i> 1000+</h3>
             <p>Happy Customers</p>
         </div>
 
-        <div data-aos='fade-left' data-aos-delay="50"
-    data-aos-duration="1000" class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
+        <div data-aos='fade-left' data-aos-delay="50" data-aos-duration="1000"
+            class="col-sm-3 col-xs-6 text-center rounded-circle cirlce-bg py-5" style="width: 180px; height:180px;">
             <h3><i class="fa fa-calendar"> </i> 10+</h3>
             <p>Cars Rented Everyday</p>
         </div>
@@ -84,8 +85,8 @@
 </section>
 <div id="testimonial" class="d-flex align-items-center m-0 mh-100" style="background-color: #efefef;"> <a
         class="carousel-control-prev text-decoration-none " href="#mycarousel" role="button" data-bs-slide="prev">
-        <div class="d-flex flex-column justify-content-center me-2 ms-auto left"><span
-                class="fas fa-arrow-left"></span> </div> <span class="sr-only"></span>
+        <div class="d-flex flex-column justify-content-center me-2 ms-auto left"><span class="fas fa-arrow-left"></span>
+        </div> <span class="sr-only"></span>
     </a>
     <div class="container">
         <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
@@ -114,11 +115,10 @@
                 <div class="carousel-item <?php if($counter==1){echo 'active';}?>">
                     <div class="row">
                         <div class="col-lg-12 text-center">
-                            <img src="<?php echo htmlentities($r['imgUrl'])?>"
-                                alt="testimonials" style="width: 150px;">
+                            <img src="<?php echo htmlentities($r['imgUrl'])?>" alt="testimonials" style="width: 150px;">
                         </div>
                     </div>
-                        <div class="row">
+                    <div class="row">
                         <!-- <div class="col-lg-6 "> <img src="assets/images/<?php echo htmlentities($r['imgUrl']) ?>"
                                 class="d-block w-100 rounded-3" alt="..."> </div> -->
                         <div class="col-lg-12">

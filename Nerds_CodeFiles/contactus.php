@@ -49,7 +49,6 @@
             flex: 1 1 40%;
             margin-top: 25px;
         }
-
     </style>
     <?php require('requires/contactusSubmit.php'); ?>
 
@@ -76,7 +75,8 @@
 
                 <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
                     class="column col-md-8  p-5 contactus">
-                    <form id="contactus_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                    <form id="contactus_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
+                        method="POST">
                         <div><label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name.." required>
                             <span class="error" id="nameerror"><?php echo $nameErr;?></span> </div>
@@ -133,7 +133,7 @@
     </div>
     <!-- contact us -->
 
-      
+
     <?php require('requires/footer.php'); ?>
     <?php require('requires/loginModal.php'); ?>
     </body>

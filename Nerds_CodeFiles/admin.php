@@ -27,10 +27,10 @@ $password = mysqli_real_escape_string($dbc, $_POST['password']);
 <html lang="en">
 
 <head>
-<title>Cars Of The World: Admin</title>
-<?php require('requires/head.php');  ?>
+  <title>Cars Of The World: Admin</title>
+  <?php require('requires/head.php');  ?>
 
-</body>
+  </body>
 
 <body class="hold-transition login-page">
   <div class="login-box p-5">
