@@ -124,7 +124,7 @@ $("#login").click(function (event){
             url: './requires/user_loginSubmit.php',
             data: $('form').serialize(),
             success: function (data) {
-              alert('form was submitted'+ data);
+              alert( data);
             }
           });
         });
@@ -134,13 +134,12 @@ $("#login").click(function (event){
   $("#Register").click(function (event){
         // using this page stop being refreshing 
         event.preventDefault();
-
           $.ajax({
             type: 'POST',
             url: './requires/user_registerSubmit.php',
             data: $('form').serialize(),
             success: function (data) {
-             alert('form was submitted'+ data);
+             alert(data);
             }
           });
         });
