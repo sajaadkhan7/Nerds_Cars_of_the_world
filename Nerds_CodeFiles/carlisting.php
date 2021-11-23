@@ -26,7 +26,7 @@
         <div class="col">
 
             <?php
-                require('requires/mysqli_connect.php');
+                require_once('requires/mysqli_connect.php');
                 
             ?>
 

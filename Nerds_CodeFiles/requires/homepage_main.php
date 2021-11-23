@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class='text-center card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                        <Span class='text-center'><a class='btn btncolor text-white mt-auto text-uppercase' href='car_detail.php?Car_id=".$r['id']."'><b>Book Now</b></a></span> &nbsp;
+                        <Span class='text-center'><a class='btn btncolor text-white mt-auto text-uppercase' href='car_details.php?Book_ID=".$r['id']."'><b>Book Now</b></a></span> &nbsp;
                       
                     </div>
                 </div>

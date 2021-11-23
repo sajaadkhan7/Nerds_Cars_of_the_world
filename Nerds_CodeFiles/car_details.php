@@ -3,29 +3,21 @@
 
 <head>
 <title>Car Listing page</title>
-<style>
-        .carousel-inner .item img {
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            /*height: 600px !important;*/
-        }
-</style>
 <?php 
     require('requires/head.php');
 
-    require('requires/mysqli_connect.php');
+    require_once('requires/mysqli_connect.php');
 
 ?>
 
 <header data-aos='zoom-out-down' data-aos-delay="550"
     data-aos-duration="1000" id="overlay" style="position: relative;">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-	    <ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-		</ol>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
 
         <?php
 
@@ -40,26 +32,27 @@
                     $r=mysqli_fetch_array($res);
                     
                     echo "<div class='carousel-inner'>";
-                    echo "<div class='item active'>
-                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage1'] . "'  class='img-responsive' alt='Car_images'></div>";
+                    echo "<div class='carousel-item active'>
+                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage1'] . "'  class='d-block w-100' alt='Car_images'></div>";
 
-                    echo "<div class='item'>
-                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage2'] . "' class='img-responsive' alt='Car_images'></div>";
+                    echo "<div class='carousel-item'>
+                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage2'] . "' class='d-block w-100' alt='Car_images'></div>";
 
-                    echo "<div class='item'>
-                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage3'] . "' class='img-responsive' alt='Car_images'></div></div>";
+                    echo "<div class='carousel-item'>
+                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage3'] . "' class='d-block w-100' alt='Car_images'></div></div>";
                     
 
                     ?>
 
-      <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+      
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
 </header>
@@ -70,23 +63,23 @@
           <div class="col-sm-9">
             <h2><?php echo htmlentities($r['BrandName']);?> , <?php echo htmlentities($r['VehiclesTitle']);?></h2>
           </div>
-          <div class="col-sm-3 mt-2">
+          <div class="col-sm-3 mt-1">
             <h3>$<?php echo htmlentities($r['PricePerDay']);?> total </h3> 
           </div>
         </div>
 
         <div class="d-flex justify-content-around" style="padding-top: 40px; padding-bottom: 20px;">
-          <div class="p-5 bd-highlight text-center border border-white rounded">
+          <div class="p-4 bd-highlight text-center border border-white rounded">
             <i class="fa fa-calendar" aria-hidden="true"></i>
               <h4><?php echo htmlentities($r['ModelYear']);?></h4>
               <p>Reg.Year</p>
           </div>
-          <div class="p-5 bd-highlight text-center border border-white rounded">
+          <div class="p-4 bd-highlight text-center border border-white rounded">
               <i class="fa fa-cogs" aria-hidden="true"></i>
               <h4><?php echo htmlentities($r['FuelType']);?></h4>
               <p>Fuel Type</p>
           </div>
-          <div class="p-5 bd-highlight text-center border border-white rounded">
+          <div class="p-4 bd-highlight text-center border border-white rounded">
               <i class="fa fa-user-plus" aria-hidden="true"></i>
               <h4><?php echo htmlentities($r['SeatingCapacity']);?></h4>
               <p> &nbsp;Seats &nbsp;</p>
@@ -95,7 +88,7 @@
 
         <div class="row" style="padding-top: 20px; padding-bottom: 30px;">
           <div class="col text-center">
-            <h3><a href="checkout.php" class="btn btncolor mt-auto text-white text-uppercase"><b> Book Now</b></a></h3>
+            <h4><a href="checkout.php" class="btn btncolor mt-auto text-white text-uppercase"><b> Book Now</b></a></h>
       </div>
       </div>
     </div>
@@ -108,8 +101,8 @@
   <div class="accordion" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingCarOverView">
-          <button class="btn" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseCarOverview" aria-expanded="true" aria-controls="collapseCarOverview">
-            <h4 class="text-left"><b>Car OverView</b><h4>
+          <button class="btn" style="width:100%;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCarOverview" aria-expanded="true" aria-controls="collapseCarOverview">
+            <h5 class="text-start"><b>Car OverView</b><h5>
           </button>
       </div>
 
@@ -122,15 +115,15 @@
               ?>
               </p>
               <div class="d-flex flex-column" style="padding-top: 10px; padding-bottom: 10px;">
-                <div class="p-4">
+                <div class="p-2">
                   <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
                   <?php echo $r['Engine'] ?>
                 </div>
-                <div class="p-4">
+                <div class="p-2">
                   <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
                   <?php echo $r['DriveTrain'] ?>
                 </div>
-                <div class="p-4">
+                <div class="p-2">
                   <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
                   <?php echo $r['color'] ?>
                 </div>
@@ -142,8 +135,8 @@
     </div>
     <div class="card">
       <div class="card-header" id="headingInteriorFeatures">
-          <button class="btn collapsed" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseInteriorFeatures" aria-expanded="false" aria-controls="collapseInteriorFeatures">
-            <h4 class="text-left"><b>Interior Features</b><h4>
+          <button class="btn collapsed" style="width:100%;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInteriorFeatures" aria-expanded="false" aria-controls="collapseInteriorFeatures">
+            <h5 class="text-start"><b>Interior Features</b><h5>
           </button>
       </div>
       <div id="collapseInteriorFeatures" class="collapse" aria-labelledby="headingInteriorFeatures" data-parent="#accordionExample">
@@ -159,8 +152,8 @@
     </div>
     <div class="card">
       <div class="card-header" id="headingExteriorFeatures">
-          <button class="btn collapsed" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseExteriorFeatures" aria-expanded="false" aria-controls="collapseExteriorFeatures">
-            <h4 class="text-left"><b>Exterior Features</b><h4>
+          <button class="btn collapsed" style="width:100%;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExteriorFeatures" aria-expanded="false" aria-controls="collapseExteriorFeatures">
+            <h5 class="text-start"><b>Exterior Features</b><h5>
           </button>
       </div>
       <div id="collapseExteriorFeatures" class="collapse" aria-labelledby="headingExteriorFeatures" data-parent="#accordionExample">
@@ -176,8 +169,8 @@
     </div>
     <div class="card">
       <div class="card-header" id="headingFunctionality">
-          <button class="btn collapsed" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseFunctionality" aria-expanded="false" aria-controls="collapseFunctionality">
-            <h4 class="text-left"><b>Functionality</b><h4>
+          <button class="btn collapsed" style="width:100%;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFunctionality" aria-expanded="false" aria-controls="collapseFunctionality">
+            <h5 class="text-start"><b>Functionality</b><h5>
           </button>
       </div>
       <div id="collapseFunctionality" class="collapse" aria-labelledby="headingFunctionality" data-parent="#accordionExample">
