@@ -71,29 +71,36 @@
               LOGIN</span></button>
           <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
         </form>
-        <form class="d-flex btn-group">
+        <!-- <form class="d-flex btn-group">
           <input class="form-control position-relative" name="search" type="text" placeholder="Search"
             style="font-size: 0.7rem;">
           <button class="btn btncolor" type="submit"><i class="fas fa-search"></i></button>
 
+        </form> -->
+
+        <!-- <ul class="position-absolute top-100 left-0 right-0 list-group"> -->
             <?php 
-        //     if(isset($_REQUEST['search'])){
-        //     $vhname=$_REQUEST['search'];}else {$vhname="";}
-        //     $result = mysqli_query($dbc, "SELECT * FROM tblvehicles JOIN tblbrands on tblvehicles.VehiclesBrand=tblbrands.id
-        //      WHERE VehiclesTitle LIKE '%{$vhname}%' OR BrandName LIKE '%{$vhname}%'");
-        
-        // while ($row = mysqli_fetch_array($result))
-        // {
-        //         echo "<li class='list-group-item list-group-item-action'>".$row['VehiclesTitle']."</li>";
-                
-        // }
+            // if(isset($_REQUEST['search']))
+            // {
+            //  $vhname=$_REQUEST['search'];}
+            //  else 
+            //  {
+            //    $vhname="";
+            //   }
+            //   $q="SELECT * FROM tblvehicles JOIN tblbrands on tblvehicles.VehiclesBrand=tblbrands.id
+            //   WHERE VehiclesTitle LIKE '%{$vhname}%' OR BrandName LIKE '%{$vhname}%'";
+
+            //    $result = mysqli_query($dbc,$q);
+
+            // while ($row=mysqli_fetch_array($result))
+            // {
+            //         echo "<li class='list-group-item list-group-item-action'>".$row['VehiclesTitle']."</li>";
+            // }
             
             
             ?>
           
-        </ul>
-        </form>
-
+        <!-- </ul> -->
       </div>
     </div>
   </nav>
