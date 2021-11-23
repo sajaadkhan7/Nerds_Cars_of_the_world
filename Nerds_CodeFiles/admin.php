@@ -83,5 +83,6 @@ $password = mysqli_real_escape_string($dbc, $_POST['password']);
 
 </body>
 <?php require('requires/footer.php'); ?>
+<?php require('requires/loginModal.php'); ?>
 
 </html>
