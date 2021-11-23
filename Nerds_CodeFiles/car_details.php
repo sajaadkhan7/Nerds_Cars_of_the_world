@@ -63,8 +63,8 @@
           <div class="col-sm-9">
             <h2><?php echo htmlentities($r['BrandName']);?> , <?php echo htmlentities($r['VehiclesTitle']);?></h2>
           </div>
-          <div class="col-sm-3 mt-1">
-            <h3>$<?php echo htmlentities($r['PricePerDay']);?> total </h3> 
+          <div class="col-sm-3">
+            <h2>$<?php echo htmlentities($r['PricePerDay']);?> total </h2> 
           </div>
         </div>
 
@@ -189,6 +189,7 @@
 
 
 <?php require('requires/footer.php'); ?>
+<?php require('requires/loginModal.php'); ?>
 
 
 
