@@ -75,7 +75,7 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-around" style="padding-top: 40px; padding-bottom: 30px;">
+        <div class="d-flex justify-content-around" style="padding-top: 40px; padding-bottom: 20px;">
           <div class="p-5 bd-highlight text-center border border-white rounded">
             <i class="fa fa-calendar" aria-hidden="true"></i>
               <h4><?php echo htmlentities($r['ModelYear']);?></h4>
@@ -92,11 +92,106 @@
               <p> &nbsp;Seats &nbsp;</p>
           </div>
         </div>
+
+        <div class="row" style="padding-top: 20px; padding-bottom: 30px;">
+          <div class="col text-center">
+            <h3><a href="checkout.php" class="btn btncolor mt-auto text-white text-uppercase"><b> Book Now</b></a></h3>
+      </div>
+      </div>
     </div>
 </section>
 
-<section  class="px-2 py-4">
-  
+<section class="container px-2 py-4">
+  <div style="padding-top: 20px; padding-bottom: 20px;">
+        <h3>Car Details:</h3>
+    </div>
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingCarOverView">
+          <button class="btn" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseCarOverview" aria-expanded="true" aria-controls="collapseCarOverview">
+            <h4 class="text-left"><b>Car OverView</b><h4>
+          </button>
+      </div>
+
+      <div id="collapseCarOverview" class="collapse show" aria-labelledby="headingCarOverView" data-parent="#accordionExample">
+        <div class="card-body">
+
+          <div class="container" style="padding-top: 20px; padding-bottom: 10px;">
+              <p><?php 
+                echo $r['VehiclesOverview']
+              ?>
+              </p>
+              <div class="d-flex flex-column" style="padding-top: 10px; padding-bottom: 10px;">
+                <div class="p-4">
+                  <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
+                  <?php echo $r['Engine'] ?>
+                </div>
+                <div class="p-4">
+                  <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
+                  <?php echo $r['DriveTrain'] ?>
+                </div>
+                <div class="p-4">
+                  <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
+                  <?php echo $r['color'] ?>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingInteriorFeatures">
+          <button class="btn collapsed" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseInteriorFeatures" aria-expanded="false" aria-controls="collapseInteriorFeatures">
+            <h4 class="text-left"><b>Interior Features</b><h4>
+          </button>
+      </div>
+      <div id="collapseInteriorFeatures" class="collapse" aria-labelledby="headingInteriorFeatures" data-parent="#accordionExample">
+        <div class="card-body">
+        <div class="container" style="padding-top: 20px; padding-bottom: 10px;">
+              <p><?php 
+                echo $r['InteriorFeatures']
+              ?>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingExteriorFeatures">
+          <button class="btn collapsed" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseExteriorFeatures" aria-expanded="false" aria-controls="collapseExteriorFeatures">
+            <h4 class="text-left"><b>Exterior Features</b><h4>
+          </button>
+      </div>
+      <div id="collapseExteriorFeatures" class="collapse" aria-labelledby="headingExteriorFeatures" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="container" style="padding-top: 20px; padding-bottom: 10px;">
+              <p><?php 
+                echo $r['ExteriorFeatures']
+              ?>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFunctionality">
+          <button class="btn collapsed" style="width:100%;" type="button" data-toggle="collapse" data-target="#collapseFunctionality" aria-expanded="false" aria-controls="collapseFunctionality">
+            <h4 class="text-left"><b>Functionality</b><h4>
+          </button>
+      </div>
+      <div id="collapseFunctionality" class="collapse" aria-labelledby="headingFunctionality" data-parent="#accordionExample">
+        <div class="card-body">
+        <div class="container" style="padding-top: 20px; padding-bottom: 10px;">
+              <p><?php 
+                echo $r['Functionality']
+              ?>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
