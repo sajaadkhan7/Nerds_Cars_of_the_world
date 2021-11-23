@@ -1,38 +1,23 @@
 <!doctype html>
 <html lang="en">
-<?php
-// session_start();
-// if(isset($_SESSION['login']) && $_SESSION['login'] == true){
-
-//     echo "Welcome to your account!";
-
-// }else{
-
-
-//     header("location: index.php");
-
-// }
-
-?>
 <head>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/modals/">
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    .text-slider-items,
-    .typed-cursor {
-        display: none;
-    }
-    @media (min-width: 576px) {
-        .txtsize {
-            font-size: 1rem;
+        .text-slider-items,
+        .typed-cursor {
+            display: none;
         }
-    }
-    
-   
+
+        @media (min-width: 576px) {
+            .txtsize {
+                font-size: 1rem;
+            }
+        }
     </style>
     <title>Cars Of The World:Homepage</title>
-    
+
     <?php require('requires/head.php'); ?>
     <!-- your content here... -->
     <header id="overlay" style="position: relative;">
@@ -52,10 +37,7 @@
             </div>
         </div>
     </header>
-    <?php // require('requires/user_loginSubmit.php'); ?>
-
-    
-    <!-- Section-->
+       <!-- Section-->
     <?php include('requires/homepage_main.php');?>
 
     <?php require('requires/footer.php'); ?>
@@ -63,4 +45,3 @@
     </body>
 
 </html>
-

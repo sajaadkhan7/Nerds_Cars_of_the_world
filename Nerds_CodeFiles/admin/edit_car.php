@@ -46,56 +46,59 @@ $rows = mysqli_fetch_array($result1);
 <?php require('header.php'); ?>
 
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <!-- Navbar -->
-      
-        <!-- /.navbar -->
+  <div class="wrapper">
+    <!-- Navbar -->
 
-        <!-- Main Sidebar Container -->
-        <?php require('sidebar.php'); ?>
-        <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
+    <!-- /.navbar -->
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Edit Car</h1>
-                        </div>
-                        <button> <a href="car_detail.php"> Back to Car List </a></button>
+    <!-- Main Sidebar Container -->
+    <?php require('sidebar.php'); ?>
+    <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
 
-                    </div>
-                </div>
-                <!-- /.container-fluid -->
-            </section>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Edit Car</h1>
+            </div>
+            <button> <a href="car_detail.php"> Back to Car List </a></button>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                  
-                <form action="edit_car.php?id=<?php echo $getid; ?>" method="POST">
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+
+          <form action="edit_car.php?id=<?php echo $getid; ?>" method="POST">
             <div class="card-body">
-<div class="form-group">
+              <div class="form-group">
 
-<label for="VehiclesTitle">Image</label>
-<img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>' width="100" height="100">
-<!-- <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img2'];  ?>' width="100" height="100">
+                <label for="VehiclesTitle">Image</label>
+                <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>' width="100"
+                  height="100">
+                <!-- <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img2'];  ?>' width="100" height="100">
 <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img3'];  ?>' width="100" height="100"> -->
-</div>
+              </div>
 
               <div class="form-group">
-           
+
 
                 <label for="VehiclesTitle">Vehicle's Title</label>
-                <input disabled class="form-control" id="VehiclesTitle" name="VehiclesTitle" value="<?php echo $rows['title']; ?>">
+                <input disabled class="form-control" id="VehiclesTitle" name="VehiclesTitle"
+                  value="<?php echo $rows['title']; ?>">
               </div>
               <div class="form-group">
                 <label for="VehiclesBrand">Vehicle's Brand</label>
-                <input disabled class="form-control" id="VehiclesBrand" name="VehiclesBrand" value="<?php echo $rows['carbrand']; ?>">
+                <input disabled class="form-control" id="VehiclesBrand" name="VehiclesBrand"
+                  value="<?php echo $rows['carbrand']; ?>">
               </div>
-           
+
               <div class="form-group">
                 <label for="fueltype">Fuel type</label>
                 <input disabled class="form-control" id="fueltype" name="fueltype" value="<?php echo $rows['Fuel']; ?>">
@@ -110,7 +113,8 @@ $rows = mysqli_fetch_array($result1);
 
               <div class="form-group">
                 <label for="PricePerDay">Price Per Day</label>
-                <input type="text" class="form-control" id="PricePerDay" name="PricePerDay" value="<?php echo $rows['price']; ?>">
+                <input type="text" class="form-control" id="PricePerDay" name="PricePerDay"
+                  value="<?php echo $rows['price']; ?>">
               </div>
               <div class="form-group">
                 <label for="color">Colour</label>
@@ -119,13 +123,15 @@ $rows = mysqli_fetch_array($result1);
 
               <div class="form-group">
                 <label for="ModelYear">Model Year</label>
-                <input disabled class="form-control" id="ModelYear" name="ModelYear" value="<?php echo $rows['model']; ?>">
+                <input disabled class="form-control" id="ModelYear" name="ModelYear"
+                  value="<?php echo $rows['model']; ?>">
               </div>
               <div class="form-group">
                 <label for="SeatingCapacity">SeatingCapacity</label>
-                <input disabled class="form-control" id="SeatingCapacity" value="<?php echo $rows['SeatingCapacity']; ?>" name="SeatingCapacity">
+                <input disabled class="form-control" id="SeatingCapacity"
+                  value="<?php echo $rows['SeatingCapacity']; ?>" name="SeatingCapacity">
               </div>
-            
+
 
             </div>
             <!-- /.card-body -->
@@ -134,14 +140,14 @@ $rows = mysqli_fetch_array($result1);
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
-                </div>
-            
-            </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <?php require('footer.php'); ?>
-        <!-- Page specific script -->
+
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <?php require('footer.php'); ?>
+    <!-- Page specific script -->
 
 </body>
 

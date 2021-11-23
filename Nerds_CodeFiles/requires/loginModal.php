@@ -1,4 +1,5 @@
 <div class="modal fade" id="myModal" role="dialog">
+
     <div class="modal-dialog" id="modelfade">
         <span style="color:red" id="errorMsg"></span>
         <span style="color:red" id="errorregister"></span>
@@ -6,6 +7,7 @@
         <!-- Modal content-->
         <div class="modal-content p-2">
             <!-- <button type="button" class="close" data-bs-dismiss="modal">&times;</button> -->
+
             <div class="btn-group" role="group">
                 <button style="background-color:#4ACDE8;" class="btn btncolor btn mt-auto me-1" id="loginbtn"
                     onclick="showlogin()">login</button>
@@ -13,10 +15,7 @@
             </div>
             <div id="loginform">
                 <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000" class="contactus">
-                    <!-- <div class="modal-header">
-                            <h4 class="modal-title">Login</h4>
-                        </div> -->
-                    <!-- <form id="userloginform" action="<?php //echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  method="POST"> -->
+
                     <form id="userloginform" action="user_loginSubmit.php" method="POST">
                         <div class="pt-2"><label for="username">USERNAME</label>
                             <input type="text" id="username" name="loginusername" placeholder="Your username.."
@@ -40,35 +39,43 @@
 
             </div>
 
+
             <!-- <div class="modal-content" > -->
             <div id="registerform">
 
                 <div class="contactus">
-                    <!-- <div class="modal-header"> -->
-                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                    <!-- <h4 class="modal-title">Register</h4>
-                        </div> -->
-                    <!-- <form id="userRegisterform" action="<?php // echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  method="POST"> -->
+
                     <form class="pt-2" id="userRegisterform" action="user_registerSubmit.php" method="POST">
                         <div><label for="username">USERNAME</label>
                             <input type="text" id="usernameregister" name="username" placeholder="Your username.."
                                 required>
+
+                    
+                    <form class="pt-2" id="userRegisterform" action="user_registerSubmit.php" method="POST">
+                        <div><label for="username">USERNAME</label>
+                            <input type="text" id="username" name="username" placeholder="Your username.." required>
+
                             <span class="error" id="usernameerror"><?php echo $usernameErr;?></span>
                         </div>
 
                         <div> <label for="Email">Email</label>
+
                             <input type="email" id="Emailregister"  name="email"
                                 placeholder="Email..." required>
+
                             <span class="error" id="emailerror"><?php echo $emailErr;?></span>
                         </div>
 
                         <div> <label for="password">PASSWORD</label>
+
                             <input type="text" id="passwordregister" name="password" placeholder="Password" required>
+
                             <span class="error" id="passworderror"><?php echo $passwordErr;?></span>
                         </div>
 
                         <div class="button-modal" style="padding-top: 10px;">
                             <!-- <button class="btn btncolor mt-auto" value="Submit">submit</button> -->
+
 
                             <button class="btn btncolor mt-auto" id="Register" onclick="showregister()"
                                 value="Submit">Register</button>
@@ -90,19 +97,20 @@
 
 
 <script>
-$("#loginform").show();
-$("#registerform").hide();
+    $("#loginform").show();
+    $("#registerform").hide();
 
 
-$(document).ready(function() {
+    $(document).ready(function () {
 
-    $("#registerform").click(function() {
-        $("#loginform").hide();
+        $("#registerform").click(function () {
+            $("#loginform").hide();
+        });
+        $("#loginform").click(function () {
+            $("#loginform").show();
+        });
     });
-    $("#loginform").click(function() {
-        $("#loginform").show();
-    });
-});
+
 
 
 function showlogin() {
@@ -115,7 +123,9 @@ function showlogin() {
         "background-color": "#0091AD"
     });
 
-}
+
+    }
+
 
 
 function showregister() {
@@ -128,7 +138,9 @@ function showregister() {
         "background-color": "#0091AD"
     });
 
-}
+
+    }
+
 
 
 $("#login").click(function(event) {
@@ -160,10 +172,12 @@ $("#login").click(function(event) {
         event.preventDefault();
        // return false;
 // alert("hg");
+
         $.ajax({
             type: 'POST',
             url: './requires/user_loginSubmit.php',
             data: $('form').serialize(),
+
             success: function(data) {
                 // alert(data);
                 $("#errorMsg").html(data).show().delay(3000).fadeOut('slow');
@@ -171,6 +185,7 @@ $("#login").click(function(event) {
         });
     }
 });
+
 
 
 function ValidateEmail(email) {
@@ -232,11 +247,16 @@ $("#Register").click(function(event) {
     } else {
         $("#errorregister").html("");
 
+
+    $("#Register").click(function (event) {
+        // using this page stop being refreshing 
+
         event.preventDefault();
         $.ajax({
             type: 'POST',
             url: './requires/user_registerSubmit.php',
             data: $('form').serialize(),
+
             success: function(data) {
                 $("#errorregister").html(
                     "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>" +
@@ -252,3 +272,4 @@ $("#Register").click(function(event) {
     }
 });
 </script>
+
