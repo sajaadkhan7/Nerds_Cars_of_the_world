@@ -51,8 +51,9 @@
               href="carlisting.php"><b>Cars</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='admin.php'){ echo 'activeLink';} else echo ''; ?>"
-              href="admin.php"><b>Admin</b></a>
+            <!-- <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='admin.php'){ echo 'activeLink';} else echo ''; ?>"
+              href="admin.php"><b>Admin</b></a> -->
+              <a data-bs-toggle="modal" data-bs-target="#myModaladmin" class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='admin.php'){ echo 'activeLink';} else echo ''; ?>" href="admin.php"><b>Admin</b></a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING'])=='aboutus.php'){ echo 'activeLink';} else echo ''; ?>"
@@ -65,7 +66,7 @@
         </ul>
 
         <form class="d-flex">
-          <button class="btn btncolor my-2 mx-2 btn-info btn-lg" onclick="loginuser()" data-bs-toggle="modal"
+          <button class="btn btncolor my-2 mx-2 btn-info btn-lg"  data-bs-toggle="modal"
             data-bs-target="#myModal" type="button"><i class="fas fa-user"></i><span class="d-sm-none">
               LOGIN</span></button>
           <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
@@ -90,10 +91,13 @@
             
             ?>
           
-        </ul> -->
+        </ul>
         </form>
 
       </div>
     </div>
   </nav>
-  <?php require('requires/user_registerSubmit.php');?>
+  <?php require_once('requires/user_registerSubmit.php');?>
+
+  <?php require_once('requires/adminModel.php'); ?>
+

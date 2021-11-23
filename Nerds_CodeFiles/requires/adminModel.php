@@ -40,6 +40,7 @@ $("#adminlogin").click(function(event) {
     var admin_password = document.getElementById("admin_password").value;
     // 
     // 
+  
     if (admin_username == '') {
       //  alert(usernamelogin);
         $("#errorMsg").html(
