@@ -64,9 +64,15 @@
 
   <section class="px-2 pt-4" style="background-color: #121212;">
     <div class="container" style="padding-top: 20px; padding-bottom: 30px; color: #ffffff; background-color: #121212;">
-      <div class="row">
-        <div class="col-sm-9">
-          <h2><?php echo htmlentities($r['BrandName']);?> , <?php echo htmlentities($r['VehiclesTitle']);?></h2>
+
+        <div class="row">
+          <div class="col-sm-9">
+            <h2><?php echo htmlentities($r['BrandName']);?> , <?php echo htmlentities($r['VehiclesTitle']);?></h2>
+          </div>
+          <div class="col-sm-3">
+            <h2>$<?php echo htmlentities($r['PricePerDay']);?> total </h2> 
+          </div>
+
         </div>
         <div class="col-sm-3 mt-1">
           <h3>$<?php echo htmlentities($r['PricePerDay']);?> total </h3>
@@ -205,7 +211,10 @@
   </section>
 
 
-  <?php require('requires/footer.php'); ?>
+
+<?php require('requires/footer.php'); ?>
+<?php require('requires/loginModal.php'); ?>
+
 
 
 
