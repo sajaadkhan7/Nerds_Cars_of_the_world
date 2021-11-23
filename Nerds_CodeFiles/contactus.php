@@ -135,6 +135,7 @@
 
       
     <?php require('requires/footer.php'); ?>
+    <?php require('requires/loginModal.php'); ?>
     </body>
 
 </html>
