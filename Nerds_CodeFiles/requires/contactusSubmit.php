@@ -4,7 +4,7 @@
     $nameErr = $emailErr = $messageErr = "";
     $name = $email = $message= "";
     $emailvalid=$namevalid=$messagevalid=false;
-    require('requires/mysqli_connect.php');
+    require_once('requires/mysqli_connect.php');
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["name"])) {
