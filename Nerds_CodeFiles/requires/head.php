@@ -23,6 +23,7 @@
    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    <!-- aos animation -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="css/loginModal.css">
      <!-- Add jquery cdn -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -92,6 +93,9 @@
       </div>
     </div>
   </nav>
+  <?php require('requires/user_registerSubmit.php');?>
+
+
 <!-- <form class="d-flex">
           <button class="btn btncolor my-2 mx-2 " type="button"><i class="fas fa-user"></i><span class="d-sm-none">
           LOGIN</span></button>
@@ -103,3 +107,4 @@
       </div>
     </div>
   </nav> -->
+
