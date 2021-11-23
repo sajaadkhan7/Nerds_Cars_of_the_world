@@ -17,7 +17,7 @@
 
 <header data-aos='zoom-out-down' data-aos-delay="550"
     data-aos-duration="1000" id="overlay" style="position: relative;">
-    <img src="assets/images/banner-image-1.jpg" style="width:100%;" alt="book store cover image">
+    <img src="assets/images/banner-image-1.2.jpg" style="width:100%;" alt="rental car cover image">
 
 </header>
 
