@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_bind_param($stmt,"sss",$username,$email,$password);
         mysqli_stmt_execute($stmt);
 
-    echo "<script> alert('You are registered successfully.');</script>";
+    echo "You are registered successfully.";
     }
     else{
         "<script> alert('Error! ".mysqli_error($dbc)."');</script>";
