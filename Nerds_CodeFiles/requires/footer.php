@@ -1,63 +1,61 @@
 <!-- typed js for typing animation -->
- <!-- Import typed.min.js file from typed.js folder -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      
-      <!-- Add jquery cdn -->
-      <script src=
-  "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-      </script>
-    
-      <!-- Add this script for successful 
+<!-- Import typed.min.js file from typed.js folder -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+  integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Add jquery cdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+
+<!-- Add this script for successful 
           implementation of typed.js  -->
-      <script>
-          if ($(".text-slider").length == 1) {
-                
-              var typed_strings = 
-                  $(".text-slider-items").text();
-    
-              var typed = new Typed(".text-slider", {
-                  strings: typed_strings.split(", "),
-                  typeSpeed: 50,
-                  loop: true,
-                  backDelay: 900,
-                  backSpeed: 30,
-              });
- 
-     
-          }       
-      </script>
+<script>
+  if ($(".text-slider").length == 1) {
+
+    var typed_strings =
+      $(".text-slider-items").text();
+
+    var typed = new Typed(".text-slider", {
+      strings: typed_strings.split(", "),
+      typeSpeed: 50,
+      loop: true,
+      backDelay: 900,
+      backSpeed: 30,
+    });
+
+
+  }
+</script>
 <!-- typed js for typing animation -->
 <!-- aos animation -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
+<script>
+  AOS.init();
 
-// You can also pass an optional settings object
-// below listed default settings
-AOS.init({
-  // Global settings:
-  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-  initClassName: 'aos-init', // class applied after initialization
-  animatedClassName: 'aos-animate', // class applied on animation
-  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-  
+ 
+  AOS.init({
+    // Global settings:
+    disable: false, 
+    startEvent: 'DOMContentLoaded',
+    initClassName: 'aos-init', 
+    animatedClassName: 'aos-animate', 
+    useClassNames: false,
+    disableMutationObserver: false,
+    debounceDelay: 50,
+    throttleDelay: 99,
 
-  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120, // offset (in px) from the original trigger point
-  delay: 0, // values from 0 to 3000, with step 50ms
-  duration: 400, // values from 0 to 3000, with step 50ms
-  easing: 'ease', // default easing for AOS animations
-  once: false, // whether animation should happen only once - while scrolling down
-  mirror: false, // whether elements should animate out while scrolling past them
-  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
-});
+    offset: 120,
+    delay: 0,
+    duration: 400,
+    easing: 'ease', 
+    once: false,
+    mirror: false,
+    anchorPlacement: 'top-bottom', 
 
-  </script>
+  });
+</script>
 <!-- aos animation -->
 
 
@@ -127,8 +125,8 @@ AOS.init({
         <div class="newsletter-form">
           <form method="post">
             <div class="form-group">
-              <input type="email" name="subscriberemail" class="form-control newsletter-input" style="font-size: 0.7rem;" required
-                placeholder="Your Email" />
+              <input type="email" name="subscriberemail" class="form-control newsletter-input"
+                style="font-size: 0.7rem;" required placeholder="Your Email" />
             </div>
             <button type="submit" name="emailsubscibe"
               class="btn btncolor text-white text-uppercase mt-3"><b>Subscribe</b><span><i class="fa fa-angle-right"

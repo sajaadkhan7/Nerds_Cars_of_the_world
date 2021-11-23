@@ -165,15 +165,18 @@ while($brandsrows = mysqli_fetch_array($resultbrands)){
                             </div>
                             <div class="form-group">
                                 <label for="color">InteriorFeatures</label>
-                                <textarea class="form-control ckeditor" id="InteriorFeatures" name="InteriorFeatures"></textarea>
+                                <textarea class="form-control ckeditor" id="InteriorFeatures"
+                                    name="InteriorFeatures"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="ExteriorFeatures">ExteriorFeatures</label>
-                                <textarea class="form-control ckeditor" id="ExteriorFeatures" name="ExteriorFeatures"></textarea>
+                                <textarea class="form-control ckeditor" id="ExteriorFeatures"
+                                    name="ExteriorFeatures"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="Functionality">Functionality</label>
-                                <textarea class="form-control ckeditor" id="Functionality" name="Functionality"></textarea>
+                                <textarea class="form-control ckeditor" id="Functionality"
+                                    name="Functionality"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="File">File input1</label>

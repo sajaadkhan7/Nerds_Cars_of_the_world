@@ -42,29 +42,20 @@
 
             session_start();
     
-            $_SESSION['login']= true;
+            $_SESSION['username']= $username;
+            $_SESSION['password']= $password;
+            //session_start();
+//if(isset($_SESSION['username'])) { 
+            // print_r($_SESSION);
             // header("location: index.php");
-            echo "You have logged in successfully!";
-    
+            echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>You have logged in successfully! </span>";
         
         }else{
-            $_SESSION['login']= false;
-            echo "invalid login information";
+          //  $_SESSION['login']= false;
+            echo   "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>invalid login information </span>";
+
         }
 
-    // $sql = "SELECT `id`, `username`, `password` FROM `users` WHERE username = $username";
-
-    
-    //     if($stmt=mysqli_prepare($dbc,$sql)){
-    //         mysqli_stmt_bind_param($stmt,"sss",$username,$password);
-    //         mysqli_stmt_execute($stmt);
-
-    //     echo "<script> alert('You are logged in successfully.');</script>";
-    //     }
-    //     else{
-    //         "<script> alert('Error! ".mysqli_error($dbc)."');</script>";
-    //     }
-    //     mysqli_stmt_close($stmt);
         mysqli_close($dbc);
 
       }
