@@ -33,7 +33,7 @@ $result1 = mysqli_query($dbc, $join);
                         <div class="col-sm-6">
                             <h1>Car Details</h1>
                         </div>
-                        <button> <a href="add_car.php"> ADD CAR </a></button>
+                        <button class="btn btncolor my-2 mx-2 btn-info text-white "> <a style="text-decoration:none; color:white;" href="add_car.php"> ADD CAR </a></button>
 
                     </div>
                 </div>

@@ -40,12 +40,15 @@ $(document).ready(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
+  // $("#searchField").blur(function(){
+  //   $("#searchdata li").css('display','none');
+  // });
 });
     </script>
 </head>
 
 <body>
-  <nav data-aos='zoom-out-down' style="z-index: 1;" data-aos-delay="900" data-aos-duration="1000"
+  <nav data-aos='zoom-out-down' style="z-index: 1;" data-aos-delay="300" data-aos-duration="1000"
     class="navbar navbar-expand-sm navbar-dark navbg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
@@ -81,14 +84,14 @@ $(document).ready(function(){
         </ul>
 
         <form class="d-flex">
-          <button class="btn btncolor my-2 mx-2 btn-info btn-lg"  data-bs-toggle="modal"
+          <button class="btn btncolor my-2 mx-2 btn-info"  data-bs-toggle="modal"
             data-bs-target="#myModal" type="button"><i class="fas fa-user"></i><span class="d-sm-none">
               LOGIN</span></button>
           <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
         </form>
         <div class="d-flex btn-group">
           <input class="form-control" autocomplete="off"  id="searchField" name="search" type="text" placeholder="Search"
-            style="font-size: 0.7rem;position:relative;">
+            style="font-size: 0.7rem;position:relative;padding:10px;">
           <!-- <button id="searchSubmit" class="btn btncolor"  type="submit"><i class="fas fa-search"></i></button> -->
           <ul id="searchdata" style="position:absolute;" class="list-unstyled top-100 left-0 right-0 list-group">
             <?php 

@@ -108,7 +108,7 @@
                         </script>";}
                         if($brandname == ''){
                             $q = "SELECT tblvehicles.id, tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
-                        tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
+                        tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vprofile
                         from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
                         $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);
                         }  
@@ -116,7 +116,7 @@
                         else{
 
                         $q = "SELECT tblvehicles.id, tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
-                        tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
+                        tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vprofile
                         from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand
                         WHERE tblbrands.BrandName = '" . $brandname . "';";
                         $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);  
@@ -133,13 +133,13 @@
                     data-aos-anchor-placement='center-bottom'>
                         <div class='card h-100'>
                         <div style='position:relative;'>
-                        <a href='#'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='Car_image' /></a>
-                        <ul style='position:absolute;width:100%;list-style-type:none;font-size:0.7em;' class='txtsize text-white list-inline transparent-details'>
-                                <li class='list-inline-item' ><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
-                                <li class='list-inline-item' ><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. " Model</li>
-                                <li class='list-inline-item' ><i class='fa fa-user' aria-hidden='true'></i> ".$r['SeatingCapacity']." seats</li>
-                                </ul>
-                            </div>
+                        <a href='car_details.php?CAR_ID=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/profile/".$r['Vprofile']."' alt='...' /></a>
+                        <ul style='position:absolute;list-style-type:none;width:100%;font-size:0.7em;' class='txtsize text-center text-white row transparent-details card-details'>
+                             <li class='col'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
+                             <li class='col'><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. "</li>
+                             <li class='col'><i class='fa fa-user' aria-hidden='true'></i> ".$r['SeatingCapacity']." seats</li>
+                             </ul>
+                         </div>
                         <div class='card-body p-4'>
                                 <div class='text-center'>
                                     <h5 class='fw-bolder'>".$r['BrandName']." : ".$r['VehiclesTitle']."</h5>
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                             <div class='text-center card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                                <Span class='text-center'><a class='btn btncolor text-white mt-auto' href='car_details.php?CAR_ID=".$r['id']."'>View Details</a></span> &nbsp;
+                                <Span class='text-center'><a class='btn btncolor text-white mt-auto' href='car_details.php?CAR_ID=".$r['id']."'><b>View Details</b></a></span> &nbsp;
                             
                             </div>
                         </div>

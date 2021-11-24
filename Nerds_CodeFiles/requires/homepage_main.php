@@ -13,7 +13,7 @@
             <?php
                require_once('mysqli_connect.php');
                 $q = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
-                tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
+                tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vprofile
                  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand
                  limit 6";
                 $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);   
@@ -29,11 +29,11 @@
              data-aos-anchor-placement='center-bottom'>
                 <div class='card h-100' style='padding: 20px; background-color: #031F26; border-style: none; border-radius: 0'>
                 <div style='position:relative;'>
-                   <a href='car_detail.php?Car_id=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/images/".$r['BrandName']."/".$r['Vimage1']."' alt='...' /></a>
-                   <ul style='position:absolute;list-style-type:none;width:100%;font-size:0.7em;' class='txtsize text-white list-inline transparent-details card-details'>
-                        <li class='list-inline-item'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
-                        <li class='list-inline-item'><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. " Model</li>
-                        <li class='list-inline-item'><i class='fa fa-user' aria-hidden='true'></i> ".$r['SeatingCapacity']." seats</li>
+                   <a href='car_details.php?CAR_ID=".$r['id']."'><img class='card-img-top img-responsive' style='object-fit:cover;' src='assets/profile/".$r['Vprofile']."' alt='...' /></a>
+                   <ul style='position:absolute;list-style-type:none;width:100%;font-size:0.7em;' class='txtsize text-center text-white row transparent-details card-details'>
+                        <li class='col'><i class='fa fa-car' aria-hidden='true'></i> ".$r['FuelType']."</li>
+                        <li class='col'><i class='fa fa-calendar' aria-hidden='true'></i> ".$r['ModelYear']. "</li>
+                        <li class='col'><i class='fa fa-user' aria-hidden='true'></i> ".$r['SeatingCapacity']." seats</li>
                         </ul>
                     </div>
                  <div class='card-body p-4'>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class='text-center card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                        <Span class='text-center'><a class='btn btncolor text-white mt-auto text-uppercase' href='car_details.php?Book_ID=".$r['id']."'><b>Book Now</b></a></span> &nbsp;
+                        <Span class='text-center'><a class='btn btncolor text-white mt-auto text-uppercase' href='car_details.php?CAR_ID=".$r['id']."'><b>Book Now</b></a></span> &nbsp;
                       
                     </div>
                 </div>

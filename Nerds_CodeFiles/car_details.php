@@ -13,7 +13,7 @@
   <header data-aos='zoom-out-down' data-aos-delay="550" data-aos-duration="1000" id="overlay"
     style="position: relative;">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
+      <div class="carousel-indicators" style="position:absolute; bottom:10px;" >
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
           aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
@@ -35,7 +35,7 @@
                     $r=mysqli_fetch_array($res);
 
                     
-                    echo "<div class='carousel-inner'>";
+                    echo "<div class='carousel-inner' style='padding:0;'>";
                     echo "<div class='carousel-item active'>
                             <img src='assets/covers/".$r['Vimage1'] . "'  class='d-block w-100' alt='Car_images'></div>";
 
@@ -48,49 +48,46 @@
                     ?>
 
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
         data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon" style="color:black;" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      <button class="carousel-control-next" style="color:black;" type="button" data-bs-target="#carouselExampleIndicators"
         data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
+      </button> -->
     </div>
 
   </header>
 
-  <section class="px-2 pt-4" style="background-color: #121212;">
-    <div class="container" style="padding-top: 20px; padding-bottom: 30px; color: #ffffff; background-color: #121212;">
+  <section class="px-2 pt-4" style="background-color: #031F26;">
+    <div class="container" style="padding-top: 20px; padding-bottom: 30px; color: #ffffff;">
 
         <div class="row">
-          <div class="col-sm-9">
+          <div class="col-9">
             <h2><?php echo htmlentities($r['BrandName']);?> , <?php echo htmlentities($r['VehiclesTitle']);?></h2>
           </div>
-          <div class="col-sm-3">
-            <h2>$<?php echo htmlentities($r['PricePerDay']);?> total </h2> 
+          <div class="col-3 text-end">
+            <h2>Total: $<?php echo htmlentities($r['PricePerDay']);?> </h2> 
           </div>
 
         </div>
-        <div class="col-sm-3 mt-1">
-          <h3>$<?php echo htmlentities($r['PricePerDay']);?> total </h3>
-        </div>
-      </div>
+      
 
       <div class="d-flex justify-content-around" style="padding-top: 40px; padding-bottom: 20px;">
-        <div class="p-4 bd-highlight text-center border border-white rounded">
+        <div class="p-4 bd-highlight text-center border border-white " style="width:20%;">
           <i class="fa fa-calendar" aria-hidden="true"></i>
           <h4><?php echo htmlentities($r['ModelYear']);?></h4>
-          <p>Reg.Year</p>
+          <p>Year</p>
         </div>
-        <div class="p-4 bd-highlight text-center border border-white rounded">
+        <div class="p-4 bd-highlight text-center border border-white " style="width:20%;">
           <i class="fa fa-cogs" aria-hidden="true"></i>
           <h4><?php echo htmlentities($r['FuelType']);?></h4>
           <p>Fuel Type</p>
         </div>
-        <div class="p-4 bd-highlight text-center border border-white rounded">
+        <div class="p-4 bd-highlight text-center border border-white " style="width:20%;">
           <i class="fa fa-user-plus" aria-hidden="true"></i>
           <h4><?php echo htmlentities($r['SeatingCapacity']);?></h4>
           <p> &nbsp;Seats &nbsp;</p>
@@ -99,7 +96,7 @@
 
       <div class="row" style="padding-top: 20px; padding-bottom: 30px;">
         <div class="col text-center">
-          <h4><a href="checkout.php" class="btn btncolor mt-auto text-white text-uppercase"><b> Book Now</b></a></h>
+          <a href="checkout.php" class="btn btncolor mt-auto text-white text-uppercase"><b>Book Now </b></a>
         </div>
       </div>
     </div>
@@ -130,7 +127,7 @@
               </p>
               <div class="d-flex flex-column" style="padding-top: 10px; padding-bottom: 10px;">
                 <div class="p-2">
-                  <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
+                  <i class="fas fa-cogs" aria-hidden="true"></i>&nbsp;
                   <?php echo $r['Engine'] ?>
                 </div>
                 <div class="p-2">
@@ -138,7 +135,7 @@
                   <?php echo $r['DriveTrain'] ?>
                 </div>
                 <div class="p-2">
-                  <i class="fas fa-car" aria-hidden="true"></i>&nbsp;
+                  <i class="fas fa-palette" aria-hidden="true"></i>&nbsp;
                   <?php echo $r['color'] ?>
                 </div>
               </div>

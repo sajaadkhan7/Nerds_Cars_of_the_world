@@ -153,27 +153,27 @@
         <div class="mb-4 flex-center text-center">
 
           <!-- Facebook -->
-          <a id="fb" class="fb-ic text-decoration-none" href="https://www.facebook.com">
+          <a id="fb" class="fb-ic text-decoration-none" target="_blank" href="https://www.facebook.com">
             <i class="fab fa-facebook-f fa-lg text-white me-4"> </i>
           </a>
           <!-- Twitter -->
-          <a class="tw-ic text-decoration-none" href="https://www.twiter.com">
+          <a class="tw-ic text-decoration-none" target="_blank" href="https://www.twitter.com">
             <i class="fab fa-twitter fa-lg text-white me-4"> </i>
           </a>
           <!-- Google +-->
-          <a class="gplus-ic text-decoration-none" href="https://accounts.google.com/">
+          <a class="gplus-ic text-decoration-none" target="_blank" href="https://accounts.google.com/">
             <i class="fab fa-google-plus-g fa-lg text-white me-4"> </i>
           </a>
           <!--Linkedin -->
-          <a class="li-ic text-decoration-none" href="https://www.linkedin.com">
+          <a class="li-ic text-decoration-none" target="_blank" href="https://www.linkedin.com">
             <i class="fab fa-linkedin-in fa-lg text-white me-4"> </i>
           </a>
           <!--Instagram-->
-          <a class="ins-ic text-decoration-none" href="https://www.instagram.com">
+          <a class="ins-ic text-decoration-none" target="_blank" href="https://www.instagram.com">
             <i class="fab fa-instagram fa-lg text-white me-4"> </i>
           </a>
           <!--Pinterest-->
-          <a class="pin-ic text-decoration-none" href="https://www.pinterest.com">
+          <a class="pin-ic text-decoration-none" target="_blank" href="https://www.pinterest.com">
             <i class="fab fa-pinterest fa-lg text-white"> </i>
           </a>
 
