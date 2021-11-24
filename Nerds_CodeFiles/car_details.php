@@ -33,18 +33,18 @@
                     $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);  
                         
                     $r=mysqli_fetch_array($res);
+
                     
                     echo "<div class='carousel-inner'>";
                     echo "<div class='carousel-item active'>
-                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage1'] . "'  class='d-block w-100' alt='Car_images'></div>";
+                            <img src='assets/covers/".$r['Vimage1'] . "'  class='d-block w-100' alt='Car_images'></div>";
 
                     echo "<div class='carousel-item'>
-                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage2'] . "' class='d-block w-100' alt='Car_images'></div>";
+                            <img src='assets/covers/".$r['Vimage2'] . "' class='d-block w-100' alt='Car_images'></div>";
 
                     echo "<div class='carousel-item'>
-                            <img src='assets/all_car_images/" . $r['BrandName']."/".$r['Vimage3'] . "' class='d-block w-100' alt='Car_images'></div></div>";
+                            <img src='assets/covers/".$r['Vimage3'] . "' class='d-block w-100' alt='Car_images'></div></div>";
                     
-
                     ?>
 
 
