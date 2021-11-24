@@ -64,6 +64,7 @@ a:link {
     width: 50%;
 }
 
+
 .bgcolor,
 .btncolor:hover {
     background-color: var(--hover-color);

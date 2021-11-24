@@ -28,13 +28,24 @@
 <?php require_once('requires/mysqli_connect.php');?>
 <style>
 #searchdata li{
-z-index: 1000;
+  display: none;
 }
   </style>
+  <script>
+$(document).ready(function(){
+  $("#searchField").on("keyup", function(e) {
+   
+    var value = $(this).val().toLowerCase();
+    $("#searchdata li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+    </script>
 </head>
 
 <body>
-  <nav data-aos='zoom-out-down' data-aos-delay="50" data-aos-duration="1000"
+  <nav data-aos='zoom-out-down' style="z-index: 1;" data-aos-delay="900" data-aos-duration="1000"
     class="navbar navbar-expand-sm navbar-dark navbg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
@@ -75,11 +86,11 @@ z-index: 1000;
               LOGIN</span></button>
           <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
         </form>
-        <form class="d-flex btn-group">
-          <input class="form-control position-relative" id="searchField" name="search" type="text" placeholder="Search"
-            style="font-size: 0.7rem;">
-          <button id="searchSubmit" class="btn btncolor"  type="submit"><i class="fas fa-search"></i></button>
-          <ul id="searchdata" class="position-absolute top-100 left-0 right-0 list-group">
+        <div class="d-flex btn-group">
+          <input class="form-control" autocomplete="off"  id="searchField" name="search" type="text" placeholder="Search"
+            style="font-size: 0.7rem;position:relative;">
+          <!-- <button id="searchSubmit" class="btn btncolor"  type="submit"><i class="fas fa-search"></i></button> -->
+          <ul id="searchdata" style="position:absolute;" class="list-unstyled top-100 left-0 right-0 list-group">
             <?php 
            
             if(isset($_REQUEST['search']))
@@ -99,7 +110,7 @@ z-index: 1000;
 
             while ($row=mysqli_fetch_array($result))
             {
-                    echo "<li class='list-group-item list-group-item-action'><a href='car_details.php?CAR_ID=".$row['id']."'>".$row['VehiclesTitle']."</a></li>";
+                    echo "<li class='list-group-item list-group-item-action'><a class='d-block' href='car_details.php?CAR_ID=".$row['id']."'>".$row['VehiclesTitle']." ".$row['BrandName']."</a></li>";
             }
           
             
@@ -107,7 +118,7 @@ z-index: 1000;
             ?>
           
         </ul>
-        </form>
+          </div>
 
         
       </div>

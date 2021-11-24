@@ -90,7 +90,7 @@
       <!-- Grid column -->
       <div class="col-md-2 mb-3">
         <h6 class="text-uppercase">
-          <a href="#" class="text-white">ADMIN LOGIN</a>
+          <a data-bs-toggle="modal" data-bs-target="#myModaladmin" href="#" class="text-white">ADMIN LOGIN</a>
         </h6>
       </div>
       <!-- Grid column -->
@@ -123,7 +123,7 @@
 
         <h6 class="mb-4 newsletter-font text-uppercase">Subscribe to our Newsletter</h6>
         <div class="newsletter-form">
-          <form method="post">
+          <form method="post" action="requires/subscribe.php">
             <div class="form-group">
               <input type="email" name="subscriberemail" class="form-control newsletter-input"
                 style="font-size: 0.7rem;" required placeholder="Your Email" />

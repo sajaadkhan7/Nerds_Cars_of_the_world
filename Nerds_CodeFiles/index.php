@@ -21,7 +21,7 @@
     <?php require('requires/head.php'); ?>
     <!-- your content here... -->
     <header id="overlay" style="position: relative;">
-        <img data-aos='zoom-out-down' data-aos-delay="300" data-aos-duration="1000"
+        <img data-aos='zoom-out-down' data-aos-delay="150" data-aos-duration="1000"
             src="assets/images/banner-image-2021.jpg" style="width:100%;" alt="book store cover image">
         <div class="row" id="overlay-text">
             <div class="col-sm-12 my-auto" style="margin-left: -50px">
