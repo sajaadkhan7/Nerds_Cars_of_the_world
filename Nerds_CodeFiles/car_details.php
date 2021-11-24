@@ -24,11 +24,11 @@
 
       <?php
 
-            $Book_ID = $_GET['Book_ID'];
+            $CAR_ID = $_GET['CAR_ID'];
                     
             $q = "SELECT v.VehiclesTitle, b.BrandName, v.VehiclesOverview, v.PricePerDay, v.FuelType, v.ModelYear, v.SeatingCapacity,
                     v.Vimage1, v.Vimage2, v.Vimage3, v.Engine, v.DriveTrain, v.color, v.InteriorFeatures, v.ExteriorFeatures, v.Functionality
-                    FROM tblvehicles v JOIN tblbrands b on b.id=v.VehiclesBrand WHERE v.id =" . $Book_ID .";";
+                    FROM tblvehicles v JOIN tblbrands b on b.id=v.VehiclesBrand WHERE v.id =" . $CAR_ID .";";
 
                     $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);  
                         

@@ -25,8 +25,12 @@
 <link rel="stylesheet" href="css/loginModal.css">
 <!-- Add jquery cdn -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
+<?php require_once('requires/mysqli_connect.php');?>
+<style>
+#searchdata li{
+z-index: 1000;
+}
+  </style>
 </head>
 
 <body>
@@ -71,36 +75,41 @@
               LOGIN</span></button>
           <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
         </form>
-        <!-- <form class="d-flex btn-group">
-          <input class="form-control position-relative" name="search" type="text" placeholder="Search"
+        <form class="d-flex btn-group">
+          <input class="form-control position-relative" id="searchField" name="search" type="text" placeholder="Search"
             style="font-size: 0.7rem;">
-          <button class="btn btncolor" type="submit"><i class="fas fa-search"></i></button>
-
-        </form> -->
-
-        <!-- <ul class="position-absolute top-100 left-0 right-0 list-group"> -->
+          <button id="searchSubmit" class="btn btncolor"  type="submit"><i class="fas fa-search"></i></button>
+          <ul id="searchdata" class="position-absolute top-100 left-0 right-0 list-group">
             <?php 
-            // if(isset($_REQUEST['search']))
-            // {
-            //  $vhname=$_REQUEST['search'];}
-            //  else 
-            //  {
-            //    $vhname="";
-            //   }
-            //   $q="SELECT * FROM tblvehicles JOIN tblbrands on tblvehicles.VehiclesBrand=tblbrands.id
-            //   WHERE VehiclesTitle LIKE '%{$vhname}%' OR BrandName LIKE '%{$vhname}%'";
+           
+            if(isset($_REQUEST['search']))
+            {
+             $vhname=$_REQUEST['search'];
+            }
+             else 
+             {
+               $vhname="";
+              }
+              $q="SELECT tblvehicles.id, tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,
+              tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1
+              from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand
+              WHERE VehiclesTitle LIKE '%{$vhname}%' OR BrandName LIKE '%{$vhname}%'";
 
-            //    $result = mysqli_query($dbc,$q);
+               $result = mysqli_query($dbc,$q);
 
-            // while ($row=mysqli_fetch_array($result))
-            // {
-            //         echo "<li class='list-group-item list-group-item-action'>".$row['VehiclesTitle']."</li>";
-            // }
+            while ($row=mysqli_fetch_array($result))
+            {
+                    echo "<li class='list-group-item list-group-item-action'><a href='car_details.php?CAR_ID=".$row['id']."'>".$row['VehiclesTitle']."</a></li>";
+            }
+          
             
             
             ?>
           
-        <!-- </ul> -->
+        </ul>
+        </form>
+
+        
       </div>
     </div>
   </nav>
@@ -108,3 +117,40 @@
 
   <?php require_once('requires/adminModel.php'); ?>
 
+  <script>
+
+
+
+// $(document).ready(function() {
+//   $("#searchdata").hide();
+//   $("#searchField").focus(function(){
+//     $("#searchdata").show();
+//   });
+   
+//   $("#searchField").blur(function(){
+//     $("#searchdata").hide();
+//   });
+//    $("#searchSubmit").click(function(){
+//     $("#searchdata").show();
+//    });
+  
+
+// });
+
+
+// keyup(function(){
+//     event.preventDefault();
+    
+//         $.ajax({
+//             type: 'POST',
+//             url: 'head.php',
+//             data: $('form').serialize(),
+//             success: function(data) {
+//                 // alert(data);
+//                 $("#errorMsg").html(data).show().delay(3000).fadeOut('slow');
+//                 $("#modelfade").delay(3500).fadeOut('slow');
+//             } 
+//         });
+//     });
+
+</script>

@@ -123,7 +123,7 @@
                         } 
                         while($r=mysqli_fetch_array($res)){
         
-                    echo "<div class='col mb-5' data-aos='zoom-in-up'
+                    echo "<div id='car".$r['id']."' class='col mb-5' data-aos='zoom-in-up'
                     data-aos-offset='0'
                     data-aos-delay='0'
                     data-aos-duration='1000'
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                             <div class='text-center card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                                <Span class='text-center'><a class='btn btncolor text-white mt-auto' href='car_details.php?Book_ID=".$r['id']."'>View Details</a></span> &nbsp;
+                                <Span class='text-center'><a class='btn btncolor text-white mt-auto' href='car_details.php?CAR_ID=".$r['id']."'>View Details</a></span> &nbsp;
                             
                             </div>
                         </div>
