@@ -3,7 +3,7 @@ require('../requires/mysqli_connect.php');
 $query = "SELECT * FROM `tblvehicles` ";
 $result = mysqli_query($dbc, $query); 
 
-$join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vimage1 as img1 , v.VehiclesTitle as title , b.BrandName as carbrand, v.VehiclesOverview as vehicle_overview , v.PricePerDay as price, 
+$join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vprofile as img1 , v.VehiclesTitle as title , b.BrandName as carbrand, v.VehiclesOverview as vehicle_overview , v.PricePerDay as price, 
 v.ModelYear as model FROM tblvehicles v INNER JOIN tblbrands b ON v.VehiclesBrand = b.id ";
 $result1 = mysqli_query($dbc, $join); 
 
@@ -51,7 +51,7 @@ $result1 = mysqli_query($dbc, $join);
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <table id="example2" class="table table-bordered table-hover">
+                                    <table id="example2" >
                                         <thead>
                                             <tr>
                                                 <th>Image</th>
@@ -61,6 +61,7 @@ $result1 = mysqli_query($dbc, $join);
                                                 <th>Price Per Day</th>
                                                 <th>Model Year</th>
                                                 <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
