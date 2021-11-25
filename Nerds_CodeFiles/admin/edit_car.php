@@ -30,7 +30,7 @@ if(isset($_GET["id"])){
 //     $result1 = mysqli_query($dbc, $query1); 
 //     $rows = mysqli_fetch_array($result1);
     
-$join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vimage1 as img1 , v.Vimage2 as img2,
+$join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vprofile as profImg,v.Vimage1 as img1 , v.Vimage2 as img2,
  v.Vimage3 as img3, v.VehiclesTitle as title , b.BrandName as carbrand, v.VehiclesOverview as vehicle_overview , v.SeatingCapacity as SeatingCapacity
  , v.PricePerDay as price, v.FuelType as Fuel, v.color as color,
 v.ModelYear as model FROM tblvehicles v INNER JOIN tblbrands b ON v.VehiclesBrand = b.id where v.id = $getid";
@@ -80,7 +80,7 @@ $rows = mysqli_fetch_array($result1);
               <div class="form-group">
 
                 <label for="VehiclesTitle">Image</label>
-                <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>' width="100"
+                <img src='../assets/profile/<?php echo $rows['profImg'];  ?>' width="100"
                   height="100">
                 <!-- <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img2'];  ?>' width="100" height="100">
 <img src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img3'];  ?>' width="100" height="100"> -->
