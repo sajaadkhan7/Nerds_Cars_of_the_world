@@ -40,10 +40,14 @@ $(document).ready(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
-  // $("#searchField").blur(function(){
-  //   $("#searchdata li").css('display','none');
-  // });
 });
+
+$(document).on("click", function(event){
+        var $trigger = $("#searchdata li");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+          $("#searchdata li").fadeOut();
+        }            
+    });
     </script>
 </head>
 
