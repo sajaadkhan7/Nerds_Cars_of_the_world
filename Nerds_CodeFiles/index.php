@@ -9,7 +9,7 @@
         .typed-cursor {
             display: none;
         }
-
+        
         @media (min-width: 576px) {
             .txtsize {
                 font-size: 1rem;

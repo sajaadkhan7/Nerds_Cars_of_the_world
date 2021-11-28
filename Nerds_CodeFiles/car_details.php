@@ -46,18 +46,6 @@
                             <img src='assets/covers/".$r['Vimage3'] . "' class='d-block w-100' alt='Car_images'></div></div>";
                     
                     ?>
-
-
-      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" style="color:black;" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" style="color:black;" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button> -->
     </div>
 
   </header>
@@ -77,17 +65,17 @@
       
 
       <div class="d-flex justify-content-around" style="padding-top: 40px; padding-bottom: 20px;">
-        <div class="p-4 bd-highlight text-center border border-white " style="width:20%;">
+        <div class="p-4 bd-highlight text-center border border-white " style="min-width:100px; width:20%; ">
           <i class="fa fa-calendar" aria-hidden="true"></i>
           <h4><?php echo htmlentities($r['ModelYear']);?></h4>
           <p>Year</p>
         </div>
-        <div class="p-4 bd-highlight text-center border border-white " style="width:20%;">
+        <div class="p-4 bd-highlight text-center border border-white " style="min-width:100px; width:20%;">
           <i class="fa fa-cogs" aria-hidden="true"></i>
           <h4><?php echo htmlentities($r['FuelType']);?></h4>
           <p>Fuel Type</p>
         </div>
-        <div class="p-4 bd-highlight text-center border border-white " style="width:20%;">
+        <div class="p-4 bd-highlight text-center border border-white " style="min-width:100px; width:20%;">
           <i class="fa fa-user-plus" aria-hidden="true"></i>
           <h4><?php echo htmlentities($r['SeatingCapacity']);?></h4>
           <p> &nbsp;Seats &nbsp;</p>
