@@ -227,14 +227,14 @@ a:link {
     }
 }
 
-@media only screen and (min-width: 708px) {
+/* @media only screen and (min-width: 708px) {
     #overlay-text {
         width: 40%;
         top: 150px;
         right: 10px;
         line-height: 30px;
     }
-}
+} */
 
 @media (max-width:560px) {
     .review {
