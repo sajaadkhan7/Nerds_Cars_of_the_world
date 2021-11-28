@@ -24,7 +24,7 @@
         <img data-aos='zoom-out-down' data-aos-delay="150" data-aos-duration="1000"
             src="assets/images/banner-image-2021.jpg" style="width:100%;" alt="book store cover image">
         <div class="row" id="overlay-text">
-            <div class="col-sm-12 my-auto" style="margin-left: -50px">
+            <div class="col-sm-12 my-auto" >
                 <div class="banner_content text-white">
                     <h1 class="fw-md-bolder" data-aos='zoom-in-down' data-aos-delay="550" data-aos-duration="1000"
                         style="letter-spacing: normal;">Rent the car of your choice.</h1>

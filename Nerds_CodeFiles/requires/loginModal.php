@@ -18,8 +18,8 @@
                         </div> -->
                     <!-- <form id="userloginform" action="<?php //echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  method="POST"> -->
                     <form id="userloginform" action="user_loginSubmit.php" method="POST">
-                        <div class="pt-2"><label for="username">USERNAME</label>
-                            <input type="text" id="username" name="loginusername" placeholder="Your username.."
+                        <div class="pt-2"><label for="username">Email</label>
+                            <input type="text" id="username" name="loginEmail" placeholder="Your Email..."
                                 required>
                             <span class="error" id="usernameerror"><?php echo $usernameErr;?></span>
                         </div>
@@ -135,19 +135,46 @@ $("#login").click(function(event) {
     // using this page stop being refreshing 
     var usernamelogin = document.getElementById("username").value;
     var passwordlogin = document.getElementById("password").value;
-    // 
-    // 
-    
+ 
+   
+    //email validation
+    // if (usernamelogin == '') {
+    //   //  alert(usernamelogin);
+    //     $("#errorMsgLogin").html(
+    //         "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter username</span>"
+    //         ).show().delay(3000).fadeOut('slow');
+    //     $("#usernamelogin").focus();
+    //     return;
+    // } else {
+    //     $("#errorMsgLogin").html("");
+    // }
+
     if (usernamelogin == '') {
-      //  alert(usernamelogin);
         $("#errorMsgLogin").html(
-            "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter username</span>"
+            "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter email</span>"
             ).show().delay(3000).fadeOut('slow');
-        $("#usernamelogin").focus();
+        $("#username").focus();
         return;
     } else {
         $("#errorMsgLogin").html("");
     }
+
+    if (!ValidateEmail(usernamelogin)) {
+        $("#errorregister").html(
+            "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter valid email </span>"
+            ).show().delay(3000).fadeOut('slow');
+        // $("#EmailRegister").focus();
+        return;
+      // alert("Invalid email address.");
+        }
+        else {
+            // alert("Valid email address.");
+                    $("#errorMsgLogin").html("");
+
+        }
+
+//email validation
+
   //  return false;
     if (passwordlogin == '') {
        // alert(passwordlogin);
@@ -168,7 +195,8 @@ $("#login").click(function(event) {
             success: function(data) {
                 // alert(data);
                 $("#errorMsgLogin").html(data).show().delay(3000).fadeOut('slow');
-                $("#modelfade").delay(1000).fadeOut('slow');
+              //  $("#modelfade").delay(1000).fadeOut('slow');
+              location.reload();
             } 
         });
     }
@@ -243,9 +271,9 @@ $("#Register").click(function(event) {
                 $("#errorregister").html(
                     "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>" +
                     data + " </span>").show().delay(3000).fadeOut('slow');
-//  alert(data);
-                //   window.location.href = "index.php";
-                $("#modelfade").delay(1000).fadeOut('slow');
+
+               
+                showlogin();
 
             }
 
