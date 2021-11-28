@@ -10,14 +10,14 @@
       if (empty($_POST["name"])) {
         $nameErr = "Name is required";
       } else {
-        $name = test_input($_POST["name"]);
+        $name = test_input1($_POST["name"]);
         $namevalid=true;
       }
     
       if (empty($_POST["email"])) {
         $emailErr = "Email is required";
       } else {
-        $email = test_input($_POST["email"]);
+        $email = test_input1($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Invalid email format";
           }
@@ -29,7 +29,7 @@
       if (empty($_POST["message"])) {
         $messageErr = "Message is required";
       } else {
-        $message = test_input($_POST["message"]);
+        $message = test_input1($_POST["message"]);
         $messagevalid=true;
       }
 
@@ -46,7 +46,7 @@
             "<script> alert('Error! ".mysqli_error($dbc)."');</script>";
         }
         mysqli_stmt_close($stmt);
-        mysqli_close($dbc);
+    
 
       }
 
@@ -54,7 +54,7 @@
     }
 
 
-function test_input($data){
+function test_input1($data){
     $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
