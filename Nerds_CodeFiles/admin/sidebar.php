@@ -3,7 +3,7 @@
             <!-- Brand Logo -->
             <a href="car_detail.php" class="brand-link">
 
-                <span class="brand-text font-weight-light">Admin</span>
+                <span class="brand-text font-weight-light">ADMIN</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
@@ -17,9 +17,10 @@
                             <a href="car_detail.php" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    Car Detail List
+                                    Car Listing
                                 </p>
                             </a>
+                            <button class="btn btncolor my-2 mx-2 btn-info text-white"> <a style="text-decoration:none; color:white;" href="add_car.php"> ADD NEW CARS </a></button>
                         </li>
 
 

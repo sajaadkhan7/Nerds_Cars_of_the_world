@@ -87,10 +87,9 @@ if(isset($_FILES['file1']['name']) and isset($_FILES['file2']['name']) and isset
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Add Car</h1>
+                            <h1>Add a new car</h1>
                         </div>
-                        <button> <a href="car_detail.php"> Back to Car List </a></button>
-
+                        <button class="btn btncolor my-2 mx-2 btn-info text-white"> <a style="text-decoration:none; color:white;" href="car_detail.php"> Back to listings </a></button>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -211,7 +210,7 @@ while($brandsrows = mysqli_fetch_array($resultbrands)){
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary btncolor my-2 px-5 py-2 btn-info text-white">SUBMIT</button>
                         </div>
                     </form>
 
