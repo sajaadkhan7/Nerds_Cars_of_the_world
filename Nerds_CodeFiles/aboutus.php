@@ -35,7 +35,7 @@
         <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000" class="col-lg-5 px-5 mx-auto"><img
             src="assets/images/about-2.png" alt="" class="img-fluid mb-4 mb-lg-0"></div>
         <div data-aos='fade-left' data-aos-delay="0" data-aos-duration="1000" class="col-lg-6"><i
-            class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+            class="fa fa-leaf fa-2x mb-3" style="color: #0091AD;"></i>
 
           <h2 class="font-weight-light">Offers and insurance</h2>
           <p class="font-italic text-muted mb-4">We offer the best deals for the car rental in this market. Moreover,
@@ -79,7 +79,7 @@
         <!-- Team item-->
         <div data-aos='zoom-out-down' data-aos-delay="0" data-aos-duration="1000" class="col-xl-3 col-sm-6 mb-5">
           <div class="bg-white rounded shadow-sm py-5 px-4"><img
-              src="https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Round&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light"
+              src="assets/images/avatar_abjith.svg"
               alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Abjith</h5><span class="small text-uppercase text-muted">Graphic Designer</span>
            
@@ -90,7 +90,7 @@
         <!-- Team item-->
         <div data-aos='zoom-out-down' data-aos-delay="0" data-aos-duration="1000" class="col-xl-3 col-sm-6 mb-5">
           <div class="bg-white rounded shadow-sm py-5 px-4"><img
-              src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light"
+              src="assets/images/avatar_gagan.svg"
               alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Gaganpreet Kaur</h5><span class="small text-uppercase text-muted">Web Developer</span>
           
@@ -101,7 +101,7 @@
         <!-- Team item-->
         <div data-aos='zoom-out-down' data-aos-delay="0" data-aos-duration="1000" class="col-xl-3 col-sm-6 mb-5">
           <div class="bg-white rounded shadow-sm py-5 px-4"><img
-              src="https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Prescription02&facialHairType=BeardLight&facialHairColor=Black&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Light"
+              src="assets/images/avatar_sajaad.svg"
               alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Sajaad Khan</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
           
@@ -112,7 +112,7 @@
         <!-- Team item-->
         <div data-aos='zoom-out-down' data-aos-delay="0" data-aos-duration="1000" class="col-xl-3 col-sm-6 mb-5">
           <div class="bg-white rounded shadow-sm py-5 px-4"><img
-              src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light"
+              src="assets/images/avatar_jeni.svg"
               alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Jeni Patel</h5><span class="small text-uppercase text-muted">Senior Web Developer</span>
            

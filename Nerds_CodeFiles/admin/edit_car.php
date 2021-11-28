@@ -62,9 +62,9 @@ $rows = mysqli_fetch_array($result1);
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Edit Car</h1>
+              <h1>Edit Car Info</h1>
             </div>
-            <button> <a href="car_detail.php"> Back to Car List </a></button>
+            <button class="btn btncolor my-2 mx-2 btn-info text-white"> <a style="text-decoration:none; color:white;" href="car_detail.php"> Back to listings </a></button>
 
           </div>
         </div>
@@ -137,7 +137,7 @@ $rows = mysqli_fetch_array($result1);
             <!-- /.card-body -->
 
             <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary btncolor my-2 px-5 py-2 btn-info text-white">SUBMIT</button>
             </div>
           </form>
         </div>

@@ -29,12 +29,10 @@ $result1 = mysqli_query($dbc, $join);
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
+                    <div class="row align-items-center mb-2">
                         <div class="col-sm-6">
-                            <h1>Car Details</h1>
+                            <h1>CAR DETAILS</h1>
                         </div>
-                        <button class="btn btncolor my-2 mx-2 btn-info text-white "> <a style="text-decoration:none; color:white;" href="add_car.php"> ADD CAR </a></button>
-
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -47,7 +45,7 @@ $result1 = mysqli_query($dbc, $join);
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">List of all cars with detail</h3>
+                                    <h3 class="card-title">Car details are displayed here. Admin has all the rights to edit or delete any data.</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
