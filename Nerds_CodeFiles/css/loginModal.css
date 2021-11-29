@@ -16,7 +16,7 @@ textarea {
     margin-bottom: 16px;
     resize: vertical;
 }
-#password,#admin_password{
+#password,#admin_password,#passwordregister{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;

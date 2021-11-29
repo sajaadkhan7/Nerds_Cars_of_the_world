@@ -9,12 +9,6 @@
 
          $username = $_POST["admin_username"];
          $password = $_POST["admin_password"];     
-
-        
-
-
-      
-
 // $username = mysqli_real_escape_string($dbc,$_POST['username']);
 // $password = mysqli_real_escape_string($dbc, $_POST['password']);
 

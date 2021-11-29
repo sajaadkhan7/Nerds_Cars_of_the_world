@@ -46,7 +46,9 @@
             $_SESSION['email']= $email;
             $_SESSION['password']= $password;
 
-            echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>You have logged in successfully! </span>";
+            echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>You have logged in successfully! </span>
+            <script>location.reload();</script>";
+
         
         }else{
           //  $_SESSION['login']= false;
@@ -63,9 +65,9 @@
 
 
 function test_input($data){
-//     $data = trim($data);
-//   $data = stripslashes($data);
-//   $data = htmlspecialchars($data);
+    $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
     return $data;
 }
 
