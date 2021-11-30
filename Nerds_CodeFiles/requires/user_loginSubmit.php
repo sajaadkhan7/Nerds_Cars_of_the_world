@@ -1,6 +1,5 @@
 <?php
 
-// echo "gagan";
 
     $usernameErr = $passwordErr = "";
     $email = $password = "";
@@ -12,7 +11,6 @@
 
 
       if (empty($_POST["loginEmail"])) {
-        // echo "gagan1";
 
         $usernameErr = "Email is required";
       } else {
@@ -22,7 +20,6 @@
       }
     
       if (empty($_POST["loginpassword"])) {
-        // echo "gagan2";
 
         $passwordErr = "password is required";
       } else {
@@ -52,7 +49,6 @@
 
         
         }else{
-          //  $_SESSION['login']= false;
             echo   "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>invalid login information </span>";
 
         }

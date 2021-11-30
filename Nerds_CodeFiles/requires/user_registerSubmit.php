@@ -1,5 +1,4 @@
 <?php
-//  echo "register";
 
 $usernameErr = $emailErr = $passwordErr = "";
 $username = $email = $password= "";
@@ -8,8 +7,6 @@ $passwordvalid=$emailvalid=$usernamevalid=false;
 require_once('mysqli_connect.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-  // echo "register";
 
  
   if (empty($_POST["username"])) {
@@ -42,8 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if($usernamevalid && $emailvalid && $passwordvalid){
 
     $sql="INSERT INTO users VALUES(null,?,?,?)";
-
-    // $sql = "SELECT `id`, `username`, `password` FROM `users` WHERE username = $username";
     if($stmt=mysqli_prepare($dbc,$sql)){
         mysqli_stmt_bind_param($stmt,"sss",$username,$email,$password);
         mysqli_stmt_execute($stmt);
@@ -59,9 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   function test_input($data){
-  //   $data = trim($data);
-  // $data = stripslashes($data);
-  // $data = htmlspecialchars($data);
     return $data;
   }
 

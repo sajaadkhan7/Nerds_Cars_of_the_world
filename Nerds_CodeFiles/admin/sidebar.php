@@ -13,21 +13,21 @@
                         data-accordion="false">
 
 
-                        <li class="nav-item">
-                        <button class="btn btncolor btn-info text-white">
-                             <a style="text-decoration:none; color:white;" href="car_detail.php" class="nav-link">
+                        <li class="nav-item mx-3" >
+                        <button class="btn btncolor btn-info text-white" style="width:200px;">
+                             <a style="text-decoration:none; color:white;" href="car_detail.php" class="text-start" style="width:200px;">
                                     Car Listing                         
                             </a></button>
                         </li>
-                            <li class="nav-item mt-2">
+                            <li class="nav-item mt-2 mx-3">
 
-                            <button class="btn btncolor btn-info text-white">
-                                 <a style="text-decoration:none; color:white;"  class="nav-link" href="add_car.php"> Add new cars </a>
+                            <button class="btn btncolor btn-info text-white"  style="width:200px;">
+                                 <a style="text-decoration:none; color:white;"  class="text-start" href="add_car.php"  style="width:200px;"> Add new cars </a>
                                 </button>
                             </li>
-                            <li class="nav-item mt-2">
-                            <button class="btn btncolor btn-info text-white">
-                            <a style="text-decoration:none; color:white;" href="logout.php" class="nav-link">
+                            <li class="nav-item mt-2 mx-3">
+                            <button class="btn btncolor btn-info text-white"  style="width:200px;">
+                            <a style="text-decoration:none; color:white;" href="logout.php" class="text-start"  style="width:200px;">
                                 <i class="nav-icon fas fa-edit"></i>
                                     Logout
                             </a></button>

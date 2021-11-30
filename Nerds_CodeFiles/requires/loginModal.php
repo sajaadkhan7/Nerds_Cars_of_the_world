@@ -44,11 +44,7 @@
             <div id="registerform">
 
                 <div class="contactus">
-                    <!-- <div class="modal-header"> -->
-                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                    <!-- <h4 class="modal-title">Register</h4>
-                        </div> -->
-                    <!-- <form id="userRegisterform" action="<?php // echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  method="POST"> -->
+                    
                     <form class="pt-2" id="userRegisterform" action="user_registerSubmit.php" method="POST">
                         <div><label for="username">USERNAME</label>
                             <input type="text" id="usernameregister" name="username" placeholder="Your username.."
@@ -212,7 +208,6 @@ $("#Register").click(function(event) {
     } else {
         $("#errorregister").html("");
     }
-    // var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
 
    
 

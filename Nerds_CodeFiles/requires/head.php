@@ -177,37 +177,4 @@ $(document).on("click", function(event){
   <script>
 
 
-
-// $(document).ready(function() {
-//   $("#searchdata").hide();
-//   $("#searchField").focus(function(){
-//     $("#searchdata").show();
-//   });
-   
-//   $("#searchField").blur(function(){
-//     $("#searchdata").hide();
-//   });
-//    $("#searchSubmit").click(function(){
-//     $("#searchdata").show();
-//    });
-  
-
-// });
-
-
-// keyup(function(){
-//     event.preventDefault();
-    
-//         $.ajax({
-//             type: 'POST',
-//             url: 'head.php',
-//             data: $('form').serialize(),
-//             success: function(data) {
-//                 // alert(data);
-//                 $("#errorMsg").html(data).show().delay(3000).fadeOut('slow');
-//                 $("#modelfade").delay(3500).fadeOut('slow');
-//             } 
-//         });
-//     });
-
 </script>

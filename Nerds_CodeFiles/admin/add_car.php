@@ -30,7 +30,6 @@ if(isset($_FILES['file1']['name']) and isset($_FILES['file2']['name']) and isset
   $targetDir1 = "../assets/covers/";
   $targetFilePath1 = $targetDir1 . $fileName1;
   
-  // $fileType1 = pathinfo($targetFilePath1,PATHINFO_EXTENSION);
   $fileNameP = basename($_FILES["file1"]["name"]);
   $targetDirP = "../assets/profile/";
   $targetFilePathP = $targetDirP . $fileNameP;
@@ -38,15 +37,11 @@ if(isset($_FILES['file1']['name']) and isset($_FILES['file2']['name']) and isset
   $fileName2 = basename($_FILES["file2"]["name"]);
   $targetDir2 = "../assets/covers/";
   $targetFilePath2 = $targetDir2 . $fileName2;
-  // $fileType2 = pathinfo($targetFilePath2,PATHINFO_EXTENSION);
 
   $fileName3 = basename($_FILES["file3"]["name"]);
   $targetDir3 = "../assets/covers/";
   $targetFilePath3 = $targetDir3 . $fileName3;
-
-  // if(!empty($_FILES["file1"]["name"]) && !empty($_FILES["file2"]["name"])  && !empty($_FILES["file3"]["name"]) ){
      
-
     
                 if(move_uploaded_file($_FILES["file1"]["tmp_name"], $targetFilePath1)){
                     
@@ -70,7 +65,7 @@ if(isset($_FILES['file1']['name']) and isset($_FILES['file2']['name']) and isset
  $querybrands = "SELECT * FROM `tblbrands` ";
  $resultbrands = mysqli_query($dbc, $querybrands); 
  $brandsrows = mysqli_fetch_array($resultbrands);
-// ?>
+ ?>
 
 
 <!DOCTYPE html>
@@ -195,7 +190,7 @@ while($brandsrows = mysqli_fetch_array($resultbrands)){
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="File">File input1</label>
+                                <label for="File">File input2</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" name="file2" value="">

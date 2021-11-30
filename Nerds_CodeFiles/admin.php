@@ -37,7 +37,6 @@ $password = mysqli_real_escape_string($dbc, $_POST['password']);
     <div class="login-logo">
       <b>Admin</b>
     </div>
-    <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Admin login</p>

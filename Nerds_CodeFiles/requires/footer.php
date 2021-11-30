@@ -189,7 +189,7 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center">© 2020 Copyright
+  <div class="footer-copyright text-center">© 2021 Copyright
     <a href="index.php">Cars Of The World</a>
   </div>
   <!-- Copyright -->

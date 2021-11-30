@@ -63,7 +63,6 @@ $("#adminlogin").click(function(event) {
         $("#errorMsg").html("");
         event.preventDefault();
        // return false;
-// alert("hg");
         $.ajax({
             type: 'POST',
             url: './requires/admin_loginSubmit.php',

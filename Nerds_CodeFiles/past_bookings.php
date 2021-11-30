@@ -55,31 +55,10 @@
 require_once('requires/head.php'); 
 
 require_once('requires/mysqli_connect.php');
- //session_start();
-if(isset($_SESSION['username'])){
-    $_SESSION['username']; 
-  $user_id = $_SESSION['user_id'];
-
-
-// //
-// $qry = "SELECT car_bookings.id as bookingid, car_bookings.user_id as userid, car_bookings.ccnum, car_bookings.expmonth,
-//  car_bookings.expyear, car_bookings.cvv,
-//  users.id as usrid , users.username as uname, users.email as uemail, users.password FROM car_bookings
-//   INNER JOIN users on car_bookings.id = users.id where  users.id  = '$user_id'";
-$qry = "
-SELECT tbl_payment.id as paymentid, tbl_payment.user_id as userid, users.id as usrid , users.username as uname,
- users.email as uemail, users.password FROM tbl_payment 
-INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' ";
-  $result = mysqli_query($dbc,$qry) or die(mysqli_error($dbc));
-  $res=mysqli_fetch_array($result);
-  $uid = $res['usrid'];
-    $uname = $res['uname'];
-  $uemail = $res['uemail'];
-
     
  if(isset($_SESSION['username'])){
      $username = $_SESSION['username'];
- }
+ 
 
 
     ?>
@@ -100,7 +79,6 @@ INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' "
 
                 <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
                     class="column col-md-12  contactus">
-                    <!-- <form id="checkoutform" action="#" method="POST"> -->
                     <div class="col">
                         <h2>My Bookings </h2>
                         <label for="fname"></i> Full Name :</label>
@@ -112,9 +90,11 @@ INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' "
                                $q ="SELECT v.VehiclesTitle as title, v.PricePerDay as price, v.Vprofile as pic, 
                                b.BrandName as bname,
                                 cb.date
-                                FROM car_bookings cb JOIN tblvehicles v 
-                               ON v.id=cb.car_id JOIN users u ON u.id=cb.user_id 
-                               JOIN  tblbrands b ON b.id=v.VehiclesBrand where u.id =".$_SESSION['user_id'];
+                                FROM car_bookings cb 
+                                JOIN tblvehicles v ON v.id=cb.car_id 
+                                JOIN users u ON u.id=cb.user_id 
+                                JOIN tblbrands b ON b.id=v.VehiclesBrand 
+                                where u.id =".$_SESSION['user_id'];
                                                        $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);
                                                       
 
@@ -146,7 +126,6 @@ INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' "
    else{  ?>
                                 <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
                                     class="column col-12  contactus">
-                                    <!-- <form id="checkoutform" action="#" method="POST"> -->
 
                                     <div style="height: 75vh;"
                                         class=" text-center d-flex flex-column justify-content-center align-items-center">

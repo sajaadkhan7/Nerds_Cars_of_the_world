@@ -12,7 +12,6 @@
   width: 100%; 
   border-collapse: collapse; 
 }
-/* Zebra striping */
 tr:nth-of-type(odd) { 
   background: #eee; 
 }
