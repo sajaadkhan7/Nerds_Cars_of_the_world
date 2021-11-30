@@ -104,7 +104,7 @@
     $_SESSION['username']; 
 
 ?>
-   <a href="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>" class="btn btncolor mt-auto text-white text-uppercase"><b>Book Now </b></a>
+   <a href="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>&car_price=<?php echo htmlentities($r['PricePerDay']);?>" class="btn btncolor mt-auto text-white text-uppercase"><b>Book Now </b></a>
 
 <?php
 }else{
