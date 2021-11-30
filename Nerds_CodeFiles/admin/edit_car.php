@@ -26,9 +26,6 @@ if(isset($_GET["id"])){
 
 
  }
-//  $query1 = "SELECT * FROM `tblvehicles` where id = $getid";
-//     $result1 = mysqli_query($dbc, $query1); 
-//     $rows = mysqli_fetch_array($result1);
     
 $join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vprofile as profImg,v.Vimage1 as img1 , v.Vimage2 as img2,
  v.Vimage3 as img3, v.VehiclesTitle as title , b.BrandName as carbrand, v.VehiclesOverview as vehicle_overview , v.SeatingCapacity as SeatingCapacity
@@ -36,7 +33,6 @@ $join ="SELECT v.id as vid,v.VehiclesBrand as brand_id , b.id as bid ,v.Vprofile
 v.ModelYear as model FROM tblvehicles v INNER JOIN tblbrands b ON v.VehiclesBrand = b.id where v.id = $getid";
 $result1 = mysqli_query($dbc, $join); 
 $rows = mysqli_fetch_array($result1);
-//  echo  $id = $rows['vid'];
 ?>
 
 

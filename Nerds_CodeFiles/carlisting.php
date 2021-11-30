@@ -61,8 +61,6 @@
                         <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
                             <?php
 
-                    //require('requires/mysqli_connect.php');
-
                     
                     if(array_key_exists('all_manufacturers', $_POST)) {
                         $brandname = '';

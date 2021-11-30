@@ -8,13 +8,6 @@
 
     require_once('requires/mysqli_connect.php');
   
-
-
-
-  //   if($_GET['user_id']){
-  //     $user_id=$_GET['user_id'];
-  // }
-  
   if($_GET['CAR_ID']){
     $CAR_ID=$_GET['CAR_ID'];
 }
