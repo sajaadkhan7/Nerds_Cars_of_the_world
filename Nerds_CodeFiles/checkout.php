@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
  
                      
- $q = "SELECT v.VehiclesTitle, b.BrandName, v.VehiclesOverview, v.PricePerDay, v.FuelType, v.ModelYear, v.SeatingCapacity,
+ $q = "SELECT v.VehiclesTitle, b.BrandName,v.Vprofile, v.VehiclesOverview, v.PricePerDay, v.FuelType, v.ModelYear, v.SeatingCapacity,
          v.Vimage1, v.Vimage2, v.Vimage3, v.Engine, v.DriveTrain, v.color, v.InteriorFeatures, v.ExteriorFeatures, v.Functionality
          FROM tblvehicles v JOIN tblbrands b on b.id=v.VehiclesBrand WHERE v.id =" . $CAR_ID .";";
  
@@ -176,14 +176,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="row">
 
 
-                        <div class="address-wrap  p-5 ">
+                        <div class="col-12 address-wrap  p-5 ">
                             <!-- <a href="past_bookings.php" class="btn btncolor mt-auto text-white text-uppercase"><b>Your Bookings </b></a> -->
                             <p> Current selected Car </p>
 
-                            <div class="address-btm list-group">
+                            <div class=" p-5 address-btm list-group">
                                 <h5>
-                                    <?php  echo htmlentities($r['BrandName']);?> ,
-                                    <?php   echo htmlentities($r['VehiclesTitle']);?><br>
+                             <img class='card-img-top mb-5  img-responsive' style='object-fit:cover;' src='assets/profile/<?php echo $r['Vprofile'];?>' alt='...' />
+
+                                    <?php  echo "<div>".htmlentities($r['BrandName']);?>
+                                    <?php  echo htmlentities($r['VehiclesTitle'])."</div>";?><br>
                                     <span class="price">$<?php echo htmlentities($r['PricePerDay']);?> total</span>
 
                                 </h5>
