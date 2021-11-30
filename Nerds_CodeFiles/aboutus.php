@@ -17,10 +17,7 @@
 
       <div class="col-lg-6">
         <h1 class="display-4">Who are we?</h1>
-        <p class="lead text-muted mb-0">Our tech startup is a leading car rental company in the market. We provide
-          people with an opportunity to rent cars for various purposes such as personal and business use. Our goal is to
-          create a transparent, convenient and user-friendly service that appeals to everyone who needs a car at one
-          time or another.</p>
+        <p class="lead text-muted mb-0">Our tech startup is a leading car rental company in the market. We provide people with an opportunity to rent cars for various purposes such as personal and business use. Our goal is to create a transparent, convenient and user-friendly service that appeals to everyone who needs a car at one time or another.</p>
       </div>
       <div class="col-lg-6 d-none d-lg-block"><img src="assets/images/undraw_content_team.png" alt="" class="img-fluid">
       </div>
