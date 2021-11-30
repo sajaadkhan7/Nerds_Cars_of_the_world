@@ -48,7 +48,7 @@
             class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
 
           <h2 class="font-weight-light">Time Period for Car rental</h2>
-          <p class="font-italic text-muted">Our company allows any customer to get a car on rent for even more than years. Further More, We do not require ask for extra fees if they delay the while returning it. We just give a warning email which explains if delay has occurred so you know when to return.</p>
+          <p class="font-italic text-muted">Our company allows any customer to get a car on rent for even more than years. Further More, We do not require ask for extra fees if they delay the while returning it. We just give a warning email which explains if delay has occurred so you know when to return the car.</p>
         </div>
 
         <div data-aos='fade-left' data-aos-delay="0" data-aos-duration="1000"
