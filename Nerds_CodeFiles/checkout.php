@@ -8,39 +8,84 @@ $status = session_status();
         $_SESSION['username']; 
       $user_id = $_SESSION['user_id'];
     
-    if($_GET['CAR_ID']){
-     $CAR_ID=$_GET['CAR_ID'];
-    }
+      if($_GET['CAR_ID']){
+        $CAR_ID=$_GET['CAR_ID'];
+       }
+       if($_GET['car_price']){
+        $car_price=$_GET['car_price'];
+       }
 
 $qry ="SELECT `id`, `username`, `email`, `password` FROM `users` WHERE `id` = '$user_id'";
 $result = mysqli_query($dbc,$qry) or die(mysqli_error($dbc));
   $res=mysqli_fetch_array($result);
   $uname = $res['username'];
     $uemail = $res['email'];
+    require('stripe-php-master/config.php');
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    \Stripe\Stripe::setVerifySslCerts(false);
 
-    $current_date = date("Y-m-d");
+$token=$_POST['stripeToken'];
 
-    $ccnum = $_POST["ccnum"];
-    $expmonth = $_POST["expmonth"];
-    $expyear = $_POST["expyear"];
-    $cvv = $_POST["cvv"];
+$data = \stripe\Charge::create(array(
+    "amount" => $car_price*100,
+    "currency" => "cad",
+    "description" => "Car-Rentals",
+    "source"=>$token,
+ ) );
 
-        $sql = "INSERT INTO `car_bookings`(`id`, `user_id`,`car_id`, `ccnum`, `expmonth`, `expyear`, `cvv` ,  `date`) 
-        VALUES (null,'$user_id','$CAR_ID','$ccnum','$expmonth','$expyear','$cvv', '$current_date')";
+// echo '<pre>';
+// print_r($data);
+// amount
+// [created] => 1638272144
+//     [currency] => cad
+//     payment_method
+//     status
+
+    $status = $data['status'];
+     $amount = $data['amount'];
+//    echo  $data['created'];
+$current_date = date("Y-m-d");
+//    echo  $data['payment_method'];
+    $currency= $data['currency'];
+    
+    $sql = "INSERT INTO `tbl_payment`(`id`, `user_id`, `car_id`, `amount`, `status`, `date`) 
+    VALUES ('null','$user_id','$CAR_ID','$amount','$status','$current_date')";
+                    $result1 = mysqli_query($dbc,$sql) or die(mysqli_error($dbc));
+                    if($result1){
         
-                $result1 = mysqli_query($dbc,$sql) or die(mysqli_error($dbc));
+                                                echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>Your payment is done successfully! </span>";
+                                            
+                                            }else{
+                                                echo   "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Your payment is not done. Try Again!! </span>";
+                                        
+                                            }
+
+    }
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+//     $current_date = date("Y-m-d");
+
+//     $ccnum = $_POST["ccnum"];
+//     $expmonth = $_POST["expmonth"];
+//     $expyear = $_POST["expyear"];
+//     $cvv = $_POST["cvv"];
+
+//         $sql = "INSERT INTO `car_bookings`(`id`, `user_id`,`car_id`, `ccnum`, `expmonth`, `expyear`, `cvv` ,  `date`) 
+//         VALUES (null,'$user_id','$CAR_ID','$ccnum','$expmonth','$expyear','$cvv', '$current_date')";
         
-                if($result1){
+//                 $result1 = mysqli_query($dbc,$sql) or die(mysqli_error($dbc));
         
-                  echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>Your order is booked successfully! </span>";
+//                 if($result1){
+        
+//                   echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>Your order is booked successfully! </span>";
               
-              }else{
-                  echo   "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Your order is not booked. Try Again!! </span>";
+//               }else{
+//                   echo   "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Your order is not booked. Try Again!! </span>";
         
-              }
-}
+//               }
+// }
+
 
 ?>
 
@@ -48,51 +93,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <title>Cars Of The World:Contact Us</title>
+    <title>Cars Of The World:checkout</title>
     <style>
-        /* Style inputs */
-        .contactus [type=text],
-        input[type=email],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            margin-top: 6px;
-            margin-bottom: 16px;
-            resize: vertical;
-        }
+    /* Style inputs */
+    .contactus [type=text],
+    input[type=email],
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
 
-        /* Style the container/contact section */
-        .contactus {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 10px;
-        }
+    /* Style the container/contact section */
+    .contactus {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 10px;
+    }
 
-        /* Create two columns that float next to eachother */
-        .column {
-            float: left;
-            width: 50%;
-            margin-top: 6px;
-            padding: 20px;
-        }
+    /* Create two columns that float next to eachother */
+    .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+    }
 
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-        .address-wrap {
-            /* background: #fff; */
-            background-color: #f2f2f2;
-            box-shadow: 0px 3px 10px 0px rgba(38, 59, 94, 0.1);
-            -webkit-box-flex: 1;
-            margin-left: 3%;
-            flex: 1 1 40%;
-            margin-top: 25px;
-        }
+    .address-wrap {
+        /* background: #fff; */
+        background-color: #f2f2f2;
+        box-shadow: 0px 3px 10px 0px rgba(38, 59, 94, 0.1);
+        -webkit-box-flex: 1;
+        margin-left: 3%;
+        flex: 1 1 40%;
+        margin-top: 25px;
+    }
     </style>
 
     <?php
@@ -145,31 +190,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input disabled id="email" type="text" name="email" value="<?php echo $uemail; ?>">
 
                     </div> </br>
-                    <form id="checkoutform" action="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>" method="POST">
+                    <!-- <form id="checkoutform" action="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>" method="POST"> -->
 
 
-                        <div class="row">
+                    <div class="row">
 
 
-                            <div class="col-50">
-                                <h3>Payment</h3>
+                        <div class="col-50">
+                            <h3>Payment</h3>
+
+                            <form
+                                action="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>&car_price=<?php echo $car_price; ?>"
+                                method="post">
+                                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                    data-key="<?php echo $Publishable_key; ?>"
+                                    data-amount="<?php echo $car_price*100; ?>" data-name="Car-Rentals"
+                                    data-description="Car-Rentals" data-image="assets/logo/cars_logo_white.png"
+                                    data-currency="cad">
 
 
-                                <label for="ccnum">Credit card number</label>
-                                <input type="text" id="ccnum" name="ccnum" placeholder="1111-2222-3333-4444">
-                                <label for="expmonth">Exp Month</label>
-                                <input type="text" id="expmonth" name="expmonth" placeholder="September">
-                                <label for="expyear">Exp Year</label>
-                                <input type="text" id="expyear" name="expyear" placeholder="2018">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" name="cvv" placeholder="352">
-                            </div>
+                                </script>
 
+                            </form>
                         </div>
 
-                        <button value="submit" name="checkout" id="checkoutsubmit"
-                            class="btn btncolor mt-auto">Checkout</button>
-                    </form>
+                    </div>
+
+                    <!-- <button value="submit" name="checkout" id="checkoutsubmit"
+                            class="btn btncolor mt-auto">Checkout</button> -->
+                    <!-- </form> -->
                 </div>
                 <div data-aos='fade-left' data-aos-delay="0" data-aos-duration="1000" class="col-md-4"
                     style="padding-top: 40px; padding-bottom: 50px">
@@ -182,7 +231,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <div class=" p-5 address-btm list-group">
                                 <h5>
-                             <img class='card-img-top mb-5  img-responsive' style='object-fit:cover;' src='assets/profile/<?php echo $r['Vprofile'];?>' alt='...' />
+                                    <img class='card-img-top mb-5  img-responsive' style='object-fit:cover;'
+                                        src='assets/profile/<?php echo $r['Vprofile'];?>' alt='...' />
 
                                     <?php  echo "<div>".htmlentities($r['BrandName']);?>
                                     <?php  echo htmlentities($r['VehiclesTitle'])."</div>";?><br>
@@ -203,20 +253,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- contact us -->
 
 
-<?php }else{ ?>
+    <?php }else{ ?>
 
-    <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
-    class="column col-12  contactus">
-    <!-- <form id="checkoutform" action="#" method="POST"> -->
-   
+    <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000" class="column col-12  contactus">
+        <!-- <form id="checkoutform" action="#" method="POST"> -->
+
         <div style="height: 75vh;" class=" text-center d-flex flex-column justify-content-center align-items-center">
-        <h2 class="p-3">You Have been logged out..</h2>
-           
+            <h2 class="p-3">You Have been logged out..</h2>
+
             <button type="button" class="'btn btncolor px-5 btn-info " data-bs-toggle='modal'
-            data-bs-target='#myModal' >Login</button>
-          
+                data-bs-target='#myModal'>Login</button>
+
         </div>
-  
+
     </div>
 
 
@@ -227,71 +276,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php require('requires/loginModal.php'); ?>
     </body>
     <script>
-        // checkoutsubmit
-        $("#checkoutsubmit").click(function (event) {
-            // using this page stop being refreshing 
-            // var fname = fname
+    // checkoutsubmit
+    $("#checkoutsubmit").click(function(event) {
+        // using this page stop being refreshing 
+        // var fname = fname
 
-            var ccnum = document.getElementById("ccnum").value;
-            var expmonth = document.getElementById("expmonth").value;
-            var expyear = document.getElementById("expyear").value;
-            var cvv = document.getElementById("cvv").value;
+        var ccnum = document.getElementById("ccnum").value;
+        var expmonth = document.getElementById("expmonth").value;
+        var expyear = document.getElementById("expyear").value;
+        var cvv = document.getElementById("cvv").value;
 
 
 
-            if (ccnum == '') {
-                alert("asa");
+        if (ccnum == '') {
+            alert("asa");
 
-                $("#errorMsgcheckout").html(
-                    "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter card number</span>"
-                ).show().delay(3000).fadeOut('slow');
-                $("#ccnum").focus();
-                return;
-            } else {
-                $("#errorMsgcheckout").html("");
+            $("#errorMsgcheckout").html(
+                "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter card number</span>"
+            ).show().delay(3000).fadeOut('slow');
+            $("#ccnum").focus();
+            return;
+        } else {
+            $("#errorMsgcheckout").html("");
 
-            }
-            if (expmonth == '') {
-                $("#errorMsgcheckout").html(
-                    "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter expiry month</span>"
-                ).show().delay(3000).fadeOut('slow');
-                $("#expmonth").focus();
-                return;
-            } else {
-                $("#errorMsgcheckout").html("");
+        }
+        if (expmonth == '') {
+            $("#errorMsgcheckout").html(
+                "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter expiry month</span>"
+            ).show().delay(3000).fadeOut('slow');
+            $("#expmonth").focus();
+            return;
+        } else {
+            $("#errorMsgcheckout").html("");
 
-            }
-            if (expyear == '') {
-                $("#errorMsgcheckout").html(
-                    "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter expiry year</span>"
-                ).show().delay(3000).fadeOut('slow');
-                $("#expyear").focus();
-                return;
-            } else {
-                $("#errorMsgcheckout").html("");
+        }
+        if (expyear == '') {
+            $("#errorMsgcheckout").html(
+                "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter expiry year</span>"
+            ).show().delay(3000).fadeOut('slow');
+            $("#expyear").focus();
+            return;
+        } else {
+            $("#errorMsgcheckout").html("");
 
-            }
+        }
 
-            if (cvv == '') {
-                $("#errorMsgcheckout").html(
-                    "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter cvv</span>"
-                ).show().delay(3000).fadeOut('slow');
-                $("#cvv").focus();
-                return;
-            } else {
-                $("#errorMsgcheckout").html("");
-                event.preventDefault();
-                $.ajax({
-                    type: 'POST',
-                    url: './requires/checkout.php',
-                    data: $('form').serialize(),
-                    success: function (data) {
-                        alert(data);
-                        $("#errorMsgcheckout").html(data).show().delay(3000).fadeOut('slow');
-                    }
-                });
-            }
-        });
+        if (cvv == '') {
+            $("#errorMsgcheckout").html(
+                "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter cvv</span>"
+            ).show().delay(3000).fadeOut('slow');
+            $("#cvv").focus();
+            return;
+        } else {
+            $("#errorMsgcheckout").html("");
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: './requires/checkout.php',
+                data: $('form').serialize(),
+                success: function(data) {
+                    alert(data);
+                    $("#errorMsgcheckout").html(data).show().delay(3000).fadeOut('slow');
+                }
+            });
+        }
+    });
     </script>
 
 </html>

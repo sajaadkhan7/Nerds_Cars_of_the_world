@@ -64,11 +64,15 @@ if(isset($_SESSION['username'])){
   $user_id = $_SESSION['user_id'];
 
 
-//
-$qry = "SELECT car_bookings.id as bookingid, car_bookings.user_id as userid, car_bookings.ccnum, car_bookings.expmonth,
- car_bookings.expyear, car_bookings.cvv,
- users.id as usrid , users.username as uname, users.email as uemail, users.password FROM car_bookings
-  INNER JOIN users on car_bookings.id = users.id where  users.id  = '$user_id'";
+// //
+// $qry = "SELECT car_bookings.id as bookingid, car_bookings.user_id as userid, car_bookings.ccnum, car_bookings.expmonth,
+//  car_bookings.expyear, car_bookings.cvv,
+//  users.id as usrid , users.username as uname, users.email as uemail, users.password FROM car_bookings
+//   INNER JOIN users on car_bookings.id = users.id where  users.id  = '$user_id'";
+$qry = "
+SELECT tbl_payment.id as paymentid, tbl_payment.user_id as userid, users.id as usrid , users.username as uname,
+ users.email as uemail, users.password FROM tbl_payment 
+INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' ";
   $result = mysqli_query($dbc,$qry) or die(mysqli_error($dbc));
   $res=mysqli_fetch_array($result);
   $uid = $res['usrid'];
@@ -108,8 +112,9 @@ $qry = "SELECT car_bookings.id as bookingid, car_bookings.user_id as userid, car
                         <?php echo $_SESSION['email']; ?><br>
 
                         <?php 
-                               $q ="SELECT v.VehiclesTitle as title, v.PricePerDay as price, v.Vprofile as pic, b.BrandName as bname, cb.date FROM car_bookings cb JOIN tblvehicles v 
-                               ON v.id=cb.car_id JOIN users u ON u.id=cb.user_id JOIN tblbrands b ON b.id=v.VehiclesBrand where u.id = ".$_SESSION['user_id'];
+                               $q ="SELECT v.VehiclesTitle as title, v.PricePerDay as price, v.Vprofile as pic, b.BrandName as bname, pymt.date
+                                FROM tbl_payment pymt JOIN tblvehicles v 
+                               ON v.id=pymt.car_id JOIN users u ON u.id=pymt.user_id JOIN tblbrands b ON b.id=v.VehiclesBrand where u.id = ".$_SESSION['user_id'];
                                                        $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);
                                                       
 
