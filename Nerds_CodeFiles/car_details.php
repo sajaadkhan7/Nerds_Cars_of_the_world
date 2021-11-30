@@ -24,6 +24,8 @@
 
       <?php
 
+
+
             $CAR_ID = $_GET['CAR_ID'];
                     
             $q = "SELECT v.VehiclesTitle, b.BrandName, v.VehiclesOverview, v.PricePerDay, v.FuelType, v.ModelYear, v.SeatingCapacity,

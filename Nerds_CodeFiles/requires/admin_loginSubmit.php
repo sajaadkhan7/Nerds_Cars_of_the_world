@@ -9,12 +9,6 @@
 
          $username = $_POST["admin_username"];
          $password = $_POST["admin_password"];     
-
-        
-
-
-      
-
 // $username = mysqli_real_escape_string($dbc,$_POST['username']);
 // $password = mysqli_real_escape_string($dbc, $_POST['password']);
 
@@ -23,7 +17,7 @@
     if(mysqli_num_rows($result) == 1){
         session_start();
 
-        $_SESSION['username']= $username;
+        $_SESSION['admin_username']= $username;
             $_SESSION['password']= $password;
 
      echo "<script type='text/javascript'>window.location.href = 'admin/car_detail.php'; </script>";

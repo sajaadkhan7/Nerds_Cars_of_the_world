@@ -25,7 +25,21 @@
 <link rel="stylesheet" href="css/loginModal.css">
 <!-- Add jquery cdn -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<?php require_once('requires/mysqli_connect.php');?>
+<?php require_once('requires/mysqli_connect.php');
+   session_start();
+    $actual_link = $_SERVER['REQUEST_URI'];
+    $actual_link = substr($actual_link,0,-10);
+   /*if(isset($_GET['CAR_ID'])){
+    $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?CAR_ID=';
+   }else{
+       $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+   }*/
+   if(isset($_GET['id'])){
+     if($_GET['id']=='Logout'){
+       session_destroy();
+       echo "<script>location.href='$actual_link';</script>";
+     }
+   } ?>
 <style>
 #searchdata li{
   display: none;
@@ -49,6 +63,7 @@ $(document).on("click", function(event){
         }            
     });
     </script>
+    
 </head>
 
 <body>
@@ -88,9 +103,37 @@ $(document).on("click", function(event){
         </ul>
 
         <form class="d-flex">
-          <button class="btn btncolor my-2 mx-2 btn-info"  data-bs-toggle="modal"
-            data-bs-target="#myModal" type="button"><i class="fas fa-user"></i><span class="d-sm-none">
-              LOGIN</span></button>
+          
+          
+            <?php 
+          
+          if(isset($_GET['CAR_ID'])){
+            $link=$_SERVER['REQUEST_URI'].'&id=Logout';
+            }
+            else{
+            $link= $_SERVER['REQUEST_URI'].'?id=Logout'; 
+            }
+
+            if(isset($_SESSION['username'])){
+              echo " <div class='dropdown'>
+              <button class='btn btncolor my-2 me-2 btn-info dropdown-toggle' data-bs-toggle='dropdown' type='button'><i class='fas fa-user'></i>
+              <span> &nbsp".
+              $_SESSION['username']."</span></button>
+              <ul class='dropdown-menu'>
+              <li><a class='dropdown-item' href='#'>My bookings</a></li>
+      <li><a class='dropdown-item' href='".$link."'>Log Out</a></li>
+    
+    </ul></div>"; 
+            }
+
+            else{
+
+            echo "
+            <button class='btn btncolor my-2 me-2 btn-info'  data-bs-toggle='modal'
+            data-bs-target='#myModal' type='button'><i class='fas fa-user'></i>
+            <span class='d-sm-none'>
+              LOGIN</span></button>";} ?>
+              
           <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
         </form>
         <div class="d-flex btn-group">

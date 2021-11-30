@@ -59,9 +59,10 @@ a:link {
 
 #overlay-text {
     position: absolute;
-    top: 50px;
+    top: 8%;
     right: 10px;
-    width: 50%;
+    width: 60%;
+    font-size: 0.8rem;
 }
 
 
@@ -227,14 +228,15 @@ a:link {
     }
 }
 
-/* @media only screen and (min-width: 708px) {
+@media only screen and (min-width: 708px) {
     #overlay-text {
         width: 40%;
-        top: 150px;
+        top: 25%;
         right: 10px;
         line-height: 30px;
+        font-size: 1.1rem;
     }
-} */
+}
 
 @media (max-width:560px) {
     .review {

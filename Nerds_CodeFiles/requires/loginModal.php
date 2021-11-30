@@ -17,20 +17,20 @@
                             <h4 class="modal-title">Login</h4>
                         </div> -->
                     <!-- <form id="userloginform" action="<?php //echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  method="POST"> -->
-                    <form id="userloginform" action="user_loginSubmit.php" method="POST">
-                        <div class="pt-2"><label for="username">USERNAME</label>
-                            <input type="text" id="username" name="loginusername" placeholder="Your username.."
+                    <form id="userloginform" action="requires/user_loginSubmit.php" method="POST">
+                        <div class="pt-2"><label for="username">Email</label>
+                            <input type="email" id="username" name="loginEmail" placeholder="Your Email..."
                                 required>
                             <span class="error" id="usernameerror"><?php echo $usernameErr;?></span>
                         </div>
 
                         <div> <label for="password">PASSWORD</label>
-                            <input type="text" id="password" name="loginpassword" placeholder="Password" required>
+                            <input type="password" id="password" name="loginpassword" placeholder="Password" required>
                             <span class="error" id="passworderror"><?php echo $passwordErr;?></span>
                         </div>
 
                         <div class="button-modal" style="padding-top: 10px;">
-                            <button class="btn btncolor mt-auto" id="login" onclick="showlogin()"
+                            <button type="submit" class="btn btncolor mt-auto" id="login" 
                                 value="Submit">login</button>
                             <button type="button" class="btn btn-danger float-end"
                                 data-bs-dismiss="modal">Close</button>
@@ -63,7 +63,7 @@
                         </div>
 
                         <div> <label for="password">PASSWORD</label>
-                            <input type="text" id="passwordregister" name="password" placeholder="Password" required>
+                            <input type="password" id="passwordregister" name="password" placeholder="Password" style=" width: 100%;padding: 12px;border: 1px solid #ccc;margin-top: 6px;margin-bottom: 16px;resize: vertical;" required>
                             <span class="error" id="passworderror"><?php echo $passwordErr;?></span>
                         </div>
 
@@ -135,19 +135,34 @@ $("#login").click(function(event) {
     // using this page stop being refreshing 
     var usernamelogin = document.getElementById("username").value;
     var passwordlogin = document.getElementById("password").value;
-    // 
-    // 
-    
+ 
+
     if (usernamelogin == '') {
-      //  alert(usernamelogin);
         $("#errorMsgLogin").html(
-            "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter username</span>"
+            "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter email</span>"
             ).show().delay(3000).fadeOut('slow');
-        $("#usernamelogin").focus();
+        $("#username").focus();
         return;
     } else {
         $("#errorMsgLogin").html("");
     }
+
+    if (!ValidateEmail(usernamelogin)) {
+        $("#errorMsgLogin").html(
+            "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Please enter valid email </span>"
+            ).show().delay(3000).fadeOut('slow');
+        // $("#EmailRegister").focus();
+        return;
+      // alert("Invalid email address.");
+        }
+        else {
+            // alert("Valid email address.");
+                    $("#errorMsgLogin").html("");
+
+        }
+
+//email validation
+
   //  return false;
     if (passwordlogin == '') {
        // alert(passwordlogin);
@@ -159,16 +174,15 @@ $("#login").click(function(event) {
     } else {
         $("#errorMsgLogin").html("");
         event.preventDefault();
-       // return false;
-// alert("hg");
+
         $.ajax({
             type: 'POST',
             url: './requires/user_loginSubmit.php',
             data: $('form').serialize(),
             success: function(data) {
-                // alert(data);
+            
                 $("#errorMsgLogin").html(data).show().delay(3000).fadeOut('slow');
-                $("#modelfade").delay(1000).fadeOut('slow');
+           
             } 
         });
     }
@@ -179,6 +193,8 @@ function ValidateEmail(email) {
         var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         return expr.test(email);
     };
+
+
 
 $("#Register").click(function(event) {
     // using this page stop being refreshing 
@@ -243,9 +259,9 @@ $("#Register").click(function(event) {
                 $("#errorregister").html(
                     "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>" +
                     data + " </span>").show().delay(3000).fadeOut('slow');
-//  alert(data);
-                //   window.location.href = "index.php";
-                $("#modelfade").delay(1000).fadeOut('slow');
+
+               
+                showlogin();
 
             }
 

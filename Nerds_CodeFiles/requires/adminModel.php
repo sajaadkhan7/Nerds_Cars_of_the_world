@@ -18,7 +18,7 @@
 
                         </div>
                         <div> <label for="password">PASSWORD</label>
-                            <input type="text" id="admin_password" name="admin_password" placeholder="Password" required>
+                            <input type="password" id="admin_password" name="admin_password" placeholder="Password" required>
                             <span class="error" id="passworderror"><?php echo $passwordErr;?></span>
 
                         </div>

@@ -3,7 +3,7 @@
 // echo "gagan";
 
     $usernameErr = $passwordErr = "";
-    $username = $password = "";
+    $email = $password = "";
     $usernamevalid=$passwordvalid=false;
 
     require_once('mysqli_connect.php');
@@ -11,12 +11,12 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-      if (empty($_POST["loginusername"])) {
+      if (empty($_POST["loginEmail"])) {
         // echo "gagan1";
 
-        $usernameErr = "username is required";
+        $usernameErr = "Email is required";
       } else {
-         $username = $_POST["loginusername"];
+         $email = $_POST["loginEmail"];
 
         $usernamevalid=true;
       }
@@ -36,19 +36,19 @@
        
 
 
-       $query = "SELECT `id`, `username`, `password` FROM `users` WHERE `username` = '$username' and `password` = '$password'";
+       $query = "SELECT `id`, `email`, `username`,`password` FROM `users` WHERE `email` = '$email' and `password` = '$password'";
         $result = mysqli_query($dbc,$query) or die(mysqli_error($dbc));
         if(mysqli_num_rows($result) == 1){
-
+            $r=mysqli_fetch_array($result);
+           
             session_start();
-    
-            $_SESSION['username']= $username;
+            $_SESSION['username']=$r['username'];
+            $_SESSION['email']= $email;
             $_SESSION['password']= $password;
-            //session_start();
-//if(isset($_SESSION['username'])) { 
-            // print_r($_SESSION);
-            // header("location: index.php");
-            echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>You have logged in successfully! </span>";
+
+            echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>You have logged in successfully! </span>
+            <script>location.reload();</script>";
+
         
         }else{
           //  $_SESSION['login']= false;
@@ -65,9 +65,9 @@
 
 
 function test_input($data){
-//     $data = trim($data);
-//   $data = stripslashes($data);
-//   $data = htmlspecialchars($data);
+    $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
     return $data;
 }
 
