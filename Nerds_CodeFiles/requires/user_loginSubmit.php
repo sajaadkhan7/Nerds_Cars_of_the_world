@@ -43,6 +43,7 @@
            
             session_start();
             $_SESSION['username']=$r['username'];
+            $_SESSION['user_id']= $r['id']; 
             $_SESSION['email']= $email;
             $_SESSION['password']= $password;
 

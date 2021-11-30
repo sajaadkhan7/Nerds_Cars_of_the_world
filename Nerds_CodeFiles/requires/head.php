@@ -29,11 +29,7 @@
    session_start();
     $actual_link = $_SERVER['REQUEST_URI'];
     $actual_link = substr($actual_link,0,-10);
-   /*if(isset($_GET['CAR_ID'])){
-    $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?CAR_ID=';
-   }else{
-       $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-   }*/
+   
    if(isset($_GET['id'])){
      if($_GET['id']=='Logout'){
        session_destroy();
@@ -120,7 +116,7 @@ $(document).on("click", function(event){
               <span> &nbsp".
               $_SESSION['username']."</span></button>
               <ul class='dropdown-menu'>
-              <li><a class='dropdown-item' href='#'>My bookings</a></li>
+              <li><a class='dropdown-item' href='past_bookings.php'>My bookings</a></li>
       <li><a class='dropdown-item' href='".$link."'>Log Out</a></li>
     
     </ul></div>"; 

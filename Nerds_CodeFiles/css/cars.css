@@ -236,6 +236,7 @@ a:link {
         line-height: 30px;
         font-size: 1.1rem;
     }
+
 }
 
 @media (max-width:560px) {
@@ -265,6 +266,10 @@ a:link {
     .carousel-indicators .active {
         border: 1px solid transparent;
         background-color: var(--primary-color);
+    }
+    .carousel-inner {
+      
+        padding: 10px;
     }
 }
 

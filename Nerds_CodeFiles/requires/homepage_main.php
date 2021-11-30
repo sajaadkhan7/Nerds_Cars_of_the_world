@@ -114,14 +114,14 @@
 
                 <div class="carousel-item <?php if($counter==1){echo 'active';}?>">
                     <div class="row">
-                        <div class="col-lg-12 text-center">
+                        <div class="col-12 text-center">
                             <img src="<?php echo htmlentities($r['imgUrl'])?>" alt="testimonials" style="width: 150px;">
                         </div>
                     </div>
                     <div class="row">
                         <!-- <div class="col-lg-6 "> <img src="assets/images/<?php echo htmlentities($r['imgUrl']) ?>"
                                 class="d-block w-100 rounded-3" alt="..."> </div> -->
-                        <div class="col-lg-12">
+                        <div class="col-12">
                             <div class=" d-flex flex-column justify-content-center">
                                 <p class="review text-center">"<?php echo $r['Testimonial'] ?>"</p>
                                 <div class="name d-flex align-items-center justify-content-center"> <span

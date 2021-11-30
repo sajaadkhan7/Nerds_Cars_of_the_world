@@ -7,7 +7,21 @@
     require('requires/head.php');
 
     require_once('requires/mysqli_connect.php');
+  
 
+
+
+  //   if($_GET['user_id']){
+  //     $user_id=$_GET['user_id'];
+  // }
+  
+  if($_GET['CAR_ID']){
+    $CAR_ID=$_GET['CAR_ID'];
+}
+
+
+
+  
 ?>
 
   <header data-aos='zoom-out-down' data-aos-delay="550" data-aos-duration="1000" id="overlay"
@@ -23,8 +37,6 @@
       </div>
 
       <?php
-
-
 
             $CAR_ID = $_GET['CAR_ID'];
                     
@@ -84,9 +96,24 @@
         </div>
       </div>
 
+      
       <div class="row" style="padding-top: 20px; padding-bottom: 30px;">
         <div class="col text-center">
-          <a href="checkout.php" class="btn btncolor mt-auto text-white text-uppercase"><b>Book Now </b></a>
+<?php
+  if(isset($_SESSION['username'])){
+    $_SESSION['username']; 
+
+?>
+   <a href="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>" class="btn btncolor mt-auto text-white text-uppercase"><b>Book Now </b></a>
+
+<?php
+}else{
+
+  ?>
+  <a href="#"  data-bs-toggle='modal'  data-bs-target='#myModal'  class="btn btncolor mt-auto text-white text-uppercase"><b>Login For Booking</b></a>
+<?php
+}
+?>
         </div>
       </div>
     </div>
