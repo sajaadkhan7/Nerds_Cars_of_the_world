@@ -14,13 +14,24 @@
 
 
                         <li class="nav-item">
-                            <a href="car_detail.php" class="nav-link">
+                        <button class="btn btncolor btn-info text-white">
+                             <a style="text-decoration:none; color:white;" href="car_detail.php" class="nav-link">
+                                    Car Listing                         
+                            </a></button>
+                        </li>
+                            <li class="nav-item mt-2">
+
+                            <button class="btn btncolor btn-info text-white">
+                                 <a style="text-decoration:none; color:white;"  class="nav-link" href="add_car.php"> Add new cars </a>
+                                </button>
+                            </li>
+                            <li class="nav-item mt-2">
+                            <button class="btn btncolor btn-info text-white">
+                            <a style="text-decoration:none; color:white;" href="logout.php" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    Car Listing
-                                </p>
-                            </a>
-                            <button class="btn btncolor my-2 mx-2 btn-info text-white"> <a style="text-decoration:none; color:white;" href="add_car.php"> ADD NEW CARS </a></button>
+                                    Logout
+                            </a></button>
+
                         </li>
 
 

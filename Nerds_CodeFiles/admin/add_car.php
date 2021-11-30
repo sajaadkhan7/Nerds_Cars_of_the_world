@@ -27,37 +27,44 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
 if(isset($_FILES['file1']['name']) and isset($_FILES['file2']['name']) and isset($_FILES['file3']['name'])){
 
   $fileName1 = basename($_FILES["file1"]["name"]);
-  $targetDir1 = "../assets/images/$brandname/";
+  $targetDir1 = "../assets/covers/";
   $targetFilePath1 = $targetDir1 . $fileName1;
+  
   // $fileType1 = pathinfo($targetFilePath1,PATHINFO_EXTENSION);
+  $fileNameP = basename($_FILES["file1"]["name"]);
+  $targetDirP = "../assets/profile/";
+  $targetFilePathP = $targetDirP . $fileNameP;
 
   $fileName2 = basename($_FILES["file2"]["name"]);
-  $targetDir2 = "../assets/images/$brandname/";
+  $targetDir2 = "../assets/covers/";
   $targetFilePath2 = $targetDir2 . $fileName2;
   // $fileType2 = pathinfo($targetFilePath2,PATHINFO_EXTENSION);
 
   $fileName3 = basename($_FILES["file3"]["name"]);
-  $targetDir3 = "../assets/images/$brandname/";
+  $targetDir3 = "../assets/covers/";
   $targetFilePath3 = $targetDir3 . $fileName3;
 
   // if(!empty($_FILES["file1"]["name"]) && !empty($_FILES["file2"]["name"])  && !empty($_FILES["file3"]["name"]) ){
      
 
-              if(move_uploaded_file($_FILES["file1"]["tmp_name"], $targetFilePath1)){
+    
+                if(move_uploaded_file($_FILES["file1"]["tmp_name"], $targetFilePath1)){
+                    
                   if(move_uploaded_file($_FILES["file2"]["tmp_name"], $targetFilePath2)){
                       if(move_uploaded_file($_FILES["file3"]["tmp_name"], $targetFilePath3)){
+                        if(copy ( $targetFilePath1 , $targetFilePathP )){
 
                           $insertQuery = "INSERT INTO `tblvehicles`(`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOverview`, `PricePerDay`, `FuelType`, 
-                          `ModelYear`, `SeatingCapacity`, `Vimage1`, `Vimage2`, `Vimage3`, `Engine`, `DriveTrain`, `color`, `InteriorFeatures`, `ExteriorFeatures`,
+                          `ModelYear`, `SeatingCapacity`,`Vprofile`, `Vimage1`, `Vimage2`, `Vimage3`, `Engine`, `DriveTrain`, `color`, `InteriorFeatures`, `ExteriorFeatures`,
                            `Functionality`) 
                                                             VALUES (null,'$VehiclesTitle','$VehiclesBrand','$VehiclesOverview','$PricePerDay','$fueltype',
-                           '$ModelYear','$SeatingCapacity','$fileName1','$fileName2','$fileName3','$Engine','$DriveTrain','$color','$InteriorFeatures','$ExteriorFeatures','$Functionality')";
+                           '$ModelYear','$SeatingCapacity','$fileNameP','$fileName1','$fileName2','$fileName3','$Engine','$DriveTrain','$color','$InteriorFeatures','$ExteriorFeatures','$Functionality')";
                             $insert_table = @mysqli_query($dbc, $insertQuery) or die(mysqli_error($dbc));
                            echo "<span style='color:red; font-size:2em'>Added Successfully!!</span>";
                       }
                   }
               }
-        // }
+            }
 }
 }
  $querybrands = "SELECT * FROM `tblbrands` ";

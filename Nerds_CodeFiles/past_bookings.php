@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -112,9 +109,12 @@ INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' "
                         <?php echo $_SESSION['email']; ?><br>
 
                         <?php 
-                               $q ="SELECT v.VehiclesTitle as title, v.PricePerDay as price, v.Vprofile as pic, b.BrandName as bname, pymt.date
-                                FROM tbl_payment pymt JOIN tblvehicles v 
-                               ON v.id=pymt.car_id JOIN users u ON u.id=pymt.user_id JOIN tblbrands b ON b.id=v.VehiclesBrand where u.id = ".$_SESSION['user_id'];
+                               $q ="SELECT v.VehiclesTitle as title, v.PricePerDay as price, v.Vprofile as pic, 
+                               b.BrandName as bname,
+                                cb.date
+                                FROM car_bookings cb JOIN tblvehicles v 
+                               ON v.id=cb.car_id JOIN users u ON u.id=cb.user_id 
+                               JOIN  tblbrands b ON b.id=v.VehiclesBrand where u.id =".$_SESSION['user_id'];
                                                        $res=mysqli_query($dbc,$q) OR mysqli_error($dbc);
                                                       
 
@@ -131,7 +131,6 @@ INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' "
                                 </tr>
                                 <?php
                                       while($r=mysqli_fetch_array($res)){
-
                                  ?>
                                 <tr>
                                     <td><img style='object-fit:cover;' width='100' height='100'
@@ -145,27 +144,28 @@ INNER JOIN users on tbl_payment.user_id = users.id where users.id = '$user_id' "
                                 <?php
    }}
    else{  ?>
-    <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
-    class="column col-12  contactus">
-    <!-- <form id="checkoutform" action="#" method="POST"> -->
-   
-        <div style="height: 75vh;" class=" text-center d-flex flex-column justify-content-center align-items-center">
-        <h2 class="p-3">You Have been logged out..</h2>
-           
-            <button type="button" class="'btn btncolor px-5 btn-info " data-bs-toggle='modal'
-            data-bs-target='#myModal' >Login</button>
-          
-        </div>
-  
-    </div>
+                                <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
+                                    class="column col-12  contactus">
+                                    <!-- <form id="checkoutform" action="#" method="POST"> -->
+
+                                    <div style="height: 75vh;"
+                                        class=" text-center d-flex flex-column justify-content-center align-items-center">
+                                        <h2 class="p-3">You Have been logged out..</h2>
+
+                                        <button type="button" class="'btn btncolor px-5 btn-info "
+                                            data-bs-toggle='modal' data-bs-target='#myModal'>Login</button>
+
+                                    </div>
+
+                                </div>
 
 
-<?php
+                                <?php
    }
    ?>
                             </table>
                         </div>
-                      
+
 
 
                     </div> </br>

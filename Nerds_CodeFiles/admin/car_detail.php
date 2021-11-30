@@ -71,8 +71,8 @@ while($rows = mysqli_fetch_array($result1)){
 ?>
                                             <tr>
                                                 <td> <a target="_blank"
-                                                        href="../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>"><img
-                                                            src='../assets/images/<?php echo $rows['carbrand']."/".$rows['img1'];  ?>'
+                                                        href="../assets/profile/<?php echo $rows['img1'];  ?>"><img
+                                                            src='../assets/profile/<?php echo $rows['img1'];  ?>'
                                                             width="100" height="100"> </a></td>
                                                 <td><?php echo $rows['title']; ?></td>
                                                 <td><?php echo $rows['brand_id']; ?></td>

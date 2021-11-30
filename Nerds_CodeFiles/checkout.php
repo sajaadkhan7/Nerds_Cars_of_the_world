@@ -34,22 +34,14 @@ $data = \stripe\Charge::create(array(
     "source"=>$token,
  ) );
 
-// echo '<pre>';
-// print_r($data);
-// amount
-// [created] => 1638272144
-//     [currency] => cad
-//     payment_method
-//     status
-
     $status = $data['status'];
      $amount = $data['amount'];
-//    echo  $data['created'];
+
 $current_date = date("Y-m-d");
-//    echo  $data['payment_method'];
+
     $currency= $data['currency'];
     
-    $sql = "INSERT INTO `tbl_payment`(`id`, `user_id`, `car_id`, `amount`, `status`, `date`) 
+    $sql = "INSERT INTO `car_bookings`(`id`, `user_id`, `car_id`, `price`, `status`, `date`) 
     VALUES ('null','$user_id','$CAR_ID','$amount','$status','$current_date')";
                     $result1 = mysqli_query($dbc,$sql) or die(mysqli_error($dbc));
                     if($result1){
@@ -62,31 +54,6 @@ $current_date = date("Y-m-d");
                                             }
 
     }
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-//     $current_date = date("Y-m-d");
-
-//     $ccnum = $_POST["ccnum"];
-//     $expmonth = $_POST["expmonth"];
-//     $expyear = $_POST["expyear"];
-//     $cvv = $_POST["cvv"];
-
-//         $sql = "INSERT INTO `car_bookings`(`id`, `user_id`,`car_id`, `ccnum`, `expmonth`, `expyear`, `cvv` ,  `date`) 
-//         VALUES (null,'$user_id','$CAR_ID','$ccnum','$expmonth','$expyear','$cvv', '$current_date')";
-        
-//                 $result1 = mysqli_query($dbc,$sql) or die(mysqli_error($dbc));
-        
-//                 if($result1){
-        
-//                   echo   "<span class='alert alert-success' style='width: 100%;float: left;text-align: center'>Your order is booked successfully! </span>";
-              
-//               }else{
-//                   echo   "<span class='alert alert-danger' style='width: 100%;float: left;text-align: center'>Your order is not booked. Try Again!! </span>";
-        
-//               }
-// }
-
-
 ?>
 
 <!doctype html>
@@ -97,8 +64,7 @@ $current_date = date("Y-m-d");
     <style>
     /* Style inputs */
     .contactus [type=text],
-    input[type=email],
-    textarea {
+    input[type=email] {
         width: 100%;
         padding: 12px;
         border: 1px solid #ccc;
@@ -108,26 +74,7 @@ $current_date = date("Y-m-d");
     }
 
     /* Style the container/contact section */
-    .contactus {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 10px;
-    }
-
-    /* Create two columns that float next to eachother */
-    .column {
-        float: left;
-        width: 50%;
-        margin-top: 6px;
-        padding: 20px;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+ 
 
     .address-wrap {
         /* background: #fff; */
@@ -159,13 +106,9 @@ $current_date = date("Y-m-d");
              
          $r=mysqli_fetch_array($res);
     
- 
- 
-    
-    
     ?>
 
-    <!-- contact us -->
+    <!-- Checkout page -->
 
     <div class="container-fluid">
 
@@ -180,24 +123,15 @@ $current_date = date("Y-m-d");
             <div style="padding-top: 60px; padding-bottom: 70px" class="row">
 
                 <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000"
-                    class="column col-md-8  contactus">
-                    <!-- <form id="checkoutform" action="#" method="POST"> -->
-                    <div class="col-50">
-                        <h3>User's Details </h3>
+                    class="col-lg-8 p-5 contactus">
+                   <br>
+                        <h3>User's Details </h3><br>
                         <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                        <input disabled id="fname" type="text" name="fname" value="<?php echo $uname; ?>">
+                        <input disabled id="fname" type="text" name="fname" value="<?php echo $uname; ?>"><br><br>
                         <label for="email"><i class="fa fa-envelope"></i> Email</label>
                         <input disabled id="email" type="text" name="email" value="<?php echo $uemail; ?>">
-
-                    </div> </br>
-                    <!-- <form id="checkoutform" action="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>" method="POST"> -->
-
-
-                    <div class="row">
-
-
-                        <div class="col-50">
-                            <h3>Payment</h3>
+                       <br><br>
+                            <h3>Payment</h3><br>
 
                             <form
                                 action="checkout.php?CAR_ID=<?php echo $CAR_ID; ?>&car_price=<?php echo $car_price; ?>"
@@ -205,29 +139,25 @@ $current_date = date("Y-m-d");
                                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                     data-key="<?php echo $Publishable_key; ?>"
                                     data-amount="<?php echo $car_price*100; ?>" data-name="Car-Rentals"
-                                    data-description="Car-Rentals" data-image="assets/logo/cars_logo_white.png"
+                                    data-description="Car-Rentals" 
                                     data-currency="cad">
 
 
                                 </script>
 
                             </form>
-                        </div>
-
-                    </div>
-
-                    <!-- <button value="submit" name="checkout" id="checkoutsubmit"
-                            class="btn btncolor mt-auto">Checkout</button> -->
-                    <!-- </form> -->
+                        
+                    
+                  
                 </div>
-                <div data-aos='fade-left' data-aos-delay="0" data-aos-duration="1000" class="col-md-4"
+
+                <div data-aos='fade-left' data-aos-delay="0" data-aos-duration="1000" class="col-lg-4"
                     style="padding-top: 40px; padding-bottom: 50px">
                     <div class="row">
 
 
                         <div class="col-12 address-wrap  p-5 ">
-                            <!-- <a href="past_bookings.php" class="btn btncolor mt-auto text-white text-uppercase"><b>Your Bookings </b></a> -->
-                            <p> Current selected Car </p>
+                             <h2> Current selected Car </h2>
 
                             <div class=" p-5 address-btm list-group">
                                 <h5>
@@ -250,14 +180,9 @@ $current_date = date("Y-m-d");
             </div>
         </div>
     </div>
-    <!-- contact us -->
-
-
     <?php }else{ ?>
 
     <div data-aos='fade-right' data-aos-delay="0" data-aos-duration="1000" class="column col-12  contactus">
-        <!-- <form id="checkoutform" action="#" method="POST"> -->
-
         <div style="height: 75vh;" class=" text-center d-flex flex-column justify-content-center align-items-center">
             <h2 class="p-3">You Have been logged out..</h2>
 
@@ -278,9 +203,7 @@ $current_date = date("Y-m-d");
     <script>
     // checkoutsubmit
     $("#checkoutsubmit").click(function(event) {
-        // using this page stop being refreshing 
-        // var fname = fname
-
+      
         var ccnum = document.getElementById("ccnum").value;
         var expmonth = document.getElementById("expmonth").value;
         var expyear = document.getElementById("expyear").value;
