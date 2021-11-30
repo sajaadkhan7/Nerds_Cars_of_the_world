@@ -2,8 +2,7 @@
     <div class="container" style="padding-top: 60px; color: #ffffff; background-color: #121212;">
         <div class="text-center">
             <h2>Be the Best. Chose the Best</h2>
-            <p style="margin-bottom: 0;">Wide range of cars handpicked for your ease. We care for your decisions, hence
-                made it easy fro you. <br>Just rent and ride. </p>
+            <p style="margin-bottom: 0;">Wide range of cars handpicked for your ease. We care for your decisions, hence made it easy for you. Just rent and ride. <br>Just rent and ride. </p>
         </div>
     </div>
 </section>
