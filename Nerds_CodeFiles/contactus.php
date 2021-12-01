@@ -49,6 +49,15 @@
             flex: 1 1 40%;
             margin-top: 25px;
         }
+        .box {
+            inline-size: 150px; 
+            overflow-wrap: break-word;
+        }
+        @media only screen and (max-width: 767px) {
+            .address-wrap{
+                margin-left: 0;
+            }
+        }
     </style>
     <?php require('requires/contactusSubmit.php'); ?>
 
@@ -116,7 +125,7 @@
 
                                 <div class="email-wrapp list-group-item list-group-item-action">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <a href="mailto:sajaadkhan7@gmail.com">&nbsp;Carsoftheworld@gmail.com</a>
+                                    <a href="mailto:sajaadkhan7@gmail.com" class="box">&nbsp;Carsoftheworld@gmail.com</a>
                                 </div>
 
                                 <div class="mob-wrapp list-group-item list-group-item-action">

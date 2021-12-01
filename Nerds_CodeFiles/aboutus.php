@@ -8,18 +8,15 @@
 
 <body>
 
-
-
-
   </div>
-  <div class="container py-5" data-aos='zoom-out-down' data-aos-delay="300" data-aos-duration="1000">
-    <div class="row h-100 align-items-center py-5">
+  <div class="container mt-4" data-aos='zoom-out-down' data-aos-delay="300" data-aos-duration="1000">
+    <div class="row h-100 align-items-center">
 
       <div class="col-lg-6">
-        <h1 class="display-4">Who are we?</h1>
-        <p class="lead text-muted mb-0">Our tech startup is a leading car rental company in the market. We provide people with an opportunity to rent cars for various purposes such as personal and business use. Our goal is to create a transparent, convenient and user-friendly service that appeals to everyone who needs a car at one time or another.</p>
+        <h2 class="display-4">Who are we?</h2>
+        <p class="font-italic text-muted">Our tech startup is a leading car rental company in the market. We provide people with an opportunity to rent cars for various purposes such as personal and business use. Our goal is to create a transparent, convenient and user-friendly service that appeals to everyone who needs a car at one time or another.</p>
       </div>
-      <div class="col-lg-6 d-none d-lg-block"><img src="assets/images/undraw_content_team.png" alt="" class="img-fluid">
+      <div class="col-lg-6 d-none d-sm-block"><img src="assets/images/undraw_content_team.png" alt="" class="img-fluid">
       </div>
     </div>
   </div>
@@ -35,7 +32,7 @@
             class="fa fa-leaf fa-2x mb-3" style="color: #0091AD;"></i>
 
           <h2 class="font-weight-light">Offers and insurance</h2>
-          <p class="font-italic text-muted mb-4">We offer the best deals for the car rental in this market. Moreover, our prices are so cheap that even luxury cars seems affordable for anyone. Besides this, We provide insurance as well. That means you do not have to find any insurance companies to insure your vehicle.  </p>
+          <p class="font-italic text-muted mb-2">We offer the best deals for the car rental in this market. Moreover, our prices are so cheap that even luxury cars seems affordable for anyone. Besides this, We provide insurance as well. That means you do not have to find any insurance companies to insure your vehicle.  </p>
         </div>
       </div>
 
